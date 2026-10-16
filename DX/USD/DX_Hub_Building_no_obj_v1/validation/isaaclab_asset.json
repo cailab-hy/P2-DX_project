@@ -1,0 +1,22 @@
+{
+ "case": "asset",
+ "root": "/World/DX_Hub_Building",
+ "loaded": true,
+ "variants": {
+  "doors": "open",
+  "blinds": "down",
+  "fixtures": "none",
+  "lighting": "night"
+ },
+ "active_prims": {
+  "mesh": 326,
+  "collider": 308,
+  "light": 408
+ },
+ "fixtures_prim_active": false,
+ "cube_rest_z": {
+  "hall": 0.1,
+  "corridor": 0.1,
+  "counter_U_south": 0.1
+ }
+}

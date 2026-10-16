@@ -1,0 +1,17 @@
+{
+ "loaded": true,
+ "counts": {
+  "rigid_bodies": 107,
+  "joints": 16,
+  "deformables": 3
+ },
+ "device": "cuda:0",
+ "cube_on_mattress_z": 0.65,
+ "cube_on_table_z": 0.44,
+ "cube_in_sink_z": 1.042,
+ "expected": {
+  "mattress_collider_top+0.1": 0.64,
+  "table_top+0.1": 0.44,
+  "sink_bowl_bottom+0.1": 1.042
+ }
+}

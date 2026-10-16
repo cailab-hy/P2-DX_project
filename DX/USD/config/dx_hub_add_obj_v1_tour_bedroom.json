@@ -1,0 +1,98 @@
+{
+  "variants": {
+    "doors": "open",
+    "lighting": "day",
+    "blinds": "down",
+    "fixtures": "counters"
+  },
+  "eye_z": 1.5,
+  "pitch_deg": 3.0,
+  "focal_mm": 14.0,
+  "fps": 30,
+  "resolution": [
+    1280,
+    720
+  ],
+  "rt_subframes": 8,
+  "speed_mps": 1.1,
+  "accel_mps2": 0.8,
+  "corner_radius_m": 0.6,
+  "lookahead_m": 0.8,
+  "turn_dps": 45.0,
+  "look_dps": 30.0,
+  "yaw_smooth_s": 0.25,
+  "clearance_m": 0.22,
+  "hold_start_s": 1.0,
+  "hold_end_s": 2.0,
+  "scene": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/DX_Hub_Building_add_obj_v1_scene.usda",
+  "variant_prim": "/World/DX_Hub_Building_add_obj/Building",
+  "frame_step": 2,
+  "settle_s": 4.0,
+  "draw_colliders_under": "/World/DX_Hub_Building_add_obj/Furniture",
+  "_doc": "Bedroom (care room) only (2x): desk with the T-shirt, sofa, bed, wardrobe set and plant. 2026-10-16: desk + T-shirt look (camera tilted to -20 deg, 1.5 s hold).",
+  "start": [
+    -5.8,
+    16.6
+  ],
+  "route": [
+    {
+      "name": "enter",
+      "go": [
+        [
+          -4.28,
+          17.6
+        ],
+        [
+          -2.6,
+          17.7
+        ]
+      ]
+    },
+    {
+      "look": 132,
+      "pitch": -20,
+      "hold_s": 1.5
+    },
+    {
+      "look": -132
+    },
+    {
+      "name": "sofa-bed",
+      "go": [
+        [
+          -1.5,
+          18.0
+        ],
+        [
+          0.0,
+          18.0
+        ],
+        [
+          1.0,
+          17.7
+        ]
+      ]
+    },
+    {
+      "look": 70
+    },
+    {
+      "look": -165
+    },
+    {
+      "name": "back",
+      "go": [
+        [
+          -1.8,
+          17.6
+        ]
+      ]
+    },
+    {
+      "look": 160
+    }
+  ],
+  "frames_dir": "/home/cai/P2&DX_project/P2&DX/USD/work/add_obj_v1/tour_bedroom_frames",
+  "out_dir": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/walkthrough/bedroom_tour",
+  "video": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/walkthrough/DX_Hub_add_obj_v1_bedroom_tour_2x.mp4"
+}

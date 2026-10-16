@@ -1,0 +1,90 @@
+{
+ "drops_rest_z": {
+  "hall": 0.1,
+  "corridor_NS": 0.1,
+  "east_room": 0.1,
+  "pantry": 0.1,
+  "SW_room": 0.1,
+  "robot_room": 0.1,
+  "room_A": 0.1,
+  "U_north_top(arm)": 1.213,
+  "U_south_top": 0.978,
+  "bar_mid_top": 1.218,
+  "low_base_top": 0.91,
+  "showcase_top": 0.91
+ },
+ "rays": {
+  "glass A (room A west)": [
+   [
+    -0.776,
+    -8.5,
+    1.0
+   ],
+   "glass_A_RoomPartition_2_215"
+  ],
+  "glass B (south rooms)": [
+   [
+    -3.0,
+    -15.189,
+    1.0
+   ],
+   "glass_B_SouthRooms_3_237"
+  ],
+  "glass C doors (corridor east)": [
+   [
+    5.895,
+    -2.9,
+    1.0
+   ],
+   "glass_post_C_CorridorEast_0_m2925_255"
+  ],
+  "glass C wall panel": [
+   [
+    5.9,
+    -0.9,
+    1.0
+   ],
+   "glass_C_CorridorEast_2_262"
+  ],
+  "glass D (glass-door corridor)": [
+   [
+    -3.646,
+    -8.5,
+    1.0
+   ],
+   "glass_D_GlassDoorCorridor_4_278"
+  ],
+  "glass E (north glass doors)": [
+   [
+    -2.0,
+    16.216,
+    1.0
+   ],
+   "glass_E_NorthGlassDoor_1_294"
+  ],
+  "glass F (robot room north)": [
+   [
+    -9.0,
+    -0.221,
+    1.0
+   ],
+   "glass_F_RobotRoomNorth_2_307"
+  ],
+  "east room door (closed)": [
+   [
+    6.1,
+    12.6,
+    1.0
+   ],
+   "door_1_0_190"
+  ],
+  "east room door (doors=open)": [
+   [
+    12.595,
+    12.6,
+    1.0
+   ],
+   "wall_035_35"
+  ]
+ }
+}

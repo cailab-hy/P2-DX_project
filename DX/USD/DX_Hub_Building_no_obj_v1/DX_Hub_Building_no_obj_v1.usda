@@ -1,0 +1,3330 @@
+#usda 1.0
+(
+    customLayerData = {
+        string T_gsplat_to_world = "[[0.9938696791844972, 7.336686024889182e-05, 0.01609519850788618, -37.400080650200415], [-0.00010596952376223171, 0.993997956820819, 0.0020126118595718647, 15.626095268902617], [-0.01609501687369369, -0.002014063887038435, 0.9938676440947732, 1.4789511405155895], [0.0, 0.0, 0.0, 1.0]]"
+        string T_las_to_world = "[[0.9765086958999296, -0.21535833262097692, 0.007180209086888058, -3.9], [0.21531401080899376, 0.9765234344795303, 0.006469827018328831, 11.0], [-0.008404973596822502, -0.004771842727421366, 0.9999532918770864, 0.9536398026004959], [0.0, 0.0, 0.0, 1.0]]"
+        string frame = "Z-up, metres, floor z=0, walls along X/Y (same frame as DX_Hub / DX_Hub_Building v2)"
+    }
+    defaultPrim = "DX_Hub_Building"
+    doc = "DX Hub 11F (CARE robot vocational training centre) - empty building no_obj_v1: floor, walls, ceiling, windows, doors, glass partitions, built-in counters. Measured from the 2026-06-22 LiDAR scan."
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "DX_Hub_Building" (
+    assetInfo = {
+        string name = "DX_Hub_Building"
+        string version = "3.0"
+    }
+    kind = "assembly"
+    prepend payload = @./payloads/building.usdc@
+    variants = {
+        string blinds = "down"
+        string doors = "closed"
+        string fixtures = "counters"
+        string lighting = "day"
+    }
+    prepend variantSets = ["doors", "blinds", "fixtures", "lighting"]
+)
+{
+    over "Lights"
+    {
+        def Xform "Daylight"
+        {
+            def Xform "Overcast"
+            {
+                def DomeLight "Sky"
+                {
+                    float inputs:intensity = 1000
+                    asset inputs:texture:file = @./textures/kloofendal_overcast_puresky_2k.hdr@
+                    token inputs:texture:format = "latlong"
+                }
+            }
+
+            def Xform "Sunny"
+            {
+                def DomeLight "Sky"
+                {
+                    float inputs:intensity = 1000
+                    asset inputs:texture:file = @./textures/kloofendal_48d_partly_cloudy_puresky_2k.hdr@
+                    token inputs:texture:format = "latlong"
+                }
+
+                def DistantLight "Sun"
+                {
+                    float inputs:angle = 0.53
+                    float inputs:colorTemperature = 5800
+                    bool inputs:enableColorTemperature = 1
+                    float inputs:intensity = 3000
+                    float3 xformOp:rotateXYZ = (55, 0, 250)
+                    uniform token[] xformOpOrder = ["xformOp:rotateXYZ"]
+                }
+            }
+        }
+    }
+    variantSet "doors" = {
+        "closed" {
+
+        }
+        "open" {
+            over "Openings"
+            {
+                over "Doors"
+                {
+                    over "Door_00"
+                    {
+                        over "Leaf0" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Leaf1" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Door_01"
+                    {
+                        over "Leaf0" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Leaf1" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+                }
+            }
+
+            over "Glass"
+            {
+                over "D_GlassDoorCorridor"
+                {
+                    over "Door_00" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Door_01" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Door_02" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Door_03" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Door_04" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Door_05" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Door_06" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Door_07" (
+                        active = false
+                    )
+                    {
+                    }
+                }
+
+                over "E_NorthGlassDoor"
+                {
+                    over "Door_00" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Door_01" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Door_02" (
+                        active = false
+                    )
+                    {
+                    }
+                }
+            }
+
+            over "Collision"
+            {
+                over "door_0_0_188" (
+                    active = false
+                )
+                {
+                }
+
+                over "door_0_1_189" (
+                    active = false
+                )
+                {
+                }
+
+                over "door_1_0_190" (
+                    active = false
+                )
+                {
+                }
+
+                over "door_1_1_191" (
+                    active = false
+                )
+                {
+                }
+
+                over "glass_D_GlassDoorCorridor_0_266" (
+                    active = false
+                )
+                {
+                }
+
+                over "glass_D_GlassDoorCorridor_1_269" (
+                    active = false
+                )
+                {
+                }
+
+                over "glass_D_GlassDoorCorridor_2_272" (
+                    active = false
+                )
+                {
+                }
+
+                over "glass_D_GlassDoorCorridor_3_275" (
+                    active = false
+                )
+                {
+                }
+
+                over "glass_D_GlassDoorCorridor_4_278" (
+                    active = false
+                )
+                {
+                }
+
+                over "glass_D_GlassDoorCorridor_5_281" (
+                    active = false
+                )
+                {
+                }
+
+                over "glass_D_GlassDoorCorridor_6_284" (
+                    active = false
+                )
+                {
+                }
+
+                over "glass_D_GlassDoorCorridor_7_287" (
+                    active = false
+                )
+                {
+                }
+
+                over "glass_E_NorthGlassDoor_0_291" (
+                    active = false
+                )
+                {
+                }
+
+                over "glass_E_NorthGlassDoor_1_294" (
+                    active = false
+                )
+                {
+                }
+
+                over "glass_E_NorthGlassDoor_2_297" (
+                    active = false
+                )
+                {
+                }
+            }
+
+        }
+    }
+    variantSet "blinds" = {
+        "down" {
+            over "Openings"
+            {
+                over "Windows"
+                {
+                    over "Window_00"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_01"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_02"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_03"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_04"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_05"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_06"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_07"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_08"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_09"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_10"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_11"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_12"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_13"
+                    {
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+                }
+            }
+
+        }
+        "half" {
+            over "Openings"
+            {
+                over "Windows"
+                {
+                    over "Window_00"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_01"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_02"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_03"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_04"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_05"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_06"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_07"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_08"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_09"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_10"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_11"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_12"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_13"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Up" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+                }
+            }
+
+        }
+        "up" {
+            over "Openings"
+            {
+                over "Windows"
+                {
+                    over "Window_00"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_01"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_02"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_03"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_04"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_05"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_06"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_07"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_08"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_09"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_10"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_11"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_12"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+
+                    over "Window_13"
+                    {
+                        over "Blind_Down" (
+                            active = false
+                        )
+                        {
+                        }
+
+                        over "Blind_Half" (
+                            active = false
+                        )
+                        {
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    variantSet "fixtures" = {
+        "counters" {
+
+        }
+        "none" {
+            over "Fixtures" (
+                active = false
+            )
+            {
+            }
+
+            over "Collision"
+            {
+                over "U_table_north_p0_321_0" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_1" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_2" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_3" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_4" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_5" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_6" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_7" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_8" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_9" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_10" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_11" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_12" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_13" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_14" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_15" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_16" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_17" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_18" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_19" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_20" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_21" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_22" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_23" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_24" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_25" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_26" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_27" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_28" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_29" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_30" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_31" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_32" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_33" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_34" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_35" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_36" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_37" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_38" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_39" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_40" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_41" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_42" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_43" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_44" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_45" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_46" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_47" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_48" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_49" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_50" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_51" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_52" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_53" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_54" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_55" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_56" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_57" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_58" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_59" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_60" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_61" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_62" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_63" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_64" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_65" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_66" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_67" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_68" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_69" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_70" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_71" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_72" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_73" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_74" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_75" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_76" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_77" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_78" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_79" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_80" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_81" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_82" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_83" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_84" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_85" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_86" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_87" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_88" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_89" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_90" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_91" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_92" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_93" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_94" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_95" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_96" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_97" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_98" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_99" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_100" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_101" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_102" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_103" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_104" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_105" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_106" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_107" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_108" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_109" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_110" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_111" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_112" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_113" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_114" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_115" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_116" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_117" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_118" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_119" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_120" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_121" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_122" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_123" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_124" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_125" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_126" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_127" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_128" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_p0_321_129" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_0" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_1" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_2" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_3" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_4" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_5" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_6" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_7" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_8" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_9" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_10" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_11" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_12" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_13" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_14" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_15" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_16" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_17" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_18" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_19" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_20" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_21" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_22" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_23" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_24" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_25" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_26" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_27" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_28" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_29" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_30" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_31" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_32" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_33" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_34" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_35" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_36" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_37" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_38" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_39" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_40" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_41" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_42" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_43" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_44" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_45" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_46" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_47" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_48" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_49" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_50" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_51" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_52" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_53" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_54" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_55" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_56" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_57" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_58" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_59" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_60" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_61" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_62" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_63" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_64" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_65" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_66" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_67" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_68" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_69" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_70" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_71" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_72" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_73" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_74" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_75" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_76" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_77" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_78" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_79" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_80" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_81" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_82" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_83" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_84" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_85" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_86" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_87" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_88" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_89" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_90" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_91" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_92" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_93" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_94" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_95" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_96" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_97" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_98" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_99" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_100" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_101" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_102" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_103" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_104" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_105" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_106" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_107" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_108" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_109" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_110" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_111" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_112" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_113" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_114" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_115" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_116" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_117" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_118" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_119" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_120" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_121" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_122" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_123" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p0_321_124" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_0" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_1" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_2" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_3" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_4" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_5" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_6" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_7" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_8" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_9" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_10" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_11" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_12" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_13" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_14" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_15" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_16" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_17" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_18" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_19" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_20" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_21" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_22" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_23" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_24" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_25" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_26" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_27" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_28" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_29" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_30" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_31" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_32" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_33" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_34" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_35" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_36" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_37" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_38" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_39" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_40" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_41" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_42" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_43" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_44" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_45" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_46" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_47" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_48" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_49" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_50" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_51" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_52" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_53" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_54" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_55" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_56" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_57" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_58" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_59" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_60" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_61" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_62" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_63" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_64" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_65" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_66" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_67" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_68" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_69" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_70" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_71" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_72" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_73" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_74" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_75" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_76" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_77" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_78" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_79" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_80" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_81" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_82" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_83" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_84" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_85" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_86" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_87" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_88" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_89" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_90" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_91" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_92" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_93" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_94" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_95" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_96" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_97" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_98" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_99" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_100" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_101" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_102" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_103" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_104" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_105" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_106" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_107" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_108" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_109" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_110" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_111" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_112" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_113" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_114" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_115" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_116" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_117" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_118" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_119" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_120" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_121" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_122" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_123" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_124" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_south_p1_321_125" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_bar_0_321" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_bar_1_322" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_bar_2_323" (
+                    active = false
+                )
+                {
+                }
+
+                over "U_table_north_bar_backsplash_324" (
+                    active = false
+                )
+                {
+                }
+            }
+
+        }
+    }
+    variantSet "lighting" = {
+        "day" {
+            over "Lights"
+            {
+                over "Daylight"
+                {
+                    over "Sunny" (
+                        active = false
+                    )
+                    {
+                    }
+                }
+            }
+
+        }
+        "day_sunny" {
+            over "Lights"
+            {
+                over "Daylight"
+                {
+                    over "Overcast" (
+                        active = false
+                    )
+                    {
+                    }
+                }
+            }
+
+        }
+        "night" {
+            over "Lights"
+            {
+                over "Daylight" (
+                    active = false
+                )
+                {
+                }
+            }
+
+        }
+        "none" {
+            over "Lights"
+            {
+                over "Daylight" (
+                    active = false
+                )
+                {
+                }
+
+                over "Panels" (
+                    active = false
+                )
+                {
+                }
+
+                over "Coves" (
+                    active = false
+                )
+                {
+                }
+
+                over "Downlights" (
+                    active = false
+                )
+                {
+                }
+            }
+
+        }
+    }
+}
+

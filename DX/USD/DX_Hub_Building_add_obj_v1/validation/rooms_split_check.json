@@ -1,0 +1,33 @@
+{
+ "Hall": {
+  "furniture_groups_active": [
+   "Hall"
+  ],
+  "rigid_bodies": 58,
+  "max_drift_m": 0.0,
+  "deformables": [],
+  "building_gprims_active": 663
+ },
+ "Kitchen": {
+  "furniture_groups_active": [
+   "Kitchen"
+  ],
+  "rigid_bodies": 26,
+  "max_drift_m": 0.0,
+  "deformables": [],
+  "building_gprims_active": 212
+ },
+ "CareRoom": {
+  "furniture_groups_active": [
+   "CareRoom"
+  ],
+  "rigid_bodies": 14,
+  "max_drift_m": 0.0,
+  "deformables": [
+   "Pillow",
+   "Blanket",
+   "Shirt"
+  ],
+  "building_gprims_active": 142
+ }
+}

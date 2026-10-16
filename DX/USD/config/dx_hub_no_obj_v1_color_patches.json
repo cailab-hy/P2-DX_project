@@ -1,0 +1,439 @@
+{
+  "_doc": "Colour calibration patches picked on the 2026-10-08 night videos (real-01/02, 1280x720 frames at 1 s, f_<t>.jpg) and on the user photo of room 1106 (images/23.jpg). Boxes are [x0, y0, x1, y1] in pixels. 'ref' gives the per-frame reference: 'white' = neutral white acoustic ceiling tile (albedo 0.80, assumed) or a material name already calibrated (chained).",
+  "white_albedo": 0.8,
+  "frames": [
+    {
+      "src": "real-01/f_023.jpg",
+      "ref": [
+        "white",
+        [
+          560,
+          40,
+          660,
+          78
+        ]
+      ],
+      "patches": {
+        "wall_greige": [
+          [
+            880,
+            170,
+            1000,
+            280
+          ],
+          [
+            100,
+            95,
+            200,
+            180
+          ]
+        ],
+        "floor_room": [
+          [
+            480,
+            600,
+            800,
+            700
+          ]
+        ],
+        "ceiling_tile_white": [
+          [
+            560,
+            40,
+            660,
+            78
+          ]
+        ]
+      }
+    },
+    {
+      "src": "real-01/f_002.jpg",
+      "ref": [
+        "white",
+        [
+          560,
+          2,
+          700,
+          38
+        ]
+      ],
+      "patches": {
+        "wall_greige": [
+          [
+            165,
+            110,
+            225,
+            300
+          ],
+          [
+            1130,
+            170,
+            1240,
+            300
+          ]
+        ],
+        "floor_room": [
+          [
+            320,
+            600,
+            780,
+            700
+          ]
+        ],
+        "blind": [
+          [
+            430,
+            90,
+            580,
+            225
+          ]
+        ],
+        "baseboard": [
+          [
+            300,
+            487,
+            380,
+            495
+          ]
+        ],
+        "sill_ledge": [
+          [
+            300,
+            322,
+            700,
+            333
+          ]
+        ]
+      }
+    },
+    {
+      "src": "real-02/f_074.jpg",
+      "ref": [
+        "white",
+        [
+          700,
+          18,
+          820,
+          58
+        ]
+      ],
+      "patches": {
+        "wall_greige": [
+          [
+            200,
+            135,
+            300,
+            225
+          ]
+        ],
+        "counter_front": [
+          [
+            430,
+            370,
+            550,
+            470
+          ]
+        ],
+        "glass_mint": [
+          [
+            480,
+            250,
+            620,
+            288
+          ]
+        ],
+        "floor_hall": [
+          [
+            420,
+            580,
+            700,
+            700
+          ]
+        ],
+        "ceiling_gray": [
+          [
+            300,
+            92,
+            420,
+            118
+          ]
+        ]
+      }
+    },
+    {
+      "src": "real-02/f_057.jpg",
+      "ref": [
+        "white",
+        [
+          880,
+          92,
+          1000,
+          140
+        ]
+      ],
+      "patches": {
+        "ceiling_gray": [
+          [
+            160,
+            40,
+            300,
+            100
+          ]
+        ],
+        "floor_hall": [
+          [
+            900,
+            450,
+            1200,
+            600
+          ]
+        ],
+        "wall_greige": [
+          [
+            180,
+            230,
+            255,
+            390
+          ]
+        ]
+      }
+    },
+    {
+      "src": "real-02/f_003.jpg",
+      "ref": [
+        "wall_greige",
+        [
+          900,
+          260,
+          1100,
+          450
+        ]
+      ],
+      "patches": {
+        "ceiling_gray": [
+          [
+            420,
+            60,
+            470,
+            140
+          ],
+          [
+            645,
+            60,
+            700,
+            140
+          ]
+        ],
+        "floor_corridor": [
+          [
+            480,
+            560,
+            800,
+            700
+          ]
+        ],
+        "door_leaf": [
+          [
+            725,
+            260,
+            760,
+            470
+          ]
+        ]
+      }
+    },
+    {
+      "src": "real-02/f_010.jpg",
+      "ref": [
+        "wall_greige",
+        [
+          680,
+          210,
+          780,
+          400
+        ]
+      ],
+      "patches": {
+        "wall_white": [
+          [
+            285,
+            100,
+            380,
+            250
+          ]
+        ],
+        "door_frame": [
+          [
+            410,
+            170,
+            430,
+            600
+          ]
+        ]
+      }
+    },
+    {
+      "src": "real-02/f_077.jpg",
+      "ref": [
+        "wall_greige",
+        [
+          1060,
+          40,
+          1180,
+          300
+        ]
+      ],
+      "patches": {
+        "wall_tile_gray": [
+          [
+            320,
+            120,
+            700,
+            380
+          ]
+        ],
+        "floor_tile_room": [
+          [
+            300,
+            520,
+            800,
+            700
+          ]
+        ]
+      }
+    },
+    {
+      "src": "real-02/f_051.jpg",
+      "ref": [
+        "wall_greige",
+        [
+          160,
+          120,
+          380,
+          250
+        ]
+      ],
+      "patches": {
+        "wall_tv": [
+          [
+            970,
+            100,
+            1100,
+            400
+          ]
+        ],
+        "ceiling_gray": [
+          [
+            200,
+            4,
+            500,
+            24
+          ]
+        ]
+      }
+    },
+    {
+      "src": "photo/23.jpg",
+      "ref": [
+        "wall_greige",
+        [
+          1000,
+          400,
+          1600,
+          1400
+        ]
+      ],
+      "patches": {
+        "header_brown": [
+          [
+            1760,
+            660,
+            2700,
+            940
+          ]
+        ],
+        "door_leaf": [
+          [
+            1800,
+            1100,
+            2300,
+            2400
+          ]
+        ]
+      }
+    }
+  ],
+  "_method": "Chromaticity: camera white balance trusted (phone auto-WB under ~4000-5000 K LEDs); per material the median normalised linear RGB of its patches. Luminance (albedo): anchored, see 'luminance'. Vertical surfaces use same-frame ratios to the white counter front (vertical, assumed 0.80) or to the calibrated greige wall; floors/ceilings receive different irradiance, so their luminance is an estimate ordered as seen in the videos.",
+  "luminance": {
+    "wall_greige": {
+      "Y": 0.46,
+      "how": "real-02 t74: linear-luminance ratio wall / white counter front = 0.57 x 0.80"
+    },
+    "door_leaf": {
+      "Y": 0.46,
+      "how": "user: doors same warm greige as walls (photo 23: door ~ wall)",
+      "chroma_from": "wall_greige"
+    },
+    "wall_white": {
+      "Y": 0.8,
+      "how": "toilet-front walls (user: white)",
+      "chroma": "neutral"
+    },
+    "wall_tile_gray": {
+      "Y": 0.4,
+      "how": "real-02 t77 ratio to greige x 0.87 (tiles slightly darker in user photo 15)"
+    },
+    "wall_tv": {
+      "Y": 0.5,
+      "how": "TV wall a touch lighter than the greige walls (real-02 t51); chroma from greige (warm cast in the frame is cove light)",
+      "chroma_from": "wall_greige"
+    },
+    "header_brown": {
+      "Y": 0.085,
+      "how": "photo 23 ratio to greige wall 0.18"
+    },
+    "counter_front": {
+      "Y": 0.8,
+      "how": "white lacquer (reference)",
+      "chroma": "neutral"
+    },
+    "ceiling_tile_white": {
+      "Y": 0.8,
+      "how": "white acoustic tile (assumed)",
+      "chroma": "neutral"
+    },
+    "ceiling_gray": {
+      "Y": 0.12,
+      "how": "estimate: charcoal paint, darker than the 0.19 same-frame ratio because downlit"
+    },
+    "floor_room": {
+      "Y": 0.5,
+      "how": "estimate: light grey speckled vinyl; brighter than walls in every room frame"
+    },
+    "floor_hall": {
+      "Y": 0.38,
+      "how": "estimate: medium-light grey (one colour for the hall, user)"
+    },
+    "floor_corridor": {
+      "Y": 0.22,
+      "how": "estimate: core corridor medium grey (real-02 t3 floor darker than walls)"
+    },
+    "floor_tile_room": {
+      "Y": 0.2,
+      "how": "estimate: dark grey (real-02 t77, user photo 15)"
+    },
+    "baseboard": {
+      "Y": 0.07,
+      "how": "estimate: dark grey baseboard (thin, patches blend with wall)"
+    },
+    "glass_mint": {
+      "Y": 0.75,
+      "how": "tint only (glass), from real-02 t74 chroma"
+    },
+    "blind": {
+      "Y": 0.62,
+      "how": "estimate: light grey combi-blind fabric",
+      "chroma": "neutral"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+ "dofs": [
+  "door",
+  "button"
+ ],
+ "press_window_s": [
+  1.0,
+  1.3
+ ],
+ "latch_released_at_s": 1.017,
+ "button_min_mm": -6.0,
+ "button_after_release_mm": -0.0,
+ "door_final_deg": -100.0,
+ "door_limit_deg": -100,
+ "press_to_open_mm": 3.0
+}

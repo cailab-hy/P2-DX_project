@@ -1,0 +1,131 @@
+{
+ "wall_face_to_LAS_median_m": 0.008875210161545456,
+ "wall_face_to_LAS_p95_m": 0.04295802848886305,
+ "wall_band_points_within_10cm_frac": 0.908883301388711,
+ "window_blind_plane_to_LAS_median_m": 0.029926635829587767,
+ "window_blind_plane_to_LAS_p95_m": 0.07481435148309529,
+ "free_space_IoU": 0.9651861650647242,
+ "off_axis_walls": [
+  "diagonal_0_182: 129.0 deg, 4.94 m"
+ ],
+ "wall_pieces_shorter_than_0.15m": [],
+ "door_clear_widths": [
+  {
+   "door": "Door_00",
+   "opening_m": 1.58,
+   "clear_m": 1.55,
+   "height_m": 2.1
+  },
+  {
+   "door": "Door_01",
+   "opening_m": 1.68,
+   "clear_m": 1.65,
+   "height_m": 2.12
+  },
+  {
+   "door": "B_SouthRooms/Door_02",
+   "opening_m": 0.95,
+   "clear_m": 0.9,
+   "height_m": 2.29,
+   "type": "swing_door"
+  },
+  {
+   "door": "B_SouthRooms/Door_05",
+   "opening_m": 1.05,
+   "clear_m": 1.0,
+   "height_m": 2.29,
+   "type": "swing_door"
+  },
+  {
+   "door": "C_CorridorEast/Door_00",
+   "opening_m": 1.425,
+   "clear_m": 1.375,
+   "height_m": 2.379,
+   "type": "swing_door"
+  },
+  {
+   "door": "C_CorridorEast/Door_01",
+   "opening_m": 1.425,
+   "clear_m": 1.375,
+   "height_m": 2.379,
+   "type": "swing_door"
+  },
+  {
+   "door": "D_GlassDoorCorridor/Door_00",
+   "opening_m": 1.117,
+   "clear_m": 1.067,
+   "height_m": 2.29,
+   "type": "sliding_door"
+  },
+  {
+   "door": "D_GlassDoorCorridor/Door_01",
+   "opening_m": 1.116,
+   "clear_m": 1.066,
+   "height_m": 2.29,
+   "type": "sliding_door"
+  },
+  {
+   "door": "D_GlassDoorCorridor/Door_02",
+   "opening_m": 1.117,
+   "clear_m": 1.067,
+   "height_m": 2.29,
+   "type": "sliding_door"
+  },
+  {
+   "door": "D_GlassDoorCorridor/Door_03",
+   "opening_m": 1.08,
+   "clear_m": 1.03,
+   "height_m": 2.29,
+   "type": "sliding_door"
+  },
+  {
+   "door": "D_GlassDoorCorridor/Door_04",
+   "opening_m": 1.1,
+   "clear_m": 1.05,
+   "height_m": 2.29,
+   "type": "sliding_door"
+  },
+  {
+   "door": "D_GlassDoorCorridor/Door_05",
+   "opening_m": 1.27,
+   "clear_m": 1.22,
+   "height_m": 2.29,
+   "type": "sliding_door"
+  },
+  {
+   "door": "D_GlassDoorCorridor/Door_06",
+   "opening_m": 1.07,
+   "clear_m": 1.02,
+   "height_m": 2.29,
+   "type": "sliding_door"
+  },
+  {
+   "door": "D_GlassDoorCorridor/Door_07",
+   "opening_m": 1.13,
+   "clear_m": 1.08,
+   "height_m": 2.29,
+   "type": "sliding_door"
+  },
+  {
+   "door": "E_NorthGlassDoor/Door_00",
+   "opening_m": 1.167,
+   "clear_m": 1.117,
+   "height_m": 2.29,
+   "type": "sliding_door"
+  },
+  {
+   "door": "E_NorthGlassDoor/Door_01",
+   "opening_m": 1.166,
+   "clear_m": 1.116,
+   "height_m": 2.29,
+   "type": "sliding_door"
+  },
+  {
+   "door": "E_NorthGlassDoor/Door_02",
+   "opening_m": 1.167,
+   "clear_m": 1.117,
+   "height_m": 2.29,
+   "type": "sliding_door"
+  }
+ ]
+}

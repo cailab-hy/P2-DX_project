@@ -1,0 +1,26 @@
+{
+ "Hall": {
+  "furniture_off": [
+   "CareRoom",
+   "Kitchen"
+  ],
+  "building_off": 467,
+  "building_kept": 935
+ },
+ "Kitchen": {
+  "furniture_off": [
+   "CareRoom",
+   "Hall"
+  ],
+  "building_off": 1114,
+  "building_kept": 288
+ },
+ "CareRoom": {
+  "furniture_off": [
+   "Kitchen",
+   "Hall"
+  ],
+  "building_off": 1266,
+  "building_kept": 136
+ }
+}

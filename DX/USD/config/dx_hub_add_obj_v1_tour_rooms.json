@@ -1,0 +1,291 @@
+{
+  "variants": {
+    "doors": "open",
+    "lighting": "day",
+    "blinds": "down",
+    "fixtures": "counters"
+  },
+  "eye_z": 1.5,
+  "pitch_deg": 3.0,
+  "focal_mm": 14.0,
+  "fps": 30,
+  "resolution": [
+    1280,
+    720
+  ],
+  "rt_subframes": 8,
+  "speed_mps": 1.1,
+  "accel_mps2": 0.8,
+  "corner_radius_m": 0.6,
+  "lookahead_m": 0.8,
+  "turn_dps": 45.0,
+  "look_dps": 30.0,
+  "yaw_smooth_s": 0.25,
+  "clearance_m": 0.22,
+  "hold_start_s": 1.0,
+  "hold_end_s": 2.0,
+  "scene": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/DX_Hub_Building_add_obj_v1_scene.usda",
+  "variant_prim": "/World/DX_Hub_Building_add_obj/Building",
+  "out_dir": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/walkthrough/rooms_tour",
+  "frames_dir": "/home/cai/P2&DX_project/P2&DX/USD/work/add_obj_v1/tour_rooms_frames",
+  "video": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/walkthrough/DX_Hub_add_obj_v1_rooms_tour_2x.mp4",
+  "frame_step": 2,
+  "settle_s": 4.0,
+  "draw_colliders_under": "/World/DX_Hub_Building_add_obj/Furniture",
+  "_doc": "Room tour of the furnished scene (hall, bedroom = care room, kitchen), 2x speed (frame_step 2). Hall: reception logo, long table aisle, sofa groups, window desks; care room: desk with the T-shirt, sofa, bed, wardrobe set and plant (2026-10-15 layout); kitchen: coffee robot booth, aisle inside the U (sinks, induction, microwave), bar side. 2026-10-16: desk + T-shirt look (camera tilted to -20 deg, 1.5 s hold).",
+  "start": [
+    -2.6,
+    -1.6
+  ],
+  "route": [
+    {
+      "name": "reception logo",
+      "go": [
+        [
+          -1.3,
+          -2.2
+        ]
+      ]
+    },
+    {
+      "look": 125
+    },
+    {
+      "name": "hall: long table",
+      "go": [
+        [
+          -2.3,
+          0.8
+        ],
+        [
+          -1.95,
+          4.0
+        ],
+        [
+          -1.9,
+          8.6
+        ]
+      ]
+    },
+    {
+      "look": 90
+    },
+    {
+      "look": -90
+    },
+    {
+      "name": "hall: TV and aisle",
+      "go": [
+        [
+          -1.9,
+          11.2
+        ],
+        [
+          -2.6,
+          12.9
+        ],
+        [
+          -5.8,
+          13.2
+        ],
+        [
+          -5.8,
+          9.0
+        ],
+        [
+          -5.8,
+          6.2
+        ]
+      ]
+    },
+    {
+      "name": "hall: sofas",
+      "go": [
+        [
+          -7.0,
+          4.7
+        ],
+        [
+          -9.0,
+          4.6
+        ],
+        [
+          -11.6,
+          5.0
+        ],
+        [
+          -11.6,
+          10.0
+        ],
+        [
+          -11.6,
+          15.7
+        ],
+        [
+          -9.6,
+          16.9
+        ],
+        [
+          -8.4,
+          16.95
+        ]
+      ]
+    },
+    {
+      "look": 80
+    },
+    {
+      "look": -80
+    },
+    {
+      "name": "bedroom",
+      "go": [
+        [
+          -5.8,
+          17.0
+        ],
+        [
+          -4.28,
+          17.6
+        ],
+        [
+          -2.6,
+          17.7
+        ]
+      ]
+    },
+    {
+      "look": 132,
+      "pitch": -20,
+      "hold_s": 1.5
+    },
+    {
+      "look": -132
+    },
+    {
+      "name": "bedroom sofa-bed",
+      "go": [
+        [
+          -1.5,
+          18.0
+        ],
+        [
+          0.0,
+          18.0
+        ],
+        [
+          1.0,
+          17.7
+        ]
+      ]
+    },
+    {
+      "look": 70
+    },
+    {
+      "look": -165
+    },
+    {
+      "name": "to kitchen",
+      "go": [
+        [
+          -0.5,
+          18.2
+        ],
+        [
+          -2.5,
+          17.3
+        ],
+        [
+          -2.5,
+          16.22
+        ],
+        [
+          -2.5,
+          15.0
+        ],
+        [
+          -1.6,
+          12.6
+        ],
+        [
+          -0.3,
+          12.1
+        ],
+        [
+          1.3,
+          12.4
+        ],
+        [
+          1.3,
+          13.3
+        ]
+      ]
+    },
+    {
+      "look": -50
+    },
+    {
+      "look": 50
+    },
+    {
+      "look": 180
+    },
+    {
+      "name": "kitchen aisle",
+      "go": [
+        [
+          1.4,
+          11.5
+        ],
+        [
+          1.45,
+          7.6
+        ]
+      ]
+    },
+    {
+      "look": -90
+    },
+    {
+      "look": 90
+    },
+    {
+      "name": "kitchen aisle south",
+      "go": [
+        [
+          1.45,
+          5.0
+        ]
+      ]
+    },
+    {
+      "look": 180
+    },
+    {
+      "name": "bar side",
+      "go": [
+        [
+          1.45,
+          9.5
+        ],
+        [
+          1.4,
+          12.2
+        ],
+        [
+          -0.3,
+          12.05
+        ],
+        [
+          -1.6,
+          11.3
+        ],
+        [
+          -1.7,
+          8.0
+        ]
+      ]
+    }
+  ]
+}

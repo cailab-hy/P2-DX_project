@@ -1,0 +1,138 @@
+"""Stage 27 (add_obj_v1): per-space USDs (hall / kitchen / bedroom) that stay in sync with the full scene.
+
+For every space in config 'rooms' this writes, next to the full asset:
+  DX_Hub_Building_add_obj_v1_<Space>.usda        defaultPrim /DX_Hub_Building_add_obj, a reference to
+                                                 ./DX_Hub_Building_add_obj_v1.usda plus 'active = false' overrides only:
+      - /Furniture/<other space>                 whole furniture groups of the other spaces (group based: furniture added to
+                                                 this space later appears here automatically)
+      - building prims outside the space         children of the building groups (walls, windows, glass, columns, ceiling
+                                                 zones, colliders, lights, ...) whose world bounds (lights: position) do not
+                                                 touch the space boxes + margin. Large prims spanning several spaces
+                                                 (floor slab collider, shared ceiling meshes, daylight) are kept.
+  DX_Hub_Building_add_obj_v1_<Space>_scene.usda  /World + PhysicsScene (GPU dynamics) + the space asset
+Everything else (geometry, materials, physics, furniture placement) comes from the full file through the reference, so
+editing the full file updates the three spaces at once. Only the building crop list is computed here; it is regenerated
+whenever 21_add_obj_assemble.py runs (it calls this script at the end).
+Usage: python 27_split_rooms_add_obj.py               (plain pxr, no Isaac Sim needed)
+       python 27_split_rooms_add_obj.py --sync-test   adds a temporary cube under /Furniture/CareRoom of the full file, checks in
+                                                      which space files it appears (expected: CareRoom only), restores the file
+"""
+import datetime
+import json
+import shutil
+import sys
+
+from pxr import Gf, Kind, Sdf, Usd, UsdGeom, UsdPhysics, Vt
+
+from common import OUT
+
+USD = OUT.parent
+DST = USD / "DX_Hub_Building_add_obj_v1"
+FULL = "DX_Hub_Building_add_obj_v1.usda"
+CFG = json.load(open(USD / "config" / "add_obj_v1_furniture.json"))
+ROOMS = {k: v for k, v in CFG["rooms"].items() if not k.startswith("_") and isinstance(v, dict)}
+MARGIN = CFG["rooms"]["margin_m"]
+R = "/DX_Hub_Building_add_obj"
+B = f"{R}/Building"
+CROP_GROUPS = ["Floor", "Walls", "Columns", "Openings/Doors", "Openings/Windows", "Glass", "Baseboards", "Ceiling/Zones", "Ceiling/Coves",
+               "Ceiling/LightPanels", "Ceiling/HVAC", "Fixtures", "Collision", "Lights/Panels", "Lights/Downlights", "Lights/Coves", "Signage"]
+
+full = Usd.Stage.Open(str(DST / FULL))
+bbc = UsdGeom.BBoxCache(Usd.TimeCode.Default(), ["default", "guide", "render", "proxy"])
+xfc = UsdGeom.XformCache()
+
+
+def footprint(p):
+    """(x0, x1, y0, y1) of a prim; lights and other extent-less prims use their position."""
+    r = bbc.ComputeWorldBound(p).ComputeAlignedRange()
+    if r.IsEmpty():
+        t = xfc.GetLocalToWorldTransform(p).ExtractTranslation()
+        return t[0], t[0], t[1], t[1]
+    return r.GetMin()[0], r.GetMax()[0], r.GetMin()[1], r.GetMax()[1]
+
+
+building = []                                                        # (path, footprint) of every croppable building prim
+for g in CROP_GROUPS:
+    gp = full.GetPrimAtPath(f"{B}/{g}")
+    if gp:
+        building += [(str(c.GetPath()), footprint(c)) for c in gp.GetChildren()
+                     if not (g == "Signage" and c.IsA(Usd.Typed) and c.GetTypeName() == "Material")]
+spaces = [c.GetName() for c in full.GetPrimAtPath(f"{R}/Furniture").GetChildren()]
+
+
+def touches(fp, boxes):
+    x0, x1, y0, y1 = fp
+    return any(x1 >= bx0 - MARGIN and x0 <= bx1 + MARGIN and y1 >= by0 - MARGIN and y0 <= by1 + MARGIN for bx0, bx1, by0, by1 in boxes)
+
+
+summary = {}
+stamp = datetime.datetime.now().isoformat(timespec="seconds")
+for name, rc in ROOMS.items():
+    path = DST / f"DX_Hub_Building_add_obj_v1_{name}.usda"
+    path.unlink(missing_ok=True)                                     # always written from scratch
+    lay = Sdf.Layer.CreateNew(str(path))
+    st = Usd.Stage.Open(lay)
+    UsdGeom.SetStageUpAxis(st, UsdGeom.Tokens.z)
+    UsdGeom.SetStageMetersPerUnit(st, 1.0)
+    UsdPhysics.SetStageKilogramsPerUnit(st, 1.0)
+    root = st.DefinePrim(R, "Xform")
+    root.GetReferences().AddReference(f"./{FULL}")
+    st.SetDefaultPrim(root)
+    Usd.ModelAPI(root).SetKind(Kind.Tokens.assembly)
+    off_f = [s for s in spaces if s not in rc["furniture"]]
+    for s in off_f:
+        st.OverridePrim(f"{R}/Furniture/{s}").SetActive(False)
+    off_b = [p for p, fp in building if not touches(fp, rc["boxes"])]
+    for p in off_b:
+        st.OverridePrim(p).SetActive(False)
+    lay.documentation = (f"DX Hub 11F - {name} ({rc.get('name_ko', '')}) only: references the full {FULL} and switches off the furniture of "
+                         f"the other spaces and the building parts outside this space. Generated by scripts/27_split_rooms_add_obj.py; "
+                         f"do not edit by hand (edit the full scene / config, then run 21 or 27).")
+    lay.customLayerData = {"space": name, "boxes": str(rc["boxes"]), "margin_m": MARGIN, "furniture_groups_kept": Vt.StringArray(rc["furniture"]),
+                           "furniture_groups_off": Vt.StringArray(off_f), "building_prims_off": len(off_b), "building_prims_kept": len(building) - len(off_b),
+                           "generated": stamp, "source": FULL}
+    lay.Save()
+    assert Sdf.Layer.OpenAsAnonymous(str(path)), f"written layer does not parse: {path}"
+    sp = DST / f"DX_Hub_Building_add_obj_v1_{name}_scene.usda"
+    sp.unlink(missing_ok=True)
+    sl = Sdf.Layer.CreateNew(str(sp))
+    ss = Usd.Stage.Open(sl)
+    UsdGeom.SetStageUpAxis(ss, UsdGeom.Tokens.z)
+    UsdGeom.SetStageMetersPerUnit(ss, 1.0)
+    UsdPhysics.SetStageKilogramsPerUnit(ss, 1.0)
+    world = UsdGeom.Xform.Define(ss, "/World")
+    ss.SetDefaultPrim(world.GetPrim())
+    ss.DefinePrim("/World/DX_Hub_Building_add_obj").GetReferences().AddReference(f"./{path.name}")
+    ps = UsdPhysics.Scene.Define(ss, "/World/PhysicsScene")
+    ps.CreateGravityDirectionAttr(Gf.Vec3f(0, 0, -1))
+    ps.CreateGravityMagnitudeAttr(9.81)
+    psp = ps.GetPrim()
+    psp.AddAppliedSchema("PhysxSceneAPI")
+    psp.CreateAttribute("physxScene:enableGPUDynamics", Sdf.ValueTypeNames.Bool).Set(True)
+    psp.CreateAttribute("physxScene:broadphaseType", Sdf.ValueTypeNames.Token).Set("GPU")
+    psp.CreateAttribute("physxScene:solverType", Sdf.ValueTypeNames.Token).Set("TGS")
+    sl.Save()
+    summary[name] = {"furniture_off": off_f, "building_off": len(off_b), "building_kept": len(building) - len(off_b)}
+    print(f"{name}: furniture groups off {off_f}, building prims off {len(off_b)} / kept {len(building) - len(off_b)} -> {path.name}")
+json.dump(summary, open(DST / "validation" / "rooms_split.json", "w"), indent=1)
+
+if "--sync-test" in sys.argv:
+    full_path = DST / FULL
+    bak = full_path.with_suffix(".usda.bak_synctest")
+    shutil.copy(full_path, bak)
+    try:
+        lay = Sdf.Layer.FindOrOpen(str(full_path))
+        UsdGeom.Cube.Define(Usd.Stage.Open(lay), f"{R}/Furniture/CareRoom/SyncTestCube")
+        lay.Save()
+        seen = []
+        for name in ROOMS:
+            rs = Usd.Stage.Open(str(DST / f"DX_Hub_Building_add_obj_v1_{name}.usda"))       # keep the stage alive while reading
+            p = rs.GetPrimAtPath(f"{R}/Furniture/CareRoom/SyncTestCube")
+            if p and p.IsActive():
+                seen.append(name)
+    finally:
+        shutil.move(bak, full_path)
+    summary["sync_test"] = {"edit": "cube added under /Furniture/CareRoom of the full file (then removed)", "visible_in": seen,
+                            "ok": seen == ["CareRoom"]}
+    json.dump(summary, open(DST / "validation" / "rooms_split.json", "w"), indent=1)
+    print("sync test: visible in", seen, "->", "OK" if seen == ["CareRoom"] else "FAILED")

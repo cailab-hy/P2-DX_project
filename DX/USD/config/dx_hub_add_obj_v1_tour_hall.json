@@ -1,0 +1,150 @@
+{
+  "variants": {
+    "doors": "open",
+    "lighting": "day",
+    "blinds": "down",
+    "fixtures": "counters"
+  },
+  "eye_z": 1.5,
+  "pitch_deg": 3.0,
+  "focal_mm": 14.0,
+  "fps": 30,
+  "resolution": [
+    1280,
+    720
+  ],
+  "rt_subframes": 8,
+  "speed_mps": 1.1,
+  "accel_mps2": 0.8,
+  "corner_radius_m": 0.6,
+  "lookahead_m": 0.8,
+  "turn_dps": 45.0,
+  "look_dps": 30.0,
+  "yaw_smooth_s": 0.25,
+  "clearance_m": 0.22,
+  "hold_start_s": 1.0,
+  "hold_end_s": 2.0,
+  "scene": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/DX_Hub_Building_add_obj_v1_scene.usda",
+  "variant_prim": "/World/DX_Hub_Building_add_obj/Building",
+  "frame_step": 2,
+  "settle_s": 4.0,
+  "draw_colliders_under": "/World/DX_Hub_Building_add_obj/Furniture",
+  "_doc": "Hall only (2x): reception logo, long table, TV, sofa groups, window desks.",
+  "start": [
+    -2.6,
+    -1.6
+  ],
+  "route": [
+    {
+      "name": "reception logo",
+      "go": [
+        [
+          -1.3,
+          -2.2
+        ]
+      ]
+    },
+    {
+      "look": 125
+    },
+    {
+      "name": "long table",
+      "go": [
+        [
+          -2.3,
+          0.8
+        ],
+        [
+          -1.95,
+          4.0
+        ],
+        [
+          -1.9,
+          8.6
+        ]
+      ]
+    },
+    {
+      "look": 90
+    },
+    {
+      "look": -90
+    },
+    {
+      "name": "TV and aisle",
+      "go": [
+        [
+          -1.9,
+          11.2
+        ],
+        [
+          -2.6,
+          12.9
+        ],
+        [
+          -5.8,
+          13.2
+        ],
+        [
+          -5.8,
+          9.0
+        ],
+        [
+          -5.8,
+          6.2
+        ]
+      ]
+    },
+    {
+      "name": "sofas",
+      "go": [
+        [
+          -7.0,
+          4.7
+        ],
+        [
+          -9.0,
+          4.6
+        ],
+        [
+          -11.6,
+          5.0
+        ],
+        [
+          -11.6,
+          10.0
+        ],
+        [
+          -11.6,
+          15.7
+        ],
+        [
+          -9.6,
+          16.9
+        ],
+        [
+          -8.4,
+          16.95
+        ]
+      ]
+    },
+    {
+      "look": 80
+    },
+    {
+      "look": -80
+    },
+    {
+      "name": "leave",
+      "go": [
+        [
+          -6.0,
+          15.8
+        ]
+      ]
+    }
+  ],
+  "frames_dir": "/home/cai/P2&DX_project/P2&DX/USD/work/add_obj_v1/tour_hall_frames",
+  "out_dir": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/walkthrough/hall_tour",
+  "video": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/walkthrough/DX_Hub_add_obj_v1_hall_tour_2x.mp4"
+}

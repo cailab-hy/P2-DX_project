@@ -1,0 +1,978 @@
+{
+ "_doc": "Openings measured on the v3 plan faces (07b). Edit 'kind', 'leaf_type', 'hinge', 'always_closed' by hand if needed; geometry is in world metres (a0/a1 along the wall, z0/z1 heights).",
+ "doors": [
+  {
+   "line": 7,
+   "detected_by": "user (door_replace)",
+   "axis": "x",
+   "face_u": 3.6712,
+   "face_sign": -1,
+   "a0": 17.3,
+   "a1": 18.88,
+   "width": 1.58,
+   "z0": 0.0,
+   "z1": 2.1,
+   "kind": "door",
+   "rays_through": 25273,
+   "rays_per_m2": 16714.9,
+   "leaf_recess_m": null,
+   "leaf_fill": 0.01,
+   "leads_to_scanned_space": true,
+   "walls": [
+    "W028",
+    "W027"
+   ],
+   "state_in_scan": "closed",
+   "leaf_type": "double_swing",
+   "always_closed": false,
+   "hinge": "estimated (rule): estimated: leaf opens into the room (away from the corridor side), hinge at the jamb nearer to the closest wall corner",
+   "faces": [
+    3.6712,
+    3.8025
+   ],
+   "note": "user 2026-10-08 (09-real): one double door in one frame (replaces D000 + the added door); LAS elevation x=3.70",
+   "id": "D000"
+  },
+  {
+   "line": 32,
+   "detected_by": "user (door_replace)",
+   "axis": "x",
+   "face_u": 6.189,
+   "face_sign": 1,
+   "a0": 11.79,
+   "a1": 13.47,
+   "width": 1.68,
+   "z0": 0.0,
+   "z1": 2.12,
+   "kind": "door",
+   "rays_through": 33281,
+   "rays_per_m2": 19623.2,
+   "leaf_recess_m": null,
+   "leaf_fill": 0.0,
+   "leads_to_scanned_space": true,
+   "walls": [
+    "W036",
+    "W037"
+   ],
+   "state_in_scan": "closed",
+   "leaf_type": "double_swing",
+   "always_closed": false,
+   "hinge": "estimated (rule): estimated: leaf opens into the room (away from the corridor side), hinge at the jamb nearer to the closest wall corner",
+   "faces": [
+    6.189,
+    6.05
+   ],
+   "note": "user 2026-10-08 (06-real, room 1106): one double door in one frame (replaces D003/D004); LAS elevation x=6.10",
+   "id": "D001"
+  }
+ ],
+ "windows": [
+  {
+   "axis": "x",
+   "glass_plane_u": -13.095,
+   "room_side": 1,
+   "a0": -4.3,
+   "a1": -0.75,
+   "width": 3.55,
+   "sill_face_depth": 0.305,
+   "sill_z": 0.688,
+   "head_z": 2.651,
+   "mullion_pitch": null,
+   "walls": [],
+   "source": "override 'Robot room west' (C5 photo: exterior windows with roller blinds; wall not detected (low upper-band cover)); dimensions measured",
+   "id": "N000"
+  },
+  {
+   "axis": "x",
+   "glass_plane_u": -13.0811,
+   "room_side": 1,
+   "a0": -12.593,
+   "a1": -4.302,
+   "width": 8.291,
+   "sill_face_depth": 0.275,
+   "sill_z": 0.833,
+   "head_z": 2.595,
+   "mullion_pitch": 1.54,
+   "walls": [
+    "W000"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N001"
+  },
+  {
+   "axis": "x",
+   "glass_plane_u": -13.0811,
+   "room_side": 1,
+   "a0": 0.743,
+   "a1": 3.268,
+   "width": 2.525,
+   "sill_face_depth": 0.275,
+   "sill_z": 0.833,
+   "head_z": 2.595,
+   "mullion_pitch": 1.54,
+   "walls": [
+    "W001"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N002"
+  },
+  {
+   "axis": "x",
+   "glass_plane_u": -13.0811,
+   "room_side": 1,
+   "a0": 6.075,
+   "a1": 12.305,
+   "width": 6.23,
+   "sill_face_depth": 0.275,
+   "sill_z": 0.833,
+   "head_z": 2.595,
+   "mullion_pitch": 1.54,
+   "walls": [
+    "W002"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N003"
+  },
+  {
+   "axis": "x",
+   "glass_plane_u": -13.0811,
+   "room_side": 1,
+   "a0": 13.134,
+   "a1": 13.72,
+   "width": 0.586,
+   "sill_face_depth": 0.275,
+   "sill_z": 0.833,
+   "head_z": 2.595,
+   "mullion_pitch": 1.54,
+   "walls": [
+    "W003"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N004"
+  },
+  {
+   "axis": "x",
+   "glass_plane_u": -13.0811,
+   "room_side": 1,
+   "a0": 14.448,
+   "a1": 18.354,
+   "width": 3.906,
+   "sill_face_depth": 0.275,
+   "sill_z": 0.833,
+   "head_z": 2.595,
+   "mullion_pitch": 1.54,
+   "walls": [
+    "W004"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N005"
+  },
+  {
+   "axis": "x",
+   "glass_plane_u": -13.0811,
+   "room_side": 1,
+   "a0": 18.667,
+   "a1": 19.186,
+   "width": 0.519,
+   "sill_face_depth": 0.275,
+   "sill_z": 0.833,
+   "head_z": 2.595,
+   "mullion_pitch": 1.54,
+   "walls": [
+    "W006"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N006"
+  },
+  {
+   "axis": "x",
+   "glass_plane_u": -13.0811,
+   "room_side": 1,
+   "a0": 19.884,
+   "a1": 20.59,
+   "width": 0.706,
+   "sill_face_depth": 0.275,
+   "sill_z": 0.833,
+   "head_z": 2.595,
+   "mullion_pitch": 1.54,
+   "walls": [
+    "W007"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N007"
+  },
+  {
+   "axis": "x",
+   "glass_plane_u": 13.0415,
+   "room_side": -1,
+   "a0": -14.711,
+   "a1": -13.278,
+   "width": 1.433,
+   "sill_face_depth": 0.425,
+   "sill_z": 0.808,
+   "head_z": 2.715,
+   "mullion_pitch": null,
+   "walls": [
+    "W044"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N008"
+  },
+  {
+   "axis": "x",
+   "glass_plane_u": 13.0415,
+   "room_side": -1,
+   "a0": 14.201,
+   "a1": 18.747,
+   "width": 4.546,
+   "sill_face_depth": 0.425,
+   "sill_z": 0.808,
+   "head_z": 2.715,
+   "mullion_pitch": null,
+   "walls": [
+    "W043"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N009"
+  },
+  {
+   "axis": "y",
+   "glass_plane_u": -21.575,
+   "room_side": 1,
+   "a0": 3.7,
+   "a1": 5.93,
+   "width": 2.23,
+   "sill_face_depth": 0.415,
+   "sill_z": 0.689,
+   "head_z": 2.743,
+   "mullion_pitch": null,
+   "walls": [],
+   "source": "override 'South corridor end' (B1 photo: exterior window at the end of the corridor); dimensions measured",
+   "id": "N010"
+  },
+  {
+   "axis": "y",
+   "glass_plane_u": 21.375,
+   "room_side": -1,
+   "a0": 3.8,
+   "a1": 6.0,
+   "width": 2.2,
+   "sill_face_depth": 0.415,
+   "sill_z": 0.69,
+   "head_z": 2.729,
+   "mullion_pitch": null,
+   "walls": [],
+   "source": "override 'North corridor end' (B2 photo: exterior window at the end of the corridor (sill)); dimensions measured",
+   "id": "N011"
+  },
+  {
+   "axis": "y",
+   "glass_plane_u": 21.4207,
+   "room_side": -1,
+   "a0": -12.119,
+   "a1": -4.196,
+   "width": 7.923,
+   "sill_face_depth": 0.305,
+   "sill_z": 0.813,
+   "head_z": 2.635,
+   "mullion_pitch": null,
+   "walls": [
+    "W074"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N012"
+  },
+  {
+   "axis": "y",
+   "glass_plane_u": 21.4207,
+   "room_side": -1,
+   "a0": -4.196,
+   "a1": -3.18,
+   "width": 1.016,
+   "sill_face_depth": 0.305,
+   "sill_z": 0.813,
+   "head_z": 2.635,
+   "mullion_pitch": null,
+   "walls": [
+    "W073"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N013"
+  },
+  {
+   "axis": "y",
+   "glass_plane_u": 21.4207,
+   "room_side": -1,
+   "a0": -2.672,
+   "a1": -0.424,
+   "width": 2.248,
+   "sill_face_depth": 0.305,
+   "sill_z": 0.813,
+   "head_z": 2.635,
+   "mullion_pitch": null,
+   "walls": [
+    "W075"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N014"
+  },
+  {
+   "axis": "y",
+   "glass_plane_u": 21.4207,
+   "room_side": -1,
+   "a0": 0.145,
+   "a1": 3.8,
+   "width": 3.655,
+   "sill_face_depth": 0.305,
+   "sill_z": 0.813,
+   "head_z": 2.635,
+   "mullion_pitch": null,
+   "walls": [
+    "W076"
+   ],
+   "source": "measured line, extended over the wall piece",
+   "id": "N015"
+  }
+ ],
+ "window_bays_detected": [
+  {
+   "line": 17,
+   "axis": "x",
+   "glass_plane_u": 13.0136,
+   "room_side": -1,
+   "a0": 15.751,
+   "a1": 16.851,
+   "width": 1.1,
+   "sill_face_depth": 0.355,
+   "sill_z": 0.763,
+   "head_z": 2.635,
+   "mullions": [
+    15.781
+   ],
+   "rays_through": 735,
+   "walls": [
+    "W043"
+   ]
+  },
+  {
+   "line": 18,
+   "axis": "x",
+   "glass_plane_u": 13.0693,
+   "room_side": -1,
+   "a0": -14.611,
+   "a1": -13.461,
+   "width": 1.15,
+   "sill_face_depth": 0.495,
+   "sill_z": 0.853,
+   "head_z": 2.794,
+   "mullions": [
+    -14.581,
+    -14.441,
+    -14.301
+   ],
+   "rays_through": 3265,
+   "walls": [
+    "W044"
+   ]
+  },
+  {
+   "line": 19,
+   "axis": "x",
+   "glass_plane_u": -13.1257,
+   "room_side": 1,
+   "a0": -12.493,
+   "a1": -5.643,
+   "width": 6.85,
+   "sill_face_depth": 0.305,
+   "sill_z": 0.723,
+   "head_z": 2.631,
+   "mullions": [
+    -12.283,
+    -10.763,
+    -9.213,
+    -7.673,
+    -7.223,
+    -6.063
+   ],
+   "rays_through": 3911,
+   "walls": [
+    "W000"
+   ]
+  },
+  {
+   "line": 20,
+   "axis": "x",
+   "glass_plane_u": -13.0811,
+   "room_side": 1,
+   "a0": 0.543,
+   "a1": 4.393,
+   "width": 3.85,
+   "sill_face_depth": 0.275,
+   "sill_z": 0.813,
+   "head_z": 2.575,
+   "mullions": [
+    0.593,
+    0.843,
+    1.363,
+    2.903
+   ],
+   "rays_through": 705,
+   "walls": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "line": 20,
+   "axis": "x",
+   "glass_plane_u": -13.0811,
+   "room_side": 1,
+   "a0": 5.643,
+   "a1": 6.043,
+   "width": 0.4,
+   "sill_face_depth": 0.275,
+   "sill_z": 0.833,
+   "head_z": 2.598,
+   "mullions": [
+    5.763
+   ],
+   "rays_through": 8,
+   "walls": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "line": 20,
+   "axis": "x",
+   "glass_plane_u": -13.0811,
+   "room_side": 1,
+   "a0": 6.593,
+   "a1": 8.893,
+   "width": 2.3,
+   "sill_face_depth": 0.275,
+   "sill_z": 0.833,
+   "head_z": 2.557,
+   "mullions": [],
+   "rays_through": 42,
+   "walls": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "line": 21,
+   "axis": "x",
+   "glass_plane_u": -13.037,
+   "room_side": 1,
+   "a0": 12.934,
+   "a1": 13.634,
+   "width": 0.7,
+   "sill_face_depth": 0.335,
+   "sill_z": 0.833,
+   "head_z": 2.595,
+   "mullions": [
+    13.534
+   ],
+   "rays_through": 80,
+   "walls": [
+    "W005",
+    "W003",
+    "W004",
+    "W006",
+    "W007"
+   ]
+  },
+  {
+   "line": 49,
+   "axis": "y",
+   "glass_plane_u": 21.4207,
+   "room_side": -1,
+   "a0": -12.019,
+   "a1": -4.319,
+   "width": 7.7,
+   "sill_face_depth": 0.305,
+   "sill_z": 0.808,
+   "head_z": 2.583,
+   "mullions": [
+    -4.429
+   ],
+   "rays_through": 1910,
+   "walls": [
+    "W073",
+    "W074"
+   ]
+  },
+  {
+   "line": 49,
+   "axis": "y",
+   "glass_plane_u": 21.4207,
+   "room_side": -1,
+   "a0": -3.919,
+   "a1": -2.969,
+   "width": 0.95,
+   "sill_face_depth": 0.305,
+   "sill_z": 0.818,
+   "head_z": 2.686,
+   "mullions": [],
+   "rays_through": 32,
+   "walls": [
+    "W073",
+    "W074"
+   ]
+  }
+ ],
+ "doors_filled_with_wall": [
+  {
+   "axis": "x",
+   "face_u": 3.6876,
+   "a0": -17.94,
+   "a1": -16.14,
+   "z1": 2.22,
+   "note": "D001: private rooms (professor office / toilets) -> closed off as wall"
+  },
+  {
+   "axis": "x",
+   "face_u": 6.05,
+   "a0": 19.255,
+   "a1": 20.135,
+   "z1": 2.1,
+   "note": "D002: private -> wall"
+  },
+  {
+   "axis": "y",
+   "face_u": -14.5909,
+   "a0": 6.288,
+   "a1": 7.148,
+   "z1": 2.16,
+   "note": "D005: private -> wall"
+  },
+  {
+   "axis": "y",
+   "face_u": -14.5909,
+   "a0": 9.668,
+   "a1": 10.508,
+   "z1": 2.16,
+   "note": "D006: private -> wall"
+  },
+  {
+   "axis": "y",
+   "face_u": -14.5909,
+   "a0": 11.388,
+   "a1": 12.208,
+   "z1": 2.16,
+   "note": "D007: private -> wall"
+  },
+  {
+   "axis": "y",
+   "face_u": 16.1378,
+   "a0": -0.47,
+   "a1": 0.37,
+   "z1": 2.06,
+   "note": "D009: not a door -> wall"
+  },
+  {
+   "axis": "x",
+   "face_u": 5.9376,
+   "a0": 6.479,
+   "a1": 7.439,
+   "z1": 2.16,
+   "note": "user policy 2026-10-08: doors into private / unscanned rooms are closed off as wall"
+  },
+  {
+   "axis": "x",
+   "face_u": 5.9205,
+   "a0": -12.612,
+   "a1": -11.712,
+   "z1": 2.16,
+   "note": "user policy 2026-10-08: doors into private / unscanned rooms are closed off as wall"
+  }
+ ],
+ "glass_lines": [
+  {
+   "name": "A_RoomPartition",
+   "axis": "x",
+   "c": -0.77,
+   "a0": -12.45,
+   "a1": -4.4,
+   "frames_at": [],
+   "head_z": 2.34,
+   "frosted_band_z": [
+    0.54,
+    1.98
+   ],
+   "panels": [
+    {
+     "a0": -12.45,
+     "a1": -11.06,
+     "type": "fixed"
+    },
+    {
+     "a0": -11.06,
+     "a1": -9.67,
+     "type": "fixed"
+    },
+    {
+     "a0": -9.67,
+     "a1": -8.28,
+     "type": "fixed"
+    },
+    {
+     "a0": -8.28,
+     "a1": -6.89,
+     "type": "fixed"
+    },
+    {
+     "a0": -6.89,
+     "a1": -5.5,
+     "type": "fixed"
+    },
+    {
+     "a0": -5.5,
+     "a1": -4.4,
+     "type": "open_doorway"
+    }
+   ],
+   "pattern": "clear top / frosted band / clear bottom (REF-C1..C3)",
+   "layout_source": {
+    "doors": [],
+    "openings": [
+     [
+      -5.5,
+      -4.4
+     ]
+    ],
+    "max_pane": 1.5,
+    "note": "open doorway into room A at y -5.50..-4.40 (v2 measurement, header above 2.40 m)"
+   }
+  },
+  {
+   "name": "B_SouthRooms",
+   "axis": "y",
+   "c": -15.195,
+   "a0": -7.45,
+   "a1": 3.62,
+   "frames_at": [
+    -4.02,
+    -0.28
+   ],
+   "head_z": 2.34,
+   "frosted_band_z": [
+    0.26,
+    2.28
+   ],
+   "panels": [
+    {
+     "a0": -7.45,
+     "a1": -6.225,
+     "type": "fixed"
+    },
+    {
+     "a0": -6.225,
+     "a1": -5.0,
+     "type": "fixed"
+    },
+    {
+     "a0": -5.0,
+     "a1": -4.05,
+     "type": "swing_door"
+    },
+    {
+     "a0": -4.05,
+     "a1": -2.625,
+     "type": "fixed"
+    },
+    {
+     "a0": -2.625,
+     "a1": -1.2,
+     "type": "fixed"
+    },
+    {
+     "a0": -1.2,
+     "a1": -0.15,
+     "type": "swing_door"
+    },
+    {
+     "a0": -0.15,
+     "a1": 1.107,
+     "type": "fixed"
+    },
+    {
+     "a0": 1.107,
+     "a1": 2.363,
+     "type": "fixed"
+    },
+    {
+     "a0": 2.363,
+     "a1": 3.62,
+     "type": "fixed"
+    }
+   ],
+   "pattern": "clear top / frosted band / clear bottom (REF-C1..C3)",
+   "layout_source": {
+    "doors": [
+     [
+      -5.0,
+      -4.05
+     ],
+     [
+      -1.2,
+      -0.15
+     ]
+    ],
+    "max_pane": 1.5,
+    "door_leaves": "opaque",
+    "pattern": "photo (clear top / frosted band / clear bottom); door leaves fully opaque (user)"
+   }
+  },
+  {
+   "name": "C_CorridorEast",
+   "axis": "x",
+   "c": 5.925,
+   "a0": -4.35,
+   "a1": -0.35,
+   "frames_at": [
+    -3.76
+   ],
+   "head_z": 2.429,
+   "frosted_band_z": [
+    2.0,
+    2.28
+   ],
+   "panels": [
+    {
+     "a0": -4.35,
+     "a1": -2.925,
+     "type": "swing_door"
+    },
+    {
+     "a0": -2.925,
+     "a1": -1.5,
+     "type": "swing_door"
+    },
+    {
+     "a0": -1.5,
+     "a1": -0.35,
+     "type": "wall_panel"
+    }
+   ],
+   "pattern": "clear top / frosted band / clear bottom (REF-C1..C3)",
+   "layout_source": {
+    "doors": [
+     [
+      -4.35,
+      -2.925
+     ],
+     [
+      -2.925,
+      -1.5
+     ]
+    ],
+    "max_pane": 1.5,
+    "assumed": "two equal glass door leaves (REF/v2 elevation shows two leaves; split position estimated)",
+    "wall_panels": [
+     [
+      -1.5,
+      -0.35
+     ]
+    ],
+    "door_glass": "clear",
+    "header": "black",
+    "note2": "user 2026-10-08 (07-real): the north part is an opaque white panel in the black frame (LAS: dense points 0-2.45 m), the sliding doors are clear glass under a black header box"
+   }
+  },
+  {
+   "name": "D_GlassDoorCorridor",
+   "axis": "x",
+   "c": -3.65250000000001,
+   "a0": -13.0,
+   "a1": -4.0,
+   "kind": "glass_doors",
+   "decision": "user: corridor lined with glass doors (video t=20-24 s)",
+   "frames_at": [
+    -9.65,
+    -8.57,
+    -7.47,
+    -6.2,
+    -5.13
+   ],
+   "head_z": 2.34,
+   "frosted_band_z": [
+    0.64,
+    1.62
+   ],
+   "panels": [
+    {
+     "a0": -13.0,
+     "a1": -11.883,
+     "type": "sliding_door"
+    },
+    {
+     "a0": -11.883,
+     "a1": -10.767,
+     "type": "sliding_door"
+    },
+    {
+     "a0": -10.767,
+     "a1": -9.65,
+     "type": "sliding_door"
+    },
+    {
+     "a0": -9.65,
+     "a1": -8.57,
+     "type": "sliding_door"
+    },
+    {
+     "a0": -8.57,
+     "a1": -7.47,
+     "type": "sliding_door"
+    },
+    {
+     "a0": -7.47,
+     "a1": -6.2,
+     "type": "sliding_door"
+    },
+    {
+     "a0": -6.2,
+     "a1": -5.13,
+     "type": "sliding_door"
+    },
+    {
+     "a0": -5.13,
+     "a1": -4.0,
+     "type": "sliding_door"
+    }
+   ],
+   "pattern": "clear top / frosted band / clear bottom (REF-C1..C3)",
+   "layout_source": {
+    "doors": "all_panels",
+    "max_pane": 1.15
+   }
+  },
+  {
+   "name": "E_NorthGlassDoor",
+   "axis": "y",
+   "c": 16.222500000000057,
+   "a0": -4.28,
+   "a1": -0.78,
+   "kind": "glass_doors",
+   "decision": "user: glass door(s); extended west to the L corner with G (user 02-real.jpg)",
+   "frames_at": [],
+   "head_z": 2.34,
+   "frosted_band_z": [
+    0.36,
+    1.72
+   ],
+   "panels": [
+    {
+     "a0": -4.28,
+     "a1": -3.113,
+     "type": "sliding_door"
+    },
+    {
+     "a0": -3.113,
+     "a1": -1.947,
+     "type": "sliding_door"
+    },
+    {
+     "a0": -1.947,
+     "a1": -0.78,
+     "type": "sliding_door"
+    }
+   ],
+   "pattern": "clear top / frosted band / clear bottom (REF-C1..C3)",
+   "layout_source": {
+    "doors": "all_panels",
+    "max_pane": 1.15,
+    "assumed": "panel width as D (frames not visible)"
+   }
+  },
+  {
+   "name": "F_RobotRoomNorth",
+   "axis": "y",
+   "c": -0.22749999999999976,
+   "a0": -12.07,
+   "a1": -6.75,
+   "kind": "glass_partition",
+   "decision": "evidence (step 1, Q1 sheet): frame at 2.35 m, mullions ~1.05 m, frosted band 0.7-1.5 m; robot room north side",
+   "frames_at": [],
+   "head_z": 2.32,
+   "frosted_band_z": [
+    0.44,
+    1.72
+   ],
+   "panels": [
+    {
+     "a0": -12.07,
+     "a1": -11.006,
+     "type": "fixed"
+    },
+    {
+     "a0": -11.006,
+     "a1": -9.942,
+     "type": "fixed"
+    },
+    {
+     "a0": -9.942,
+     "a1": -8.878,
+     "type": "fixed"
+    },
+    {
+     "a0": -8.878,
+     "a1": -7.814,
+     "type": "fixed"
+    },
+    {
+     "a0": -7.814,
+     "a1": -6.75,
+     "type": "fixed"
+    }
+   ],
+   "pattern": "clear top / frosted band / clear bottom (REF-C1..C3)",
+   "layout_source": {
+    "doors": [],
+    "max_pane": 1.1,
+    "note": "user confirmed: glass partition, no door"
+   }
+  },
+  {
+   "name": "G_CareRoomWest",
+   "axis": "x",
+   "c": -4.28,
+   "a0": 16.22,
+   "a1": 18.3,
+   "kind": "glass_partition",
+   "decision": "user 2026-10-08 (02-real.jpg): L-shaped glass with E; clear pane y 16.22-16.85 + open black-framed doorway y 16.85-18.30 (LAS elevation), wall line c from the wall faces -4.365/-4.195",
+   "frames_at": [
+    16.76
+   ],
+   "head_z": 2.37,
+   "frosted_band_z": null,
+   "panels": [
+    {
+     "a0": 16.22,
+     "a1": 16.85,
+     "type": "fixed"
+    },
+    {
+     "a0": 16.85,
+     "a1": 18.3,
+     "type": "open_doorway"
+    }
+   ],
+   "pattern": "clear top / frosted band / clear bottom (REF-C1..C3)",
+   "layout_source": {
+    "doors": [],
+    "openings": [
+     [
+      16.85,
+      18.3
+     ]
+    ],
+    "max_pane": 1.5,
+    "note": "open doorway, black frame, white header above",
+    "head_z": 2.37
+   }
+  }
+ ]
+}

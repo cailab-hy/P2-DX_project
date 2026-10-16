@@ -1,0 +1,128 @@
+{
+  "variants": {
+    "doors": "open",
+    "lighting": "day",
+    "blinds": "down",
+    "fixtures": "counters"
+  },
+  "eye_z": 1.5,
+  "pitch_deg": 3.0,
+  "focal_mm": 14.0,
+  "fps": 30,
+  "resolution": [
+    1280,
+    720
+  ],
+  "rt_subframes": 8,
+  "speed_mps": 1.1,
+  "accel_mps2": 0.8,
+  "corner_radius_m": 0.6,
+  "lookahead_m": 0.8,
+  "turn_dps": 45.0,
+  "look_dps": 30.0,
+  "yaw_smooth_s": 0.25,
+  "clearance_m": 0.22,
+  "hold_start_s": 1.0,
+  "hold_end_s": 2.0,
+  "scene": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/DX_Hub_Building_add_obj_v1_scene.usda",
+  "variant_prim": "/World/DX_Hub_Building_add_obj/Building",
+  "frame_step": 2,
+  "settle_s": 4.0,
+  "draw_colliders_under": "/World/DX_Hub_Building_add_obj/Furniture",
+  "_doc": "Kitchen only (2x): fridge niche, coffee robot booth and kiosk, aisle inside the U (sinks, induction, microwave), bar side.",
+  "start": [
+    -2.2,
+    9.8
+  ],
+  "route": [
+    {
+      "name": "to pantry",
+      "go": [
+        [
+          -1.6,
+          12.6
+        ],
+        [
+          -0.3,
+          12.1
+        ],
+        [
+          1.3,
+          12.4
+        ],
+        [
+          1.3,
+          13.3
+        ]
+      ]
+    },
+    {
+      "look": -50
+    },
+    {
+      "look": 50
+    },
+    {
+      "look": 180
+    },
+    {
+      "name": "kitchen aisle",
+      "go": [
+        [
+          1.4,
+          11.5
+        ],
+        [
+          1.45,
+          7.6
+        ]
+      ]
+    },
+    {
+      "look": -90
+    },
+    {
+      "look": 90
+    },
+    {
+      "name": "aisle south",
+      "go": [
+        [
+          1.45,
+          5.0
+        ]
+      ]
+    },
+    {
+      "look": 180
+    },
+    {
+      "name": "bar side",
+      "go": [
+        [
+          1.45,
+          9.5
+        ],
+        [
+          1.4,
+          12.2
+        ],
+        [
+          -0.3,
+          12.05
+        ],
+        [
+          -1.6,
+          11.3
+        ],
+        [
+          -1.7,
+          8.0
+        ]
+      ]
+    }
+  ],
+  "frames_dir": "/home/cai/P2&DX_project/P2&DX/USD/work/add_obj_v1/tour_kitchen_frames",
+  "out_dir": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/walkthrough/kitchen_tour",
+  "video": "/home/cai/P2&DX_project/P2&DX/USD/DX_Hub_Building_add_obj_v1/walkthrough/DX_Hub_add_obj_v1_kitchen_tour_2x.mp4"
+}

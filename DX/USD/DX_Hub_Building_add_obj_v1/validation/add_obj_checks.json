@@ -1,0 +1,126 @@
+{
+ "rigid_bodies": 107,
+ "max_drift_m": 0.0,
+ "drift_over_5mm": {},
+ "pillow": {
+  "finite": true,
+  "z_min": 0.546,
+  "z_max": 0.69,
+  "z_median_over_mattress_centre": 0.6223,
+  "mattress_top_z": 0.53
+ },
+ "blanket": {
+  "finite": true,
+  "z_min": 0.295,
+  "z_max": 0.558,
+  "z_median_over_mattress_centre": 0.545,
+  "mattress_top_z": 0.53
+ },
+ "tshirt": {
+  "finite": true,
+  "z_min": 0.727,
+  "z_max": 0.735,
+  "share_over_desk": 1.0,
+  "z_median_over_desk": 0.727,
+  "desk_top_z": 0.725,
+  "xy_extent": [
+   0.66,
+   0.932
+  ]
+ },
+ "articulations": {
+  "CareRoom/Wardrobe800": {
+   "dofs": [
+    "door_L",
+    "door_R",
+    "drawer_0"
+   ],
+   "target": [
+    1.571,
+    -1.571,
+    0.281
+   ],
+   "after_1s": [
+    1.571,
+    -1.571,
+    0.281
+   ],
+   "body_moved_m": 0.0
+  },
+  "CareRoom/Vanity640": {
+   "dofs": [
+    "drawer_0"
+   ],
+   "target": [
+    0.255
+   ],
+   "after_1s": [
+    0.255
+   ],
+   "body_moved_m": 0.0
+  },
+  "CareRoom/Closet640": {
+   "dofs": [
+    "drawer_0",
+    "drawer_1"
+   ],
+   "target": [
+    0.281,
+    0.281
+   ],
+   "after_1s": [
+    0.281,
+    0.281
+   ],
+   "body_moved_m": 0.0
+  },
+  "Kitchen/Showcase": {
+   "dofs": [
+    "door_L",
+    "door_R"
+   ],
+   "target": [
+    0.255,
+    -0.255
+   ],
+   "after_1s": [
+    0.255,
+    -0.255
+   ],
+   "body_moved_m": 0.0
+  },
+  "Kitchen/Microwave": {
+   "dofs": [
+    "door",
+    "button"
+   ],
+   "target": [
+    -1.571,
+    0.0
+   ],
+   "after_1s": [
+    -1.571,
+    -0.0
+   ],
+   "body_moved_m": 0.0,
+   "button_pressed_m": -0.006,
+   "door_after_press_rad": -1.571,
+   "button_after_release_m": -0.0
+  },
+  "Kitchen/Fridge": {
+   "dofs": [
+    "freezer_door",
+    "fridge_door"
+   ],
+   "target": [
+    1.571,
+    1.571
+   ],
+   "after_1s": [
+    1.571,
+    1.571
+   ],
+   "body_moved_m": 0.0
+  }
+ }
+}

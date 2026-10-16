@@ -1,0 +1,22 @@
+{
+ "case": "terrain",
+ "root": "/World/ground/terrain",
+ "loaded": true,
+ "variants": {
+  "doors": "closed",
+  "blinds": "down",
+  "fixtures": "counters",
+  "lighting": "day"
+ },
+ "active_prims": {
+  "mesh": 729,
+  "collider": 708,
+  "light": 409
+ },
+ "fixtures_prim_active": true,
+ "cube_rest_z": {
+  "hall": 0.1,
+  "corridor": 0.1,
+  "counter_U_south": 0.978
+ }
+}

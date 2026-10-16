@@ -1,0 +1,600 @@
+{
+  "_doc": "Finish zones for v3 (08_building_v3_usd.py). 'box' zones are matched first (in order), then 'seed' zones = the enclosed room (walls / glass / closed doors) containing the seed point, else the default zone. Finish colours come from config/dx_hub_no_obj_v1_finishes_calibrated.json (09_calibrate_colours.py) via 'calibrated'.",
+  "default_zone": "hall",
+  "zones": [
+    {
+      "name": "toilet_front",
+      "box": [
+        3.62,
+        6.2,
+        -22.2,
+        -18.0
+      ],
+      "note": "user 2026-10-08: white walls (real-02 t10-12)"
+    },
+    {
+      "name": "corridor_core_S",
+      "box": [
+        3.62,
+        6.2,
+        -22.2,
+        -15.0
+      ],
+      "note": "real-02 t2-9: charcoal ceiling, medium grey floor"
+    },
+    {
+      "name": "corridor_NS",
+      "box": [
+        3.62,
+        6.2,
+        -15.0,
+        23.0
+      ]
+    },
+    {
+      "name": "corridor_E",
+      "box": [
+        6.0,
+        13.8,
+        -14.75,
+        -13.15
+      ],
+      "note": "walls greige (no sage: earlier impression was lighting)"
+    },
+    {
+      "name": "glass_corridor_D",
+      "box": [
+        -3.65,
+        -0.77,
+        -13.0,
+        -4.0
+      ],
+      "note": "real_03 f_026/027/080: grey soffit band along the glass, white tile coffer with a rounded north end -> same rule as the hall"
+    },
+    {
+      "name": "pantry_tile",
+      "box": [
+        -0.7,
+        3.8,
+        12.65,
+        16.4
+      ],
+      "note": "user photo 15 + real-02 t77: grey tile walls, dark floor"
+    },
+    {
+      "name": "east_room_1106",
+      "seed": [
+        9.5,
+        13.0
+      ]
+    },
+    {
+      "name": "care_room",
+      "seed": [
+        0.0,
+        19.0
+      ]
+    },
+    {
+      "name": "lecture_room",
+      "seed": [
+        -8.0,
+        -10.0
+      ]
+    },
+    {
+      "name": "robot_room",
+      "seed": [
+        -10.0,
+        -4.0
+      ]
+    },
+    {
+      "name": "room_A",
+      "seed": [
+        1.5,
+        -8.0
+      ]
+    }
+  ],
+  "zone_finish": {
+    "hall": {
+      "wall": "wall_paint",
+      "floor": "floor_hall",
+      "ceiling": "rule_hall"
+    },
+    "toilet_front": {
+      "wall": "wall_white",
+      "floor": "floor_room",
+      "ceiling": "ceiling_plain"
+    },
+    "corridor_core_S": {
+      "wall": "wall_paint",
+      "floor": "floor_corridor",
+      "ceiling": "ceiling_plain"
+    },
+    "corridor_NS": {
+      "wall": "wall_paint",
+      "floor": "floor_room",
+      "ceiling": "ceiling_plain"
+    },
+    "corridor_E": {
+      "wall": "wall_paint",
+      "floor": "floor_room",
+      "ceiling": "ceiling_plain"
+    },
+    "glass_corridor_D": {
+      "wall": "wall_paint",
+      "floor": "floor_hall",
+      "ceiling": "rule_hall"
+    },
+    "pantry_tile": {
+      "wall": "wall_tile_gray",
+      "floor": "floor_tile_room",
+      "ceiling": "ceiling_tile"
+    },
+    "east_room_1106": {
+      "wall": "wall_paint",
+      "floor": "floor_room",
+      "ceiling": "ceiling_tile"
+    },
+    "care_room": {
+      "wall": "wall_paint",
+      "floor": "floor_room",
+      "ceiling": "ceiling_tile"
+    },
+    "lecture_room": {
+      "wall": "wall_paint",
+      "floor": "floor_room",
+      "ceiling": "ceiling_tile"
+    },
+    "robot_room": {
+      "wall": "wall_paint",
+      "floor": "floor_room",
+      "ceiling": "ceiling_tile"
+    },
+    "room_A": {
+      "wall": "wall_paint",
+      "floor": "floor_room",
+      "ceiling": "ceiling_tile"
+    }
+  },
+  "finishes": {
+    "wall_paint": {
+      "rgb": [
+        0.86,
+        0.86,
+        0.84
+      ],
+      "rough": 0.8,
+      "calibrated": "wall_greige"
+    },
+    "wall_tile_gray": {
+      "rgb": [
+        0.66,
+        0.65,
+        0.62
+      ],
+      "rough": 0.45,
+      "calibrated": "wall_tile_gray",
+      "texture": "wall_tile_600x1200.png",
+      "texture_kind": "wall_tile",
+      "uv_scale_m": [
+        1.2,
+        2.4
+      ]
+    },
+    "wall_hidden": {
+      "rgb": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "rough": 0.9,
+      "calibrated": "wall_greige"
+    },
+    "wall_exterior": {
+      "rgb": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "rough": 0.9,
+      "calibrated": "wall_greige"
+    },
+    "floor_hall": {
+      "rgb": [
+        0.78,
+        0.76,
+        0.72
+      ],
+      "rough": 0.4,
+      "calibrated": "floor_hall"
+    },
+    "floor_corridor": {
+      "rgb": [
+        0.55,
+        0.55,
+        0.54
+      ],
+      "rough": 0.4,
+      "calibrated": "floor_corridor"
+    },
+    "floor_tile_room": {
+      "rgb": [
+        0.42,
+        0.41,
+        0.4
+      ],
+      "rough": 0.5,
+      "calibrated": "floor_tile_room"
+    },
+    "ceiling_white": {
+      "rgb": [
+        0.93,
+        0.93,
+        0.93
+      ],
+      "rough": 0.9,
+      "calibrated": "ceiling_tile_white"
+    },
+    "ceiling_gray": {
+      "rgb": [
+        0.55,
+        0.55,
+        0.56
+      ],
+      "rough": 0.85,
+      "calibrated": "ceiling_gray"
+    },
+    "soffit_side": {
+      "rgb": [
+        0.93,
+        0.93,
+        0.93
+      ],
+      "rough": 0.9,
+      "calibrated": "ceiling_tile_white"
+    },
+    "cove_led": {
+      "rgb": [
+        1.0,
+        0.97,
+        0.92
+      ],
+      "rough": 0.5,
+      "emissive": [
+        5.0,
+        4.8,
+        4.5
+      ]
+    },
+    "light_panel": {
+      "rgb": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rough": 0.5,
+      "emissive": [
+        12.0,
+        12.0,
+        12.0
+      ]
+    },
+    "hvac_grille": {
+      "rgb": [
+        0.92,
+        0.92,
+        0.92
+      ],
+      "rough": 0.6
+    },
+    "baseboard": {
+      "rgb": [
+        0.28,
+        0.28,
+        0.29
+      ],
+      "rough": 0.5,
+      "calibrated": "baseboard"
+    },
+    "door_frame": {
+      "rgb": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "rough": 0.5,
+      "calibrated": "door_leaf"
+    },
+    "door_leaf": {
+      "rgb": [
+        0.62,
+        0.62,
+        0.61
+      ],
+      "rough": 0.5,
+      "calibrated": "door_leaf"
+    },
+    "door_handle": {
+      "rgb": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "rough": 0.25,
+      "metal": 1.0
+    },
+    "window_frame": {
+      "rgb": [
+        0.3,
+        0.31,
+        0.32
+      ],
+      "rough": 0.4,
+      "metal": 0.5
+    },
+    "glass_window": {
+      "rgb": [
+        0.85,
+        0.9,
+        0.92
+      ],
+      "rough": 0.05,
+      "opacity": 0.12
+    },
+    "blind": {
+      "rgb": [
+        0.92,
+        0.92,
+        0.9
+      ],
+      "rough": 0.9,
+      "opacity": 0.85,
+      "calibrated": "blind"
+    },
+    "sill_ledge": {
+      "rgb": [
+        0.9,
+        0.9,
+        0.88
+      ],
+      "rough": 0.4
+    },
+    "glass_frame": {
+      "rgb": [
+        0.05,
+        0.05,
+        0.05
+      ],
+      "rough": 0.35,
+      "metal": 0.6
+    },
+    "glass_clear": {
+      "rgb": [
+        0.88,
+        0.93,
+        0.94
+      ],
+      "rough": 0.03,
+      "opacity": 0.12
+    },
+    "glass_frosted": {
+      "rgb": [
+        0.88,
+        0.92,
+        0.92
+      ],
+      "rough": 0.4,
+      "opacity": 0.75
+    },
+    "counter_front": {
+      "rgb": [
+        0.93,
+        0.93,
+        0.92
+      ],
+      "rough": 0.5,
+      "calibrated": "counter_front"
+    },
+    "counter_top": {
+      "rgb": [
+        0.95,
+        0.95,
+        0.94
+      ],
+      "rough": 0.3,
+      "calibrated": "counter_front"
+    },
+    "showcase_glass": {
+      "rgb": [
+        0.88,
+        0.93,
+        0.94
+      ],
+      "rough": 0.03,
+      "opacity": 0.2
+    },
+    "wall_white": {
+      "calibrated": "wall_white",
+      "rough": 0.8
+    },
+    "wall_tv": {
+      "calibrated": "wall_tv",
+      "rough": 0.8
+    },
+    "header_brown": {
+      "calibrated": "header_brown",
+      "rough": 0.6
+    },
+    "floor_room": {
+      "calibrated": "floor_room",
+      "rough": 0.38
+    },
+    "ceiling_tile": {
+      "calibrated": "ceiling_tile_white",
+      "rough": 0.95,
+      "texture": "ceiling_tile_300x600.png",
+      "uv_scale_m": [
+        1.2,
+        1.2
+      ],
+      "texture_kind": "ceiling_tile"
+    },
+    "ceiling_plain": {
+      "calibrated": "ceiling_tile_white",
+      "rough": 0.9
+    },
+    "glass_mint": {
+      "calibrated": "glass_mint",
+      "rough": 0.05,
+      "opacity": 0.35
+    },
+    "light_frame": {
+      "rgb": [
+        0.92,
+        0.92,
+        0.92
+      ],
+      "rough": 0.4,
+      "metal": 0.3
+    },
+    "hvac_grille_dark": {
+      "rgb": [
+        0.55,
+        0.55,
+        0.55
+      ],
+      "rough": 0.6
+    }
+  },
+  "lighting": {
+    "panel_intensity": 11000.0,
+    "panel_cct": 6500.0,
+    "cove_intensity": 4000.0,
+    "cove_cct": 3500.0,
+    "_note": "panels 6500 K = neutral white in RTX (matches the auto-white-balanced videos); coves warm as filmed. Intensities tuned in 10c_tune_exposure.py",
+    "downlight_intensity": 320000.0,
+    "downlight_radius": 0.05,
+    "downlight_cct": 6500.0
+  },
+  "hall_ceiling_rule": {
+    "gray_below_m": 2.56,
+    "note": "hall: low soffit band (2.44-2.54 m) charcoal, coffers (2.66-2.72 m) white tile"
+  },
+  "core_corridor_coffer": {
+    "x": [
+      3.95,
+      5.67
+    ],
+    "y": [
+      -18.0,
+      -15.25
+    ],
+    "z_bottom": 2.6,
+    "z_top": 2.62,
+    "finish": "ceiling_gray",
+    "cove_cct": 3500,
+    "cove_intensity": 6000,
+    "note": "LAS section y -20..-16: dark panel at 2.62 m, cove recesses at 2.68 m along both walls; 0.26 m cove width and y extent estimated from real-02 t2-9"
+  },
+  "daylight": {
+    "overcast": {
+      "hdri": "kloofendal_overcast_puresky_2k.hdr",
+      "dome_intensity": 1000.0
+    },
+    "sunny": {
+      "hdri": "kloofendal_48d_partly_cloudy_puresky_2k.hdr",
+      "dome_intensity": 1000.0,
+      "sun_intensity": 3000.0,
+      "sun_rotate_xyz": [
+        55,
+        0,
+        250
+      ],
+      "sun_cct": 5800
+    },
+    "_source": "Poly Haven, CC0 (Greg Zaal), downloaded 2026-10-08"
+  },
+  "downlights": {
+    "corridor_zones": [
+      "toilet_front",
+      "corridor_core_S",
+      "corridor_NS",
+      "corridor_E",
+      "glass_corridor_D"
+    ],
+    "corridor_spacing_m": 1.2,
+    "hall_band_grid_m": 1.5,
+    "hall_band_below_m": 2.56,
+    "min_dist_to_panel_m": 0.8,
+    "note": "positions estimated (not measured): corridor centre lines every 1.2 m and a 1.5 m grid in the charcoal hall band, as seen in real-01/02"
+  },
+  "ceiling_regularization": {
+    "level_gap_m": 0.03,
+    "smooth_sigma_m": 0.2,
+    "open_radius_m": 0.2,
+    "min_region_m2": 1.5,
+    "note": "user 2026-10-09 (photos ~/Downloads/re, video 0:34 / 2:04): soffit and coffer edges must be clean flowing curves. Region heights within level_gap_m are one level (area-weighted height); the level partition is Gaussian-smoothed as a whole; strips thinner than 2 x open_radius_m and islands smaller than min_region_m2 are absorbed by the surrounding level.",
+    "contour_smooth_px": 3.0,
+    "fit_tol_m": 0.04,
+    "cove_chord_sag_m": 0.01,
+    "shape_overrides": [
+      {
+        "name": "glass corridor D: soffit band end",
+        "level_m": 2.54,
+        "polygon": [
+          [
+            -3.75,
+            -7.0
+          ],
+          [
+            -2.45,
+            -7.0
+          ],
+          [
+            -2.45,
+            -10.1
+          ],
+          [
+            -3.75,
+            -12.9
+          ]
+        ],
+        "note": "user 2026-10-09 (video 0:34): band ends in one straight diagonal toward the glass (splat view corrD_up). Edges measured on the LiDAR height map: east edge x=-2.45 (y -10.1..-7.2), diagonal (-2.47,-10.1)->(-3.52,-12.5) (fit residual 3-11 cm); the 2.6 m patch inside is scan noise"
+      },
+      {
+        "name": "glass corridor D: coffer south part",
+        "level_m": 2.66,
+        "polygon": [
+          [
+            -2.45,
+            -7.0
+          ],
+          [
+            -0.75,
+            -7.0
+          ],
+          [
+            -0.75,
+            -12.95
+          ],
+          [
+            -3.75,
+            -12.95
+          ],
+          [
+            -3.75,
+            -12.9
+          ],
+          [
+            -2.45,
+            -10.1
+          ]
+        ],
+        "note": "white tile coffer east of the band (real_03 f_026/027/080)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,607 @@
+#usda 1.0
+(
+    defaultPrim = "Closet640"
+    doc = "Closet640: care-room furniture for DX_Hub_Building_add_obj_v1 (scripts/20_furniture_assets.py)"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def "Render" (
+    hide_in_stage_window = true
+    no_delete = true
+)
+{
+    def "OmniverseKit"
+    {
+        def "HydraTextures" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            def RenderProduct "omni_kit_widget_viewport_ViewportTexture_0" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxSettingsParticleFieldAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </OmniverseKit_Persp>
+                token omni:rtx:ambientOcclusion:denoiserMode = "none"
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:debug:view:pixelDebug:enableFixedTextPos = 1
+                token omni:rtx:directLighting:sampledLighting:denoisingTechnique = "None"
+                bool omni:rtx:dlss:frameGeneration = 0
+                bool omni:rtx:indirectDiffuse:denoiser:enabled = 0
+                bool omni:rtx:material:db:syncLoads = 1
+                token omni:rtx:post:dlss:execMode = "performance"
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                bool omni:rtx:pt:adaptiveSampling:filterError = 0
+                uint omni:rtx:pt:adaptiveSampling:fixedSppIterations = 2
+                int omni:rtx:pt:clampSpp = 64
+                uint omni:rtx:pt:limits:maxBounces = 3
+                uint omni:rtx:pt:limits:maxGlossyBounces = 3
+                uint omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                uint omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                int omni:rtx:pt:samplesPerIteration = 64
+                uint omni:rtx:pt:samplesPerPixel = 64
+                bool omni:rtx:reflections:denoiser:enabled = 0
+                token omni:rtx:rendermode = "RealTimePathTracing"
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                int omni:rtx:rt:sss:samples = 1
+                uint omni:rtx:rtpt:maxVolumeBounces = 15
+                float omni:rtx:rtpt:modulatingRoughnessThreshold = 0.08
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                bool omni:rtx:scene:hydra:mdlMaterialWarmup = 1
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 720)
+            }
+        }
+    }
+
+    def RenderSettings "OmniverseGlobalRenderSettings" (
+        prepend apiSchemas = ["OmniRtxSettingsGlobalRtAdvancedAPI_1", "OmniRtxSettingsGlobalPtAdvancedAPI_1"]
+        no_delete = true
+    )
+    {
+        rel products = </Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0>
+    }
+
+    def "Vars" (
+        hide_in_stage_window = true
+        no_delete = true
+    )
+    {
+        def RenderVar "LdrColor" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            uniform string sourceName = "LdrColor"
+            uniform token sourceType = "raw"
+        }
+    }
+}
+
+over "OmniverseKit_Persp"
+{
+    float exposure:fStop = 5
+    float exposure:responsivity = 1.1026709
+    float exposure:time = 0.02
+}
+
+def Xform "Closet640" (
+    prepend apiSchemas = ["SemanticsLabelsAPI:class", "PhysicsArticulationRootAPI"]
+    kind = "component"
+)
+{
+    token[] semantics:labels:class = ["closet"]
+
+    def "Looks"
+    {
+        def Material "PhysicsMaterial" (
+            prepend apiSchemas = ["PhysicsMaterialAPI"]
+        )
+        {
+            float physics:dynamicFriction = 0.5
+            float physics:restitution = 0
+            float physics:staticFriction = 0.6
+        }
+
+        def Material "mint_cabinet_0"
+        {
+            token outputs:surface.connect = </Closet640/Looks/mint_cabinet_0/Shader.outputs:surface>
+
+            def Shader "Shader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.4125426, 0.59061885, 0.52099556)
+                float inputs:metallic = 0
+                float inputs:opacity = 1
+                float inputs:roughness = 0.5
+                token outputs:surface
+            }
+        }
+
+        def Material "white_1"
+        {
+            token outputs:surface.connect = </Closet640/Looks/white_1/Shader.outputs:surface>
+
+            def Shader "Shader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.838799, 0.838799, 0.8148466)
+                float inputs:metallic = 0
+                float inputs:opacity = 1
+                float inputs:roughness = 0.45
+                token outputs:surface
+            }
+        }
+
+        def Material "chrome_2"
+        {
+            token outputs:surface.connect = </Closet640/Looks/chrome_2/Shader.outputs:surface>
+
+            def Shader "Shader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.61049557, 0.61049557, 0.6444797)
+                float inputs:metallic = 1
+                float inputs:opacity = 1
+                float inputs:roughness = 0.25
+                token outputs:surface
+            }
+        }
+    }
+
+    def Xform "Body" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticsLabelsAPI:class"]
+    )
+    {
+        float physics:mass = 35
+        token[] semantics:labels:class = ["closet"]
+
+        def Mesh "side_L" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.32, -0.21, 0), (-0.302, 0.21, 2.1)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.32, -0.21, 0), (-0.32, -0.21, 2.1), (-0.32, 0.21, 2.1), (-0.32, 0.21, 0), (-0.302, 0.21, 0), (-0.302, 0.21, 2.1), (-0.302, -0.21, 2.1), (-0.302, -0.21, 0), (-0.302, -0.21, 0), (-0.302, -0.21, 2.1), (-0.32, -0.21, 2.1), (-0.32, -0.21, 0), (-0.32, 0.21, 0), (-0.32, 0.21, 2.1), (-0.302, 0.21, 2.1), (-0.302, 0.21, 0), (-0.32, -0.21, 2.1), (-0.302, -0.21, 2.1), (-0.302, 0.21, 2.1), (-0.32, 0.21, 2.1), (-0.32, -0.21, 0), (-0.32, 0.21, 0), (-0.302, 0.21, 0), (-0.302, -0.21, 0)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "side_R" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(0.302, -0.21, 0), (0.32, 0.21, 2.1)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(0.302, -0.21, 0), (0.302, -0.21, 2.1), (0.302, 0.21, 2.1), (0.302, 0.21, 0), (0.32, 0.21, 0), (0.32, 0.21, 2.1), (0.32, -0.21, 2.1), (0.32, -0.21, 0), (0.32, -0.21, 0), (0.32, -0.21, 2.1), (0.302, -0.21, 2.1), (0.302, -0.21, 0), (0.302, 0.21, 0), (0.302, 0.21, 2.1), (0.32, 0.21, 2.1), (0.32, 0.21, 0), (0.302, -0.21, 2.1), (0.32, -0.21, 2.1), (0.32, 0.21, 2.1), (0.302, 0.21, 2.1), (0.302, -0.21, 0), (0.302, 0.21, 0), (0.32, 0.21, 0), (0.32, -0.21, 0)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "top" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.302, -0.21, 2.082), (0.302, 0.21, 2.1)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.302, -0.21, 2.082), (-0.302, -0.21, 2.1), (-0.302, 0.21, 2.1), (-0.302, 0.21, 2.082), (0.302, 0.21, 2.082), (0.302, 0.21, 2.1), (0.302, -0.21, 2.1), (0.302, -0.21, 2.082), (0.302, -0.21, 2.082), (0.302, -0.21, 2.1), (-0.302, -0.21, 2.1), (-0.302, -0.21, 2.082), (-0.302, 0.21, 2.082), (-0.302, 0.21, 2.1), (0.302, 0.21, 2.1), (0.302, 0.21, 2.082), (-0.302, -0.21, 2.1), (0.302, -0.21, 2.1), (0.302, 0.21, 2.1), (-0.302, 0.21, 2.1), (-0.302, -0.21, 2.082), (-0.302, 0.21, 2.082), (0.302, 0.21, 2.082), (0.302, -0.21, 2.082)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "bottom" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.302, -0.21, 0.05), (0.302, 0.21, 0.068)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.302, -0.21, 0.05), (-0.302, -0.21, 0.068), (-0.302, 0.21, 0.068), (-0.302, 0.21, 0.05), (0.302, 0.21, 0.05), (0.302, 0.21, 0.068), (0.302, -0.21, 0.068), (0.302, -0.21, 0.05), (0.302, -0.21, 0.05), (0.302, -0.21, 0.068), (-0.302, -0.21, 0.068), (-0.302, -0.21, 0.05), (-0.302, 0.21, 0.05), (-0.302, 0.21, 0.068), (0.302, 0.21, 0.068), (0.302, 0.21, 0.05), (-0.302, -0.21, 0.068), (0.302, -0.21, 0.068), (0.302, 0.21, 0.068), (-0.302, 0.21, 0.068), (-0.302, -0.21, 0.05), (-0.302, 0.21, 0.05), (0.302, 0.21, 0.05), (0.302, -0.21, 0.05)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "plinth" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.302, 0.171, 0), (0.302, 0.189, 0.05)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.302, 0.171, 0), (-0.302, 0.171, 0.05), (-0.302, 0.189, 0.05), (-0.302, 0.189, 0), (0.302, 0.189, 0), (0.302, 0.189, 0.05), (0.302, 0.171, 0.05), (0.302, 0.171, 0), (0.302, 0.171, 0), (0.302, 0.171, 0.05), (-0.302, 0.171, 0.05), (-0.302, 0.171, 0), (-0.302, 0.189, 0), (-0.302, 0.189, 0.05), (0.302, 0.189, 0.05), (0.302, 0.189, 0), (-0.302, 0.171, 0.05), (0.302, 0.171, 0.05), (0.302, 0.189, 0.05), (-0.302, 0.189, 0.05), (-0.302, 0.171, 0), (-0.302, 0.189, 0), (0.302, 0.189, 0), (0.302, 0.171, 0)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "back" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.302, -0.21, 0.018), (0.302, -0.202, 2.082)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/mint_cabinet_0>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.302, -0.21, 0.018), (-0.302, -0.21, 2.082), (-0.302, -0.202, 2.082), (-0.302, -0.202, 0.018), (0.302, -0.202, 0.018), (0.302, -0.202, 2.082), (0.302, -0.21, 2.082), (0.302, -0.21, 0.018), (0.302, -0.21, 0.018), (0.302, -0.21, 2.082), (-0.302, -0.21, 2.082), (-0.302, -0.21, 0.018), (-0.302, -0.202, 0.018), (-0.302, -0.202, 2.082), (0.302, -0.202, 2.082), (0.302, -0.202, 0.018), (-0.302, -0.21, 2.082), (0.302, -0.21, 2.082), (0.302, -0.202, 2.082), (-0.302, -0.202, 2.082), (-0.302, -0.21, 0.018), (-0.302, -0.202, 0.018), (0.302, -0.202, 0.018), (0.302, -0.21, 0.018)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "shelf_0" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.302, -0.205, 1.732), (0.302, 0.205, 1.75)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.302, -0.205, 1.732), (-0.302, -0.205, 1.75), (-0.302, 0.205, 1.75), (-0.302, 0.205, 1.732), (0.302, 0.205, 1.732), (0.302, 0.205, 1.75), (0.302, -0.205, 1.75), (0.302, -0.205, 1.732), (0.302, -0.205, 1.732), (0.302, -0.205, 1.75), (-0.302, -0.205, 1.75), (-0.302, -0.205, 1.732), (-0.302, 0.205, 1.732), (-0.302, 0.205, 1.75), (0.302, 0.205, 1.75), (0.302, 0.205, 1.732), (-0.302, -0.205, 1.75), (0.302, -0.205, 1.75), (0.302, 0.205, 1.75), (-0.302, 0.205, 1.75), (-0.302, -0.205, 1.732), (-0.302, 0.205, 1.732), (0.302, 0.205, 1.732), (0.302, -0.205, 1.732)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "cabinet_top" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.302, -0.21, 0.85), (0.302, 0.21, 0.868)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/mint_cabinet_0>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.302, -0.21, 0.85), (-0.302, -0.21, 0.868), (-0.302, 0.21, 0.868), (-0.302, 0.21, 0.85), (0.302, 0.21, 0.85), (0.302, 0.21, 0.868), (0.302, -0.21, 0.868), (0.302, -0.21, 0.85), (0.302, -0.21, 0.85), (0.302, -0.21, 0.868), (-0.302, -0.21, 0.868), (-0.302, -0.21, 0.85), (-0.302, 0.21, 0.85), (-0.302, 0.21, 0.868), (0.302, 0.21, 0.868), (0.302, 0.21, 0.85), (-0.302, -0.21, 0.868), (0.302, -0.21, 0.868), (0.302, 0.21, 0.868), (-0.302, 0.21, 0.868), (-0.302, -0.21, 0.85), (-0.302, 0.21, 0.85), (0.302, 0.21, 0.85), (0.302, -0.21, 0.85)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "drawer_rail" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.302, -0.205, 0.45), (0.302, 0.205, 0.46)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.302, -0.205, 0.45), (-0.302, -0.205, 0.46), (-0.302, 0.205, 0.46), (-0.302, 0.205, 0.45), (0.302, 0.205, 0.45), (0.302, 0.205, 0.46), (0.302, -0.205, 0.46), (0.302, -0.205, 0.45), (0.302, -0.205, 0.45), (0.302, -0.205, 0.46), (-0.302, -0.205, 0.46), (-0.302, -0.205, 0.45), (-0.302, 0.205, 0.45), (-0.302, 0.205, 0.46), (0.302, 0.205, 0.46), (0.302, 0.205, 0.45), (-0.302, -0.205, 0.46), (0.302, -0.205, 0.46), (0.302, 0.205, 0.46), (-0.302, 0.205, 0.46), (-0.302, -0.205, 0.45), (-0.302, 0.205, 0.45), (0.302, 0.205, 0.45), (0.302, -0.205, 0.45)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "hanger_rail" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            float3[] extent = [(-0.297, -0.012, 1.648), (0.297, 0.012, 1.672)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+            int[] faceVertexIndices = [0, 1, 21, 20, 1, 2, 22, 21, 2, 3, 23, 22, 3, 4, 24, 23, 4, 5, 25, 24, 5, 6, 26, 25, 6, 7, 27, 26, 7, 8, 28, 27, 8, 9, 29, 28, 9, 10, 30, 29, 10, 11, 31, 30, 11, 12, 32, 31, 12, 13, 33, 32, 13, 14, 34, 33, 14, 15, 35, 34, 15, 16, 36, 35, 16, 17, 37, 36, 17, 18, 38, 37, 18, 19, 39, 38, 19, 0, 20, 39, 40, 1, 0, 40, 2, 1, 40, 3, 2, 40, 4, 3, 40, 5, 4, 40, 6, 5, 40, 7, 6, 40, 8, 7, 40, 9, 8, 40, 10, 9, 40, 11, 10, 40, 12, 11, 40, 13, 12, 40, 14, 13, 40, 15, 14, 40, 16, 15, 40, 17, 16, 40, 18, 17, 40, 19, 18, 40, 0, 19, 41, 20, 21, 41, 21, 22, 41, 22, 23, 41, 23, 24, 41, 24, 25, 41, 25, 26, 41, 26, 27, 41, 27, 28, 41, 28, 29, 41, 29, 30, 41, 30, 31, 41, 31, 32, 41, 32, 33, 41, 33, 34, 41, 34, 35, 41, 35, 36, 41, 36, 37, 41, 37, 38, 41, 38, 39, 41, 39, 20]
+            rel material:binding = </Closet640/Looks/white_1>
+            point3f[] points = [(-0.297, 0.012, 1.66), (-0.297, 0.011412678, 1.6637082), (-0.297, 0.009708204, 1.6670535), (-0.297, 0.007053423, 1.6697083), (-0.297, 0.003708204, 1.6714127), (-0.297, 7.3478805e-19, 1.672), (-0.297, -0.003708204, 1.6714127), (-0.297, -0.007053423, 1.6697083), (-0.297, -0.009708204, 1.6670535), (-0.297, -0.011412678, 1.6637082), (-0.297, -0.012, 1.66), (-0.297, -0.011412678, 1.6562918), (-0.297, -0.009708204, 1.6529466), (-0.297, -0.007053423, 1.6502918), (-0.297, -0.003708204, 1.6485873), (-0.297, -2.2043642e-18, 1.648), (-0.297, 0.003708204, 1.6485873), (-0.297, 0.007053423, 1.6502918), (-0.297, 0.009708204, 1.6529466), (-0.297, 0.011412678, 1.6562918), (0.297, 0.012, 1.66), (0.297, 0.011412678, 1.6637082), (0.297, 0.009708204, 1.6670535), (0.297, 0.007053423, 1.6697083), (0.297, 0.003708204, 1.6714127), (0.297, 7.3478805e-19, 1.672), (0.297, -0.003708204, 1.6714127), (0.297, -0.007053423, 1.6697083), (0.297, -0.009708204, 1.6670535), (0.297, -0.011412678, 1.6637082), (0.297, -0.012, 1.66), (0.297, -0.011412678, 1.6562918), (0.297, -0.009708204, 1.6529466), (0.297, -0.007053423, 1.6502918), (0.297, -0.003708204, 1.6485873), (0.297, -2.2043642e-18, 1.648), (0.297, 0.003708204, 1.6485873), (0.297, 0.007053423, 1.6502918), (0.297, 0.009708204, 1.6529466), (0.297, 0.011412678, 1.6562918), (-0.297, 0, 1.66), (0.297, 0, 1.66)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "hook_0" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            float3[] extent = [(-0.18, 0.15, 1.69), (-0.16, 0.21, 1.71)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            point3f[] points = [(-0.18, 0.15, 1.69), (-0.18, 0.15, 1.71), (-0.18, 0.21, 1.71), (-0.18, 0.21, 1.69), (-0.16, 0.21, 1.69), (-0.16, 0.21, 1.71), (-0.16, 0.15, 1.71), (-0.16, 0.15, 1.69), (-0.16, 0.15, 1.69), (-0.16, 0.15, 1.71), (-0.18, 0.15, 1.71), (-0.18, 0.15, 1.69), (-0.18, 0.21, 1.69), (-0.18, 0.21, 1.71), (-0.16, 0.21, 1.71), (-0.16, 0.21, 1.69), (-0.18, 0.15, 1.71), (-0.16, 0.15, 1.71), (-0.16, 0.21, 1.71), (-0.18, 0.21, 1.71), (-0.18, 0.15, 1.69), (-0.18, 0.21, 1.69), (-0.16, 0.21, 1.69), (-0.16, 0.15, 1.69)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "hook_1" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            float3[] extent = [(-0.01, 0.15, 1.69), (0.01, 0.21, 1.71)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            point3f[] points = [(-0.01, 0.15, 1.69), (-0.01, 0.15, 1.71), (-0.01, 0.21, 1.71), (-0.01, 0.21, 1.69), (0.01, 0.21, 1.69), (0.01, 0.21, 1.71), (0.01, 0.15, 1.71), (0.01, 0.15, 1.69), (0.01, 0.15, 1.69), (0.01, 0.15, 1.71), (-0.01, 0.15, 1.71), (-0.01, 0.15, 1.69), (-0.01, 0.21, 1.69), (-0.01, 0.21, 1.71), (0.01, 0.21, 1.71), (0.01, 0.21, 1.69), (-0.01, 0.15, 1.71), (0.01, 0.15, 1.71), (0.01, 0.21, 1.71), (-0.01, 0.21, 1.71), (-0.01, 0.15, 1.69), (-0.01, 0.21, 1.69), (0.01, 0.21, 1.69), (0.01, 0.15, 1.69)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "hook_2" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            float3[] extent = [(0.16, 0.15, 1.69), (0.18, 0.21, 1.71)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            point3f[] points = [(0.16, 0.15, 1.69), (0.16, 0.15, 1.71), (0.16, 0.21, 1.71), (0.16, 0.21, 1.69), (0.18, 0.21, 1.69), (0.18, 0.21, 1.71), (0.18, 0.15, 1.71), (0.18, 0.15, 1.69), (0.18, 0.15, 1.69), (0.18, 0.15, 1.71), (0.16, 0.15, 1.71), (0.16, 0.15, 1.69), (0.16, 0.21, 1.69), (0.16, 0.21, 1.71), (0.18, 0.21, 1.71), (0.18, 0.21, 1.69), (0.16, 0.15, 1.71), (0.18, 0.15, 1.71), (0.18, 0.21, 1.71), (0.16, 0.21, 1.71), (0.16, 0.15, 1.69), (0.16, 0.21, 1.69), (0.18, 0.21, 1.69), (0.18, 0.15, 1.69)]
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Xform "Drawer0" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticsLabelsAPI:class"]
+    )
+    {
+        float physics:mass = 3
+        token[] semantics:labels:class = ["drawer"]
+
+        def Mesh "front" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.299, 0.194, 0.072), (0.299, 0.21, 0.448)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.299, 0.194, 0.072), (-0.299, 0.194, 0.448), (-0.299, 0.21, 0.448), (-0.299, 0.21, 0.072), (0.299, 0.21, 0.072), (0.299, 0.21, 0.448), (0.299, 0.194, 0.448), (0.299, 0.194, 0.072), (0.299, 0.194, 0.072), (0.299, 0.194, 0.448), (-0.299, 0.194, 0.448), (-0.299, 0.194, 0.072), (-0.299, 0.21, 0.072), (-0.299, 0.21, 0.448), (0.299, 0.21, 0.448), (0.299, 0.21, 0.072), (-0.299, 0.194, 0.448), (0.299, 0.194, 0.448), (0.299, 0.21, 0.448), (-0.299, 0.21, 0.448), (-0.299, 0.194, 0.072), (-0.299, 0.21, 0.072), (0.299, 0.21, 0.072), (0.299, 0.194, 0.072)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "tray_bottom" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.277, -0.166, 0.09), (0.277, 0.194, 0.102)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.277, -0.166, 0.09), (-0.277, -0.166, 0.102), (-0.277, 0.194, 0.102), (-0.277, 0.194, 0.09), (0.277, 0.194, 0.09), (0.277, 0.194, 0.102), (0.277, -0.166, 0.102), (0.277, -0.166, 0.09), (0.277, -0.166, 0.09), (0.277, -0.166, 0.102), (-0.277, -0.166, 0.102), (-0.277, -0.166, 0.09), (-0.277, 0.194, 0.09), (-0.277, 0.194, 0.102), (0.277, 0.194, 0.102), (0.277, 0.194, 0.09), (-0.277, -0.166, 0.102), (0.277, -0.166, 0.102), (0.277, 0.194, 0.102), (-0.277, 0.194, 0.102), (-0.277, -0.166, 0.09), (-0.277, 0.194, 0.09), (0.277, 0.194, 0.09), (0.277, -0.166, 0.09)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "tray_side_L" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.277, -0.166, 0.09), (-0.265, 0.194, 0.42)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.277, -0.166, 0.09), (-0.277, -0.166, 0.42), (-0.277, 0.194, 0.42), (-0.277, 0.194, 0.09), (-0.265, 0.194, 0.09), (-0.265, 0.194, 0.42), (-0.265, -0.166, 0.42), (-0.265, -0.166, 0.09), (-0.265, -0.166, 0.09), (-0.265, -0.166, 0.42), (-0.277, -0.166, 0.42), (-0.277, -0.166, 0.09), (-0.277, 0.194, 0.09), (-0.277, 0.194, 0.42), (-0.265, 0.194, 0.42), (-0.265, 0.194, 0.09), (-0.277, -0.166, 0.42), (-0.265, -0.166, 0.42), (-0.265, 0.194, 0.42), (-0.277, 0.194, 0.42), (-0.277, -0.166, 0.09), (-0.277, 0.194, 0.09), (-0.265, 0.194, 0.09), (-0.265, -0.166, 0.09)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "tray_side_R" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(0.265, -0.166, 0.09), (0.277, 0.194, 0.42)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(0.265, -0.166, 0.09), (0.265, -0.166, 0.42), (0.265, 0.194, 0.42), (0.265, 0.194, 0.09), (0.277, 0.194, 0.09), (0.277, 0.194, 0.42), (0.277, -0.166, 0.42), (0.277, -0.166, 0.09), (0.277, -0.166, 0.09), (0.277, -0.166, 0.42), (0.265, -0.166, 0.42), (0.265, -0.166, 0.09), (0.265, 0.194, 0.09), (0.265, 0.194, 0.42), (0.277, 0.194, 0.42), (0.277, 0.194, 0.09), (0.265, -0.166, 0.42), (0.277, -0.166, 0.42), (0.277, 0.194, 0.42), (0.265, 0.194, 0.42), (0.265, -0.166, 0.09), (0.265, 0.194, 0.09), (0.277, 0.194, 0.09), (0.277, -0.166, 0.09)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "tray_back" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.277, -0.166, 0.09), (0.277, -0.154, 0.42)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.277, -0.166, 0.09), (-0.277, -0.166, 0.42), (-0.277, -0.154, 0.42), (-0.277, -0.154, 0.09), (0.277, -0.154, 0.09), (0.277, -0.154, 0.42), (0.277, -0.166, 0.42), (0.277, -0.166, 0.09), (0.277, -0.166, 0.09), (0.277, -0.166, 0.42), (-0.277, -0.166, 0.42), (-0.277, -0.166, 0.09), (-0.277, -0.154, 0.09), (-0.277, -0.154, 0.42), (0.277, -0.154, 0.42), (0.277, -0.154, 0.09), (-0.277, -0.166, 0.42), (0.277, -0.166, 0.42), (0.277, -0.154, 0.42), (-0.277, -0.154, 0.42), (-0.277, -0.166, 0.09), (-0.277, -0.154, 0.09), (0.277, -0.154, 0.09), (0.277, -0.166, 0.09)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "handle" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            float3[] extent = [(-0.08, 0.216, 0.31), (0.08, 0.228, 0.324)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/chrome_2>
+            point3f[] points = [(-0.08, 0.216, 0.31), (-0.08, 0.216, 0.324), (-0.08, 0.228, 0.324), (-0.08, 0.228, 0.31), (0.08, 0.228, 0.31), (0.08, 0.228, 0.324), (0.08, 0.216, 0.324), (0.08, 0.216, 0.31), (0.08, 0.216, 0.31), (0.08, 0.216, 0.324), (-0.08, 0.216, 0.324), (-0.08, 0.216, 0.31), (-0.08, 0.228, 0.31), (-0.08, 0.228, 0.324), (0.08, 0.228, 0.324), (0.08, 0.228, 0.31), (-0.08, 0.216, 0.324), (0.08, 0.216, 0.324), (0.08, 0.228, 0.324), (-0.08, 0.228, 0.324), (-0.08, 0.216, 0.31), (-0.08, 0.228, 0.31), (0.08, 0.228, 0.31), (0.08, 0.216, 0.31)]
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Scope "Joints"
+    {
+        def PhysicsPrismaticJoint "drawer_0" (
+            prepend apiSchemas = ["PhysicsDriveAPI:linear"]
+        )
+        {
+            float drive:linear:physics:damping = 20
+            float drive:linear:physics:maxForce = 10000
+            float drive:linear:physics:stiffness = 0
+            float drive:linear:physics:targetVelocity = 0
+            uniform token drive:linear:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </Closet640/Body>
+            rel physics:body1 = </Closet640/Drawer0>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 0.33
+        }
+
+        def PhysicsPrismaticJoint "drawer_1" (
+            prepend apiSchemas = ["PhysicsDriveAPI:linear"]
+        )
+        {
+            float drive:linear:physics:damping = 20
+            float drive:linear:physics:maxForce = 10000
+            float drive:linear:physics:stiffness = 0
+            float drive:linear:physics:targetVelocity = 0
+            uniform token drive:linear:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </Closet640/Body>
+            rel physics:body1 = </Closet640/Drawer1>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 0.33
+        }
+    }
+
+    def Xform "Drawer1" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "SemanticsLabelsAPI:class"]
+    )
+    {
+        float physics:mass = 3
+        token[] semantics:labels:class = ["drawer"]
+
+        def Mesh "front" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.299, 0.194, 0.462), (0.299, 0.21, 0.838)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.299, 0.194, 0.462), (-0.299, 0.194, 0.838), (-0.299, 0.21, 0.838), (-0.299, 0.21, 0.462), (0.299, 0.21, 0.462), (0.299, 0.21, 0.838), (0.299, 0.194, 0.838), (0.299, 0.194, 0.462), (0.299, 0.194, 0.462), (0.299, 0.194, 0.838), (-0.299, 0.194, 0.838), (-0.299, 0.194, 0.462), (-0.299, 0.21, 0.462), (-0.299, 0.21, 0.838), (0.299, 0.21, 0.838), (0.299, 0.21, 0.462), (-0.299, 0.194, 0.838), (0.299, 0.194, 0.838), (0.299, 0.21, 0.838), (-0.299, 0.21, 0.838), (-0.299, 0.194, 0.462), (-0.299, 0.21, 0.462), (0.299, 0.21, 0.462), (0.299, 0.194, 0.462)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "tray_bottom" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.277, -0.166, 0.48), (0.277, 0.194, 0.492)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.277, -0.166, 0.48), (-0.277, -0.166, 0.492), (-0.277, 0.194, 0.492), (-0.277, 0.194, 0.48), (0.277, 0.194, 0.48), (0.277, 0.194, 0.492), (0.277, -0.166, 0.492), (0.277, -0.166, 0.48), (0.277, -0.166, 0.48), (0.277, -0.166, 0.492), (-0.277, -0.166, 0.492), (-0.277, -0.166, 0.48), (-0.277, 0.194, 0.48), (-0.277, 0.194, 0.492), (0.277, 0.194, 0.492), (0.277, 0.194, 0.48), (-0.277, -0.166, 0.492), (0.277, -0.166, 0.492), (0.277, 0.194, 0.492), (-0.277, 0.194, 0.492), (-0.277, -0.166, 0.48), (-0.277, 0.194, 0.48), (0.277, 0.194, 0.48), (0.277, -0.166, 0.48)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "tray_side_L" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.277, -0.166, 0.48), (-0.265, 0.194, 0.81)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.277, -0.166, 0.48), (-0.277, -0.166, 0.81), (-0.277, 0.194, 0.81), (-0.277, 0.194, 0.48), (-0.265, 0.194, 0.48), (-0.265, 0.194, 0.81), (-0.265, -0.166, 0.81), (-0.265, -0.166, 0.48), (-0.265, -0.166, 0.48), (-0.265, -0.166, 0.81), (-0.277, -0.166, 0.81), (-0.277, -0.166, 0.48), (-0.277, 0.194, 0.48), (-0.277, 0.194, 0.81), (-0.265, 0.194, 0.81), (-0.265, 0.194, 0.48), (-0.277, -0.166, 0.81), (-0.265, -0.166, 0.81), (-0.265, 0.194, 0.81), (-0.277, 0.194, 0.81), (-0.277, -0.166, 0.48), (-0.277, 0.194, 0.48), (-0.265, 0.194, 0.48), (-0.265, -0.166, 0.48)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "tray_side_R" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(0.265, -0.166, 0.48), (0.277, 0.194, 0.81)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(0.265, -0.166, 0.48), (0.265, -0.166, 0.81), (0.265, 0.194, 0.81), (0.265, 0.194, 0.48), (0.277, 0.194, 0.48), (0.277, 0.194, 0.81), (0.277, -0.166, 0.81), (0.277, -0.166, 0.48), (0.277, -0.166, 0.48), (0.277, -0.166, 0.81), (0.265, -0.166, 0.81), (0.265, -0.166, 0.48), (0.265, 0.194, 0.48), (0.265, 0.194, 0.81), (0.277, 0.194, 0.81), (0.277, 0.194, 0.48), (0.265, -0.166, 0.81), (0.277, -0.166, 0.81), (0.277, 0.194, 0.81), (0.265, 0.194, 0.81), (0.265, -0.166, 0.48), (0.265, 0.194, 0.48), (0.277, 0.194, 0.48), (0.277, -0.166, 0.48)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "tray_back" (
+            prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.277, -0.166, 0.48), (0.277, -0.154, 0.81)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/white_1>
+            rel material:binding:physics = </Closet640/Looks/PhysicsMaterial> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+            uniform token physics:approximation = "convexHull"
+            point3f[] points = [(-0.277, -0.166, 0.48), (-0.277, -0.166, 0.81), (-0.277, -0.154, 0.81), (-0.277, -0.154, 0.48), (0.277, -0.154, 0.48), (0.277, -0.154, 0.81), (0.277, -0.166, 0.81), (0.277, -0.166, 0.48), (0.277, -0.166, 0.48), (0.277, -0.166, 0.81), (-0.277, -0.166, 0.81), (-0.277, -0.166, 0.48), (-0.277, -0.154, 0.48), (-0.277, -0.154, 0.81), (0.277, -0.154, 0.81), (0.277, -0.154, 0.48), (-0.277, -0.166, 0.81), (0.277, -0.166, 0.81), (0.277, -0.154, 0.81), (-0.277, -0.154, 0.81), (-0.277, -0.166, 0.48), (-0.277, -0.154, 0.48), (0.277, -0.154, 0.48), (0.277, -0.166, 0.48)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "handle" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            float3[] extent = [(-0.08, 0.216, 0.7), (0.08, 0.228, 0.714)]
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            rel material:binding = </Closet640/Looks/chrome_2>
+            point3f[] points = [(-0.08, 0.216, 0.7), (-0.08, 0.216, 0.714), (-0.08, 0.228, 0.714), (-0.08, 0.228, 0.7), (0.08, 0.228, 0.7), (0.08, 0.228, 0.714), (0.08, 0.216, 0.714), (0.08, 0.216, 0.7), (0.08, 0.216, 0.7), (0.08, 0.216, 0.714), (-0.08, 0.216, 0.714), (-0.08, 0.216, 0.7), (-0.08, 0.228, 0.7), (-0.08, 0.228, 0.714), (0.08, 0.228, 0.714), (0.08, 0.228, 0.7), (-0.08, 0.216, 0.714), (0.08, 0.216, 0.714), (0.08, 0.228, 0.714), (-0.08, 0.228, 0.714), (-0.08, 0.216, 0.7), (-0.08, 0.228, 0.7), (0.08, 0.228, 0.7), (0.08, 0.216, 0.7)]
+            uniform token subdivisionScheme = "none"
+        }
+    }
+}
+

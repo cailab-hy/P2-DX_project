@@ -1,0 +1,2172 @@
+{
+  "_doc": "DX_Hub_Building_add_obj_v1: care-room (bedroom), kitchen and central-hall furniture. Built by scripts/20_furniture_assets.py (one USD per piece) and placed by scripts/21_add_obj_assemble.py. Units m / kg / sRGB 0-255. Each asset: local origin = floor centre of its footprint, z up, front faces +y. Outer sizes are the user's measurements (2026-10-09); part layouts are read from ~/Downloads/room_real (photos + video) and '이불과 베개.mp4'; colours are estimated by eye from the photos.",
+  "colors": {
+    "mint_bed": [
+      164,
+      196,
+      182
+    ],
+    "mint_cabinet": [
+      172,
+      202,
+      191
+    ],
+    "white": [
+      236,
+      236,
+      233
+    ],
+    "leather_black": [
+      28,
+      28,
+      30
+    ],
+    "chrome": [
+      205,
+      205,
+      210
+    ],
+    "table_top": [
+      214,
+      210,
+      200
+    ],
+    "table_side": [
+      204,
+      199,
+      188
+    ],
+    "mattress": [
+      214,
+      208,
+      196
+    ],
+    "sheet": [
+      242,
+      242,
+      240
+    ],
+    "pillow": [
+      244,
+      244,
+      242
+    ],
+    "planter": [
+      238,
+      238,
+      235
+    ],
+    "soil": [
+      60,
+      45,
+      35
+    ],
+    "leaf": [
+      38,
+      74,
+      38
+    ],
+    "trunk": [
+      95,
+      75,
+      55
+    ],
+    "mirror": [
+      190,
+      200,
+      205
+    ],
+    "stool_blue": [
+      42,
+      100,
+      135
+    ],
+    "wire_white": [
+      242,
+      242,
+      240
+    ],
+    "stainless": [
+      196,
+      198,
+      200
+    ],
+    "black": [
+      22,
+      22,
+      24
+    ],
+    "glass": [
+      225,
+      235,
+      235
+    ],
+    "bin_body": [
+      208,
+      208,
+      202
+    ],
+    "lid_yellow": [
+      226,
+      184,
+      46
+    ],
+    "lid_navy": [
+      52,
+      70,
+      102
+    ],
+    "lid_grey": [
+      128,
+      132,
+      134
+    ],
+    "ext_red": [
+      196,
+      28,
+      30
+    ],
+    "dark_grey": [
+      60,
+      62,
+      64
+    ],
+    "fridge_inox": [
+      92,
+      90,
+      88
+    ],
+    "interior_white": [
+      235,
+      238,
+      240
+    ],
+    "induction_glass": [
+      236,
+      236,
+      234
+    ],
+    "desk_top": [
+      228,
+      224,
+      212
+    ],
+    "desk_leg": [
+      176,
+      176,
+      174
+    ],
+    "shell_white": [
+      240,
+      240,
+      238
+    ],
+    "seat_dark": [
+      62,
+      57,
+      52
+    ],
+    "tv_black": [
+      18,
+      18,
+      20
+    ],
+    "office_white": [
+      241,
+      241,
+      237
+    ],
+    "mesh_black": [
+      30,
+      30,
+      32
+    ],
+    "logo_navy": [
+      30,
+      56,
+      128
+    ],
+    "oak": [
+      176,
+      128,
+      82
+    ],
+    "oak_light": [
+      214,
+      170,
+      118
+    ],
+    "cream": [
+      238,
+      232,
+      214
+    ],
+    "booth_white": [
+      246,
+      246,
+      244
+    ],
+    "screen": [
+      120,
+      170,
+      200
+    ],
+    "warm_led": [
+      255,
+      214,
+      160
+    ],
+    "gold": [
+      196,
+      160,
+      96
+    ],
+    "desk_wall_tone": [
+      182,
+      173,
+      164
+    ],
+    "tshirt_black": [
+      20,
+      20,
+      22
+    ]
+  },
+  "assets": {
+    "Bed": {
+      "label": "bed",
+      "size": [
+        1.03,
+        2.09
+      ],
+      "base_top_z": 0.33,
+      "toe_kick": [
+        0.06,
+        0.03
+      ],
+      "headboard": {
+        "depth": 0.18,
+        "block_h": 0.8,
+        "panel_h": 0.95,
+        "panel_t": 0.025
+      },
+      "footboard": {
+        "t": 0.025,
+        "h": 0.58
+      },
+      "side_rail_t": 0.025,
+      "mass_frame": 50.0,
+      "mattress": {
+        "size": [
+          0.98,
+          1.88,
+          0.2
+        ],
+        "mass": 15.0,
+        "joint": "fixed to frame (rigid, can be detached in the asset)",
+        "collider_lift": 0.01
+      },
+      "pillow": {
+        "size": [
+          0.66,
+          0.42,
+          0.13
+        ],
+        "gap_to_headboard": 0.06,
+        "deformable": "volume",
+        "youngs_modulus": 4000.0,
+        "poissons_ratio": 0.3,
+        "density": 35.0,
+        "elasticity_damping": 0.0,
+        "friction": [
+          0.7,
+          0.6
+        ],
+        "hex_resolution": 12,
+        "note": "E tuned in the scratch prototype: hung over a 4 cm bar it sags 14 cm (E 15 kPa: 7 cm); soft and floppy like the video; size from photo 1000017245 (about 2/3 of the bed width)"
+      },
+      "blanket": {
+        "size": [
+          1.5,
+          1.4
+        ],
+        "res": 0.035,
+        "foot_inset": 0.03,
+        "lift": 0.03,
+        "deformable": "surface",
+        "youngs_modulus": 1000000.0,
+        "poissons_ratio": 0.3,
+        "thickness": 0.002,
+        "density": 100.0,
+        "bend_stiffness": 0.0,
+        "friction": [
+          0.6,
+          0.5
+        ],
+        "self_collision": true,
+        "note": "thin cotton sheet (video: crumples and drapes immediately); 0.2 kg/m2; collision rest / contact offset 5 / 12 mm (defaults: sheet 15 mm above the mattress; 1 mm: sheet sank into the rounded mattress top and disappeared)",
+        "rest_offset": 0.005,
+        "contact_offset": 0.012
+      }
+    },
+    "Sofa3": {
+      "label": "sofa",
+      "size": [
+        1.75,
+        0.75,
+        0.73
+      ],
+      "leg_h": 0.1,
+      "base_h": 0.15,
+      "arm": {
+        "w": 0.12,
+        "h": 0.62
+      },
+      "back": {
+        "t": 0.18
+      },
+      "seat": {
+        "n": 3,
+        "depth": 0.55,
+        "t": 0.14
+      },
+      "mass": 45.0
+    },
+    "SofaTable": {
+      "label": "table",
+      "size": [
+        1.2,
+        0.8,
+        0.34
+      ],
+      "top_t": 0.04,
+      "panel_t": 0.02,
+      "panel_inset": 0.06,
+      "caster_h": 0.05,
+      "mass": 25.0
+    },
+    "Plant": {
+      "label": "plant",
+      "tray": [
+        0.36,
+        0.025
+      ],
+      "pot": {
+        "top": 0.3,
+        "bottom": 0.26,
+        "h": 0.6
+      },
+      "foliage_h": 0.42,
+      "mass": 8.0
+    },
+    "Wardrobe800": {
+      "label": "wardrobe",
+      "name_ko": "장롱",
+      "size": [
+        0.8,
+        0.42,
+        2.1
+      ],
+      "panel_t": 0.018,
+      "plinth_h": 0.05,
+      "doors": {
+        "n": 2,
+        "z": [
+          0.33,
+          2.08
+        ],
+        "open_deg": 110,
+        "mass": 5.0,
+        "damping": 2.0
+      },
+      "drawers": [
+        {
+          "z": [
+            0.07,
+            0.32
+          ],
+          "travel": 0.33,
+          "mass": 4.0
+        }
+      ],
+      "drawer_damping": 20.0,
+      "mass_body": 55.0
+    },
+    "Vanity640": {
+      "label": "vanity",
+      "name_ko": "화장대",
+      "size": [
+        0.64,
+        0.42,
+        2.1
+      ],
+      "panel_t": 0.018,
+      "plinth_h": 0.05,
+      "desk_z": 0.75,
+      "cubby_z": 1.75,
+      "riser": [
+        0.42,
+        0.18,
+        0.1
+      ],
+      "mirror": {
+        "w": 0.32,
+        "h": 0.64,
+        "z": 1.08
+      },
+      "drawers": [
+        {
+          "z": [
+            0.63,
+            0.74
+          ],
+          "travel": 0.3,
+          "mass": 2.0
+        }
+      ],
+      "drawer_damping": 20.0,
+      "mass_body": 35.0
+    },
+    "Closet640": {
+      "label": "closet",
+      "name_ko": "옷장",
+      "size": [
+        0.64,
+        0.42,
+        2.1
+      ],
+      "panel_t": 0.018,
+      "plinth_h": 0.05,
+      "cabinet_top_z": 0.85,
+      "cubby_z": 1.75,
+      "rail_z": 1.66,
+      "drawers": [
+        {
+          "z": [
+            0.07,
+            0.45
+          ],
+          "travel": 0.33,
+          "mass": 3.0
+        },
+        {
+          "z": [
+            0.46,
+            0.84
+          ],
+          "travel": 0.33,
+          "mass": 3.0
+        }
+      ],
+      "drawer_damping": 20.0,
+      "mass_body": 35.0
+    },
+    "BarStool": {
+      "label": "chair",
+      "model": "Hyundai Livart C600G bar stool (high)",
+      "size": [
+        0.35,
+        0.385,
+        0.762
+      ],
+      "seat_top_z": 0.7,
+      "seat_t": 0.07,
+      "rod_r": 0.009,
+      "footrest_z": 0.3,
+      "floor_splay": 0.05,
+      "mass": 6.0,
+      "note": "size from the user; shape from photos 1000017260/261: blue upholstered saddle seat with a raised back lip, white wire sled frame with a front footrest"
+    },
+    "Showcase": {
+      "label": "showcase",
+      "model": "GWRKHM07CS2F countertop refrigerated showcase",
+      "size": [
+        0.7,
+        0.56,
+        0.67
+      ],
+      "base_h": 0.2,
+      "roof_t": 0.03,
+      "post": 0.025,
+      "shelves_z": [
+        0.3,
+        0.42,
+        0.54
+      ],
+      "doors": {
+        "n": 2,
+        "travel": 0.3,
+        "mass": 2.0,
+        "damping": 10.0
+      },
+      "mass_body": 45.0,
+      "note": "front (+y) = customer side, fixed glass; back (-y) = two sliding glass doors in two tracks (video 1000017278); stainless base with vent grille",
+      "interior_light": 4000.0
+    },
+    "TrashBin3": {
+      "label": "trash_bin",
+      "plinth": [
+        1.02,
+        0.45,
+        0.08
+      ],
+      "bin": {
+        "bottom": [
+          0.27,
+          0.38
+        ],
+        "top": [
+          0.31,
+          0.42
+        ],
+        "h": 0.58,
+        "wall": 0.008,
+        "mass": 2.0
+      },
+      "lid": {
+        "h": 0.08,
+        "slot": [
+          0.18,
+          0.12
+        ]
+      },
+      "lids": [
+        "lid_yellow",
+        "lid_navy",
+        "lid_grey"
+      ],
+      "mass_plinth": 6.0,
+      "note": "LiDAR (set at x 2.6-3.6, y -13.49..-13.05 in the June scan): 3 bins ~0.31 x 0.43 m, 0.74 m high incl. 0.08 m plinth; colours from photo 1000017267",
+      "lids_note": "seen from the front, left to right (photo 1000017267)"
+    },
+    "FireExtinguisher": {
+      "label": "fire_extinguisher",
+      "body_r": 0.065,
+      "body_h": 0.4,
+      "head_h": 0.07,
+      "stand": [
+        0.22,
+        0.22,
+        0.12
+      ],
+      "mass": 6.0,
+      "note": "standard 3.3 kg ABC; LiDAR floor cylinders 0.10-0.18 m wide, 0.44-0.52 m high; red stand as in photo 1000017267"
+    },
+    "WaterPurifier": {
+      "label": "water_purifier",
+      "model": "SK magic WPU-B600F (stand type)",
+      "size": [
+        0.35,
+        0.52,
+        1.23
+      ],
+      "mass": 29.0,
+      "dispense_z": [
+        0.82,
+        1.0
+      ]
+    },
+    "Sink": {
+      "label": "sink",
+      "outer": [
+        0.6,
+        0.445
+      ],
+      "depth_outer": 0.2,
+      "inner_top": [
+        0.55,
+        0.37
+      ],
+      "depth_inner": 0.17,
+      "inner_bottom": [
+        0.47,
+        0.29
+      ],
+      "corner_r": {
+        "back": 0.05,
+        "front": 0.1
+      },
+      "flange_t": 0.008,
+      "wall": 0.006,
+      "mass": 8.0,
+      "faucets": {
+        "pullout": {
+          "note": "sink1.jpg: tall column, swan spout bending forward and down, lever on the right"
+        },
+        "straight": {
+          "note": "sink2.jpg: straight column with a short head, lever on the right"
+        }
+      },
+      "faucet_y": -0.27,
+      "note": "user 2026-10-15: outer 600 x 445 x 200 mm, inner 550 x 370 x 170 mm, 550 mm between the two sinks (edge to edge); bowl shape (D-shaped, larger front radii) from sink1/sink2.jpg; origin = counter-top level"
+    },
+    "Induction": {
+      "label": "cooktop",
+      "model": "SK magic IHR-B32A3",
+      "glass": [
+        0.595,
+        0.525,
+        0.006
+      ],
+      "body": [
+        0.555,
+        0.47,
+        0.054
+      ],
+      "cutout": [
+        0.56,
+        0.48
+      ],
+      "zones": [
+        [
+          -0.15,
+          0.05,
+          0.11
+        ],
+        [
+          0.15,
+          0.05,
+          0.11
+        ],
+        [
+          0.0,
+          -0.12,
+          0.085
+        ]
+      ],
+      "mass": 10.0,
+      "note": "built-in 3-zone, 595x525x60, cut-out 560x480 (danawa); origin = counter-top level; two units side by side (photo 1000017269)"
+    },
+    "Microwave": {
+      "label": "microwave",
+      "model": "winia NKRL201EWW (20 L)",
+      "size": [
+        0.449,
+        0.318,
+        0.259
+      ],
+      "door_w": 0.33,
+      "door_t": 0.03,
+      "open_deg": 100,
+      "door_mass": 1.2,
+      "door_damping": 0.5,
+      "button": {
+        "size": [
+          0.05,
+          0.012,
+          0.022
+        ],
+        "travel": 0.006,
+        "stiffness": 3000.0,
+        "damping": 20.0,
+        "press_to_open_m": 0.003
+      },
+      "mass_body": 11.0,
+      "note": "449x259x318 (danawa); door hinged on the left, opened by the push button at the lower right of the control panel (video 1000017281). The latch is not physics: a controller opens the door when the button joint is pressed > 3 mm (see README)"
+    },
+    "Fridge": {
+      "label": "refrigerator",
+      "model": "Samsung RT31CG5624S9 (2-door, top freezer)",
+      "size": [
+        0.6,
+        0.647,
+        1.715
+      ],
+      "door_t": 0.06,
+      "freezer_split_z": 1.26,
+      "open_deg": 120,
+      "door_mass": [
+        6.0,
+        12.0
+      ],
+      "door_damping": 3.0,
+      "mass_body": 50.0,
+      "note": "600x1715x647 (seller page); doors hinged on the right, recessed handles on the left edges (video 1000017282, photo 1000017273)"
+    },
+    "Desk6": {
+      "label": "table",
+      "size": [
+        1.8,
+        0.8,
+        0.72
+      ],
+      "top_t": 0.03,
+      "leg": 0.05,
+      "apron_h": 0.08,
+      "mass": 35.0,
+      "note": "6-person desk, size from the user; light top, grey metal legs (photos 20261009_140222/140230)"
+    },
+    "Chair6": {
+      "label": "chair",
+      "size": [
+        0.55,
+        0.5,
+        0.775
+      ],
+      "seat_h": 0.46,
+      "mass": 5.0,
+      "note": "size from the user; white plastic shell back, dark seat pad, chrome four-leg frame (photo 20261009_140230)"
+    },
+    "TVStand": {
+      "label": "tv",
+      "tv": [
+        1.45,
+        0.07,
+        0.84
+      ],
+      "tv_center_z": 1.32,
+      "post_x": 0.3,
+      "post_h": 1.72,
+      "foot_len": 0.7,
+      "shelf_z": 0.85,
+      "mass": 50.0,
+      "note": "size estimated from photos 20261009_140222/140230 (about a 65-inch TV on a black mobile stand)"
+    },
+    "Armchair": {
+      "label": "sofa",
+      "size": [
+        0.71,
+        0.75,
+        0.72
+      ],
+      "leg_h": 0.1,
+      "base_h": 0.15,
+      "arm": {
+        "w": 0.12,
+        "h": 0.62
+      },
+      "back": {
+        "t": 0.18
+      },
+      "seat": {
+        "n": 1,
+        "depth": 0.55,
+        "t": 0.14
+      },
+      "mass": 22.0,
+      "note": "1-seat sofa, size from the user; same style as Sofa3 (photo 20261009_140342)"
+    },
+    "OfficeDesk": {
+      "label": "desk",
+      "size": [
+        1.4,
+        0.7,
+        0.74
+      ],
+      "top_t": 0.025,
+      "leg_w": 0.04,
+      "mass": 25.0,
+      "note": "window-side work desk, estimated from photos 20261009_140419/140424: white top, white A-frame legs"
+    },
+    "OfficeChair": {
+      "label": "chair",
+      "seat": [
+        0.5,
+        0.48
+      ],
+      "seat_h": 0.47,
+      "back": [
+        0.46,
+        0.55
+      ],
+      "base_r": 0.33,
+      "mass": 14.0,
+      "note": "black mesh task chair with 5-star base, armrests and headrest (photos 20261009_140419/140424)"
+    },
+    "CoffeeRobot": {
+      "label": "coffee_robot",
+      "model": "Doosan Robotics Dr.Presso robot cafe (닥터프레소)",
+      "size": [
+        1.8,
+        1.59,
+        1.85
+      ],
+      "caster_h": 0.06,
+      "shell_t": 0.07,
+      "corner_r": 0.22,
+      "worktop_z": 0.91,
+      "band_z": [
+        0.6,
+        0.9
+      ],
+      "interior_light": 4000.0,
+      "arm": {
+        "usd": "a0509.usd",
+        "base": [
+          0.38,
+          -0.05
+        ],
+        "yaw": 0.0,
+        "q_deg": [
+          160,
+          5,
+          110,
+          0,
+          -115,
+          0
+        ],
+        "note": "Doosan A0509 from github.com/DoosanRobotics/doosan-robot2 (dsr_description2/usd, BSD-3); static pose like photo coffee_robot.jpg: forearm toward the coffee machine, gripper up. Physics of the arm is disabled (links = static colliders); the original file is untouched next to the asset"
+      },
+      "coffee_machine": {
+        "x": -0.5,
+        "y": -0.3,
+        "size": [
+          0.4,
+          0.5,
+          0.55
+        ]
+      },
+      "goosenecks": [
+        [
+          0.7,
+          -0.25
+        ],
+        [
+          -0.82,
+          -0.05
+        ]
+      ],
+      "cup_tubes": [
+        [
+          0.56,
+          -0.3
+        ],
+        [
+          0.47,
+          -0.3
+        ],
+        [
+          0.38,
+          -0.36
+        ]
+      ],
+      "pickup": {
+        "x": [
+          0.12,
+          -0.46
+        ],
+        "y": 0.3,
+        "n": 3
+      },
+      "tv": {
+        "size": [
+          0.55,
+          0.32
+        ],
+        "z": 1.5,
+        "x": -0.05
+      },
+      "note": "overall 1800 W x 1590 D x 1850 H (myrobotsolution.com spec page); layout from photo coffee_robot.jpg and coffee_robot_video.mp4: rounded white shell on casters, oak lower panel, cream sign band, glass front, oak back wall with a monitor, espresso machine on the viewer's right, arm on the left, three pick-up trays in front. Static (does not move)."
+    },
+    "CoffeeKiosk": {
+      "label": "kiosk",
+      "base": [
+        0.5,
+        0.42,
+        0.04
+      ],
+      "column": [
+        0.36,
+        0.12,
+        1.0
+      ],
+      "head": [
+        0.36,
+        0.1,
+        0.75
+      ],
+      "screen": [
+        0.3,
+        0.53
+      ],
+      "mass": 30.0,
+      "note": "ordering kiosk; video cv_039: along the east wall (face x 3.6075) south of the booth, facing west (order from north: fire extinguisher, kiosk, plant, purifier); size estimated"
+    },
+    "CareDesk": {
+      "label": "desk",
+      "size": [
+        1.4,
+        0.75,
+        0.725
+      ],
+      "top_t": 0.025,
+      "leg": 0.035,
+      "mass": 18.0,
+      "note": "user 2026-10-16: 1400 (along the wall) x 750 x 725 mm (was 1000 x 600); top 8 % darker than the care-room wall (linear albedo x 0.92 of wall_greige), white legs"
+    },
+    "TShirt": {
+      "label": "tshirt",
+      "size": {
+        "body_w": 0.48,
+        "length": 0.66,
+        "sleeve": 0.17,
+        "sleeve_open": 0.17,
+        "neck_w": 0.17,
+        "neck_drop_front": 0.07
+      },
+      "res": 0.015,
+      "layer_gap": 0.008,
+      "deformable": "surface",
+      "density": 120.0,
+      "thickness": 0.0015,
+      "youngs_modulus": 1000000.0,
+      "poissons_ratio": 0.25,
+      "bend_stiffness": 0.0,
+      "elasticity_damping": 0.1,
+      "bend_damping": 0.1,
+      "friction": [
+        0.72,
+        0.6
+      ],
+      "self_collision": true,
+      "rest_offset": 0.002,
+      "contact_offset": 0.008,
+      "note": "black short-sleeve T-shirt (adult S/M laid flat: 480 wide, 660 long, 170 sleeves). Isaac Sim 6.1 ships no stand-alone T-shirt (only People/.../V_Neck_Scrub_Shirt, skinned to a character) and the LeIsaac FoldCloth cloth (HF LightwheelAI/leisaac_env, lightwheel_bedroom/cloth/cloth.usd) is a long-sleeve shirt simulated as PhysX particle cloth, which PhysX 110 / Isaac Sim 6.1 no longer has. So: two layers (front / back) sewn at side, sleeve and shoulder seams, open at neck, hem and cuffs, simulated as one surface deformable. Material after LeIsaac (friction 0.72, self collision) and Isaac Lab Isaac-Lift-Cloth-Franka physx preset (E 1 MPa, nu 0.25, damping 0.1); areal mass 0.18 kg/m2 (cotton jersey)"
+    }
+  },
+  "room": {
+    "name": "care_room",
+    "_doc": "v3 model faces (config/dx_hub_no_obj_v1_plan.json / openings.json; LiDAR agrees within 1-3 cm): east wall x 3.671 (W027), south wall y 16.329 (W069), north sill wall y 21.116 (window N014/N015 glass 21.421 - sill depth 0.305), pilaster x -0.545..0.255 (front y 20.377), west wall x -4.365. The June 2026 scan shows a different layout (care beds), so positions come from the 2026-10 photos / video. East wall between the south wall and door D000 (y 16.32-17.30) is the v3 gap-fill piece with its room face at x 3.6075.",
+    "east_x": 3.671,
+    "south_y": 16.329,
+    "north_y": 21.116,
+    "pilaster_x": [
+      -0.545,
+      0.255
+    ],
+    "west_x": -4.365,
+    "gap": 0.015,
+    "east_x_south_part": 3.6075
+  },
+  "placements": {
+    "CareRoom": {
+      "Bed": {
+        "x": 1.981,
+        "y": 20.046,
+        "yaw": 0,
+        "asset": "Bed"
+      },
+      "Sofa3": {
+        "x": -1.47,
+        "y": 20.521,
+        "yaw": 180,
+        "asset": "Sofa3"
+      },
+      "Plant": {
+        "asset": "Plant",
+        "x": -0.2525,
+        "y": 16.669,
+        "yaw": 0
+      },
+      "Wardrobe800": {
+        "x": 1.8075,
+        "y": 16.554,
+        "yaw": 0,
+        "anchor_to_wall": true,
+        "asset": "Wardrobe800"
+      },
+      "Vanity640": {
+        "x": 1.0875,
+        "y": 16.554,
+        "yaw": 0,
+        "anchor_to_wall": true,
+        "asset": "Vanity640"
+      },
+      "Closet640": {
+        "x": 0.4475,
+        "y": 16.554,
+        "yaw": 0,
+        "anchor_to_wall": true,
+        "asset": "Closet640"
+      },
+      "CareDesk": {
+        "asset": "CareDesk",
+        "x": -3.817,
+        "y": 19.07,
+        "yaw": -90
+      },
+      "TShirt": {
+        "asset": "TShirt",
+        "x": -3.835,
+        "y": 19.07,
+        "z": 0.735,
+        "yaw": 90
+      }
+    },
+    "Kitchen": {
+      "_doc": "Kitchen (U-north counter, sink arm and pantry entrance; photos ~/Downloads/주방_real + videos). Counter-top items carry z = top of their support (bar low end 0.81 m, sink counter 1.112 m in v3). Showcase on the bar's low north end, glass front to the hall (west), sliding doors to the kitchen side (east). Stools along the bar's west face, 0.55 m pitch, facing the bar. Sinks at the LiDAR bowl positions (y 6.95, 8.10), two inductions between sinks and microwave, microwave at the north end of the sink counter; all face the work side (west). Purifier, bins and extinguisher north of the counter end along the east wall (face x 3.6075), facing west. Fridge in the niche north of the bar (opened in wall W021), facing east, front 0.1 m proud of the wall line (June scan saw the old fridge front at x ~0.3). 2026-10-15: Dr.Presso coffee robot booth in the north part of the pantry (empty dark space in the 10-09 video), back to the north wall (face y 16.138), facing south, centre x 1.3 so the kiosk sits ~1.1 m right of the booth like photo coffee_robot.jpg (booth width 1.8 m as the scale); ordering kiosk against the east wall south of the booth, facing west (video cv_039). Sinks rebuilt to the measured 600 x 445 mm (centres 1.15 m apart = 550 mm gap); north sink with the pull-out faucet (sink1.jpg), south sink straight (sink2.jpg).",
+      "Showcase": {
+        "asset": "Showcase",
+        "x": -0.27,
+        "y": 11.02,
+        "z": 0.81,
+        "yaw": 90
+      },
+      "Plant": {
+        "asset": "Plant",
+        "x": -0.96,
+        "y": 11.25,
+        "yaw": 30
+      },
+      "BarStool_1": {
+        "asset": "BarStool",
+        "x": -0.75,
+        "y": 6.65,
+        "yaw": -90
+      },
+      "BarStool_2": {
+        "asset": "BarStool",
+        "x": -0.75,
+        "y": 7.2,
+        "yaw": -90
+      },
+      "BarStool_3": {
+        "asset": "BarStool",
+        "x": -0.75,
+        "y": 7.75,
+        "yaw": -90
+      },
+      "BarStool_4": {
+        "asset": "BarStool",
+        "x": -0.75,
+        "y": 8.3,
+        "yaw": -90
+      },
+      "Sink_1": {
+        "asset": "Sink",
+        "x": 3.22,
+        "y": 6.95,
+        "z": 1.112,
+        "yaw": 90,
+        "variants": {
+          "faucet": "straight"
+        }
+      },
+      "Sink_2": {
+        "asset": "Sink",
+        "x": 3.22,
+        "y": 8.1,
+        "z": 1.112,
+        "yaw": 90,
+        "variants": {
+          "faucet": "pullout"
+        }
+      },
+      "Microwave": {
+        "asset": "Microwave",
+        "x": 3.27,
+        "y": 10.85,
+        "z": 1.112,
+        "yaw": 90
+      },
+      "WaterPurifier": {
+        "asset": "WaterPurifier",
+        "x": 3.3275,
+        "y": 11.6,
+        "yaw": 90
+      },
+      "TrashBin3": {
+        "asset": "TrashBin3",
+        "x": 3.3625,
+        "y": 12.33,
+        "yaw": 90
+      },
+      "FireExtinguisher": {
+        "asset": "FireExtinguisher",
+        "x": 3.47,
+        "y": 13.05,
+        "yaw": 90
+      },
+      "Fridge": {
+        "asset": "Fridge",
+        "x": -0.0265,
+        "y": 13.33,
+        "yaw": -90
+      },
+      "Induction_1": {
+        "asset": "Induction",
+        "x": 3.2,
+        "y": 9.05,
+        "z": 1.112,
+        "yaw": 90
+      },
+      "Induction_2": {
+        "asset": "Induction",
+        "x": 3.2,
+        "y": 9.8,
+        "z": 1.112,
+        "yaw": 90
+      },
+      "CoffeeRobot": {
+        "asset": "CoffeeRobot",
+        "x": 1.3,
+        "y": 15.328,
+        "yaw": 180
+      },
+      "CoffeeKiosk": {
+        "asset": "CoffeeKiosk",
+        "x": 3.3825,
+        "y": 14.6,
+        "yaw": 90
+      }
+    },
+    "_doc": "x, y = footprint centre (world), yaw in degrees (asset front +y rotated). User 2026-10-09 (2nd round): bed centred on its window (v3 Window_10, x 0.256-3.706), head 2.5 cm off the north sill wall; sofa back 0.70 m from the north sill wall, table and plant moved with it (table 0.45 m in front of the sofa, plant 0.6 m west of it); wardrobe set against the south wall, facing north, east to west 장롱 | 화장대 | 옷장, 장롱 east side 1.40 m from the east wall (x 3.6075) - measured from the east wall because 1.4 m off the south wall would block the double door D000. Care room, user 2026-10-15: sofa back 0.22 m from the north sill wall (table unchanged); plant moved to the right (viewer facing the set = west) of the closet: 0.20 m from it, 0.16 m from the south wall; new desk against the west wall (room face x -4.197, W013), its south edge 0.40 m north of the open doorway G (north jamb y 18.30), 1000 along the wall x 600 deep; black T-shirt lying on it, neck toward the wall, sleeves along the wall (hem overhangs the front edge ~8 cm). Care room, user 2026-10-15 (2): sofa table removed; sofa east arm 0.05 m from the pilaster (west face x -0.545). Care room, user 2026-10-16: desk now 1400 x 750, south edge 0.07 m north of doorway G (y 18.37); T-shirt moved with it (unchanged otherwise).",
+    "Hall": {
+      "_doc": "Central hall (photos ~/Downloads/hall_real). Sofa groups at the June-scan positions (tables x -8.85, y 6.6 / 10.05 / 12.8; armchair pairs at x -10.2 and -7.5): photo 20261009_140337 left = south. Long table = three 6-person desks joined along y at x -3.7 (y 5.9-11.3), 3 chairs per long side per desk (0.55 m pitch, clear of the corner legs) (the two extra chairs are not modelled), TV stand at the north end facing the table. Window-side desks (user 2026-10-09, 2nd round: rotated 90 deg): the user layout with the WEST windows on top (sill ledge x -12.786, window y 14.57-20.47; photo 20261009_140419 = north-west corner pier on the right, 140424 = west-wall pier): rows run north-south, row 1 against the windows, rows 2-3 and 4-5 back to back, desk 11 at the north-east end; ASCII left = south; rows 2/4 offset 0.18 m north. User 2026-10-09 (3rd round): the set moved 1.246 m north so its north end (desk 11) meets the north window sill (y 21.116); desk 11 (x -5.67) turned 180 deg, its chair on the west side. User 2026-10-09 (4th round, sketch): each desk group (1-2 / 3-6 / 7-10 / 11) moved north with its chairs until its north end meets the wall (1-2: north-west corner pier y 20.47; others: north sill wall y 21.116, 1.5 cm gap); desk 11 also pushed east against wall W013 (x -4.361). Rows 3 (desks 5-6) and 5 (desks 9-10) also moved 0.18 m north against the sill wall (no stagger at the wall end).",
+      "SofaTable_S": {
+        "asset": "SofaTable",
+        "x": -8.85,
+        "y": 6.6,
+        "yaw": 90
+      },
+      "Armchair_SW1": {
+        "asset": "Armchair",
+        "x": -10.2,
+        "y": 6.23,
+        "yaw": -90
+      },
+      "Armchair_SW2": {
+        "asset": "Armchair",
+        "x": -10.2,
+        "y": 6.97,
+        "yaw": -90
+      },
+      "Armchair_SE1": {
+        "asset": "Armchair",
+        "x": -7.5,
+        "y": 6.23,
+        "yaw": 90
+      },
+      "Armchair_SE2": {
+        "asset": "Armchair",
+        "x": -7.5,
+        "y": 6.97,
+        "yaw": 90
+      },
+      "SofaTable_C": {
+        "asset": "SofaTable",
+        "x": -8.85,
+        "y": 10.05,
+        "yaw": 90
+      },
+      "Armchair_CW1": {
+        "asset": "Armchair",
+        "x": -10.2,
+        "y": 9.68,
+        "yaw": -90
+      },
+      "Armchair_CW2": {
+        "asset": "Armchair",
+        "x": -10.2,
+        "y": 10.42,
+        "yaw": -90
+      },
+      "Sofa3_C": {
+        "asset": "Sofa3",
+        "x": -7.5,
+        "y": 10.05,
+        "yaw": 90
+      },
+      "SofaTable_N": {
+        "asset": "SofaTable",
+        "x": -8.85,
+        "y": 12.8,
+        "yaw": 90
+      },
+      "Armchair_NW1": {
+        "asset": "Armchair",
+        "x": -10.2,
+        "y": 12.43,
+        "yaw": -90
+      },
+      "Armchair_NW2": {
+        "asset": "Armchair",
+        "x": -10.2,
+        "y": 13.17,
+        "yaw": -90
+      },
+      "Armchair_NE1": {
+        "asset": "Armchair",
+        "x": -7.5,
+        "y": 12.43,
+        "yaw": 90
+      },
+      "Armchair_NE2": {
+        "asset": "Armchair",
+        "x": -7.5,
+        "y": 13.17,
+        "yaw": 90
+      },
+      "Desk6_1": {
+        "asset": "Desk6",
+        "x": -3.7,
+        "y": 6.8,
+        "yaw": 90
+      },
+      "Chair6_1W1": {
+        "asset": "Chair6",
+        "x": -4.22,
+        "y": 6.25,
+        "yaw": -90
+      },
+      "Chair6_1W2": {
+        "asset": "Chair6",
+        "x": -4.22,
+        "y": 6.8,
+        "yaw": -90
+      },
+      "Chair6_1W3": {
+        "asset": "Chair6",
+        "x": -4.22,
+        "y": 7.35,
+        "yaw": -90
+      },
+      "Chair6_1E1": {
+        "asset": "Chair6",
+        "x": -3.18,
+        "y": 6.25,
+        "yaw": 90
+      },
+      "Chair6_1E2": {
+        "asset": "Chair6",
+        "x": -3.18,
+        "y": 6.8,
+        "yaw": 90
+      },
+      "Chair6_1E3": {
+        "asset": "Chair6",
+        "x": -3.18,
+        "y": 7.35,
+        "yaw": 90
+      },
+      "Desk6_2": {
+        "asset": "Desk6",
+        "x": -3.7,
+        "y": 8.6,
+        "yaw": 90
+      },
+      "Chair6_2W1": {
+        "asset": "Chair6",
+        "x": -4.22,
+        "y": 8.05,
+        "yaw": -90
+      },
+      "Chair6_2W2": {
+        "asset": "Chair6",
+        "x": -4.22,
+        "y": 8.6,
+        "yaw": -90
+      },
+      "Chair6_2W3": {
+        "asset": "Chair6",
+        "x": -4.22,
+        "y": 9.15,
+        "yaw": -90
+      },
+      "Chair6_2E1": {
+        "asset": "Chair6",
+        "x": -3.18,
+        "y": 8.05,
+        "yaw": 90
+      },
+      "Chair6_2E2": {
+        "asset": "Chair6",
+        "x": -3.18,
+        "y": 8.6,
+        "yaw": 90
+      },
+      "Chair6_2E3": {
+        "asset": "Chair6",
+        "x": -3.18,
+        "y": 9.15,
+        "yaw": 90
+      },
+      "Desk6_3": {
+        "asset": "Desk6",
+        "x": -3.7,
+        "y": 10.4,
+        "yaw": 90
+      },
+      "Chair6_3W1": {
+        "asset": "Chair6",
+        "x": -4.22,
+        "y": 9.85,
+        "yaw": -90
+      },
+      "Chair6_3W2": {
+        "asset": "Chair6",
+        "x": -4.22,
+        "y": 10.4,
+        "yaw": -90
+      },
+      "Chair6_3W3": {
+        "asset": "Chair6",
+        "x": -4.22,
+        "y": 10.95,
+        "yaw": -90
+      },
+      "Chair6_3E1": {
+        "asset": "Chair6",
+        "x": -3.18,
+        "y": 9.85,
+        "yaw": 90
+      },
+      "Chair6_3E2": {
+        "asset": "Chair6",
+        "x": -3.18,
+        "y": 10.4,
+        "yaw": 90
+      },
+      "Chair6_3E3": {
+        "asset": "Chair6",
+        "x": -3.18,
+        "y": 10.95,
+        "yaw": 90
+      },
+      "TVStand": {
+        "asset": "TVStand",
+        "x": -3.7,
+        "y": 12.25,
+        "yaw": 180
+      },
+      "OfficeDesk_1": {
+        "asset": "OfficeDesk",
+        "x": -12.416,
+        "y": 18.175,
+        "yaw": -90
+      },
+      "OfficeChair_1": {
+        "asset": "OfficeChair",
+        "x": -11.79,
+        "y": 18.175,
+        "yaw": 90
+      },
+      "OfficeDesk_2": {
+        "asset": "OfficeDesk",
+        "x": -12.416,
+        "y": 19.755,
+        "yaw": -90
+      },
+      "OfficeChair_2": {
+        "asset": "OfficeChair",
+        "x": -11.79,
+        "y": 19.755,
+        "yaw": 90
+      },
+      "OfficeDesk_3": {
+        "asset": "OfficeDesk",
+        "x": -10.32,
+        "y": 19.001,
+        "yaw": 90
+      },
+      "OfficeChair_3": {
+        "asset": "OfficeChair",
+        "x": -10.94,
+        "y": 19.001,
+        "yaw": -90
+      },
+      "OfficeDesk_4": {
+        "asset": "OfficeDesk",
+        "x": -10.32,
+        "y": 20.401,
+        "yaw": 90
+      },
+      "OfficeChair_4": {
+        "asset": "OfficeChair",
+        "x": -10.94,
+        "y": 20.401,
+        "yaw": -90
+      },
+      "OfficeDesk_5": {
+        "asset": "OfficeDesk",
+        "x": -9.62,
+        "y": 19.001,
+        "yaw": -90
+      },
+      "OfficeChair_5": {
+        "asset": "OfficeChair",
+        "x": -9.0,
+        "y": 19.001,
+        "yaw": 90
+      },
+      "OfficeDesk_6": {
+        "asset": "OfficeDesk",
+        "x": -9.62,
+        "y": 20.401,
+        "yaw": -90
+      },
+      "OfficeChair_6": {
+        "asset": "OfficeChair",
+        "x": -9.0,
+        "y": 20.401,
+        "yaw": 90
+      },
+      "OfficeDesk_7": {
+        "asset": "OfficeDesk",
+        "x": -7.58,
+        "y": 19.001,
+        "yaw": 90
+      },
+      "OfficeChair_7": {
+        "asset": "OfficeChair",
+        "x": -8.2,
+        "y": 19.001,
+        "yaw": -90
+      },
+      "OfficeDesk_8": {
+        "asset": "OfficeDesk",
+        "x": -7.58,
+        "y": 20.401,
+        "yaw": 90
+      },
+      "OfficeChair_8": {
+        "asset": "OfficeChair",
+        "x": -8.2,
+        "y": 20.401,
+        "yaw": -90
+      },
+      "OfficeDesk_9": {
+        "asset": "OfficeDesk",
+        "x": -6.88,
+        "y": 19.001,
+        "yaw": -90
+      },
+      "OfficeChair_9": {
+        "asset": "OfficeChair",
+        "x": -6.26,
+        "y": 19.001,
+        "yaw": 90
+      },
+      "OfficeDesk_10": {
+        "asset": "OfficeDesk",
+        "x": -6.88,
+        "y": 20.401,
+        "yaw": -90
+      },
+      "OfficeChair_10": {
+        "asset": "OfficeChair",
+        "x": -6.26,
+        "y": 20.401,
+        "yaw": 90
+      },
+      "OfficeDesk_11": {
+        "asset": "OfficeDesk",
+        "x": -4.726,
+        "y": 20.401,
+        "yaw": 90
+      },
+      "OfficeChair_11": {
+        "asset": "OfficeChair",
+        "x": -5.346,
+        "y": 20.401,
+        "yaw": -90
+      }
+    }
+  },
+  "building_edits": {
+    "_doc": "Edits applied in DX_Hub_Building_add_obj_v1.usda as overrides of the referenced v3 building (v3 files untouched).",
+    "counter_cutouts": {
+      "prim": "Fixtures/U_table_north/Part0_0",
+      "collider_prefix": "U_table_north_p0_",
+      "arm": {
+        "x": [
+          2.833,
+          3.695
+        ],
+        "y": [
+          4.55,
+          11.384
+        ]
+      },
+      "top": [
+        1.082,
+        1.112
+      ],
+      "body_top_z": 0.85,
+      "holes": [
+        {
+          "name": "Sink_1",
+          "x": [
+            3.025,
+            3.415
+          ],
+          "y": [
+            6.665,
+            7.235
+          ]
+        },
+        {
+          "name": "Sink_2",
+          "x": [
+            3.025,
+            3.415
+          ],
+          "y": [
+            7.815,
+            8.385
+          ]
+        },
+        {
+          "name": "Induction_1",
+          "x": [
+            2.96,
+            3.44
+          ],
+          "y": [
+            8.77,
+            9.33
+          ]
+        },
+        {
+          "name": "Induction_2",
+          "x": [
+            2.96,
+            3.44
+          ],
+          "y": [
+            9.52,
+            10.08
+          ]
+        }
+      ],
+      "note": "sink and induction holes in the sink-arm top; the arm colliders are replaced by boxes around the holes (cabinet body up to 0.85 m)"
+    },
+    "fridge_niche": {
+      "wall": "W021",
+      "x": [
+        0.078,
+        0.198
+      ],
+      "open_y": [
+        12.8,
+        13.75
+      ],
+      "keep_y": [
+        13.75,
+        14.389
+      ],
+      "partition": {
+        "x": [
+          -0.51,
+          0.078
+        ],
+        "y": [
+          13.75,
+          13.83
+        ]
+      },
+      "z": [
+        0.0,
+        2.2
+      ],
+      "note": "the box north of the bar (W016/W021/W063/W067) is the fridge niche: the June scan saw the old fridge front at x~0.3, y 12.95-13.7 (it had been taken for wall W021)"
+    }
+  },
+  "validation_views": {
+    "_doc": "camera eye / target (world, m) estimated for each reference photo or video frame (paths relative to work/add_obj_v1/)",
+    "photo_1000017243": {
+      "eye": [
+        0.2,
+        19.0,
+        1.55
+      ],
+      "target": [
+        -3.2,
+        20.7,
+        0.35
+      ],
+      "ref": "ref/photo_1000017243.jpg"
+    },
+    "photo_1000017244": {
+      "eye": [
+        -3.9,
+        18.4,
+        1.5
+      ],
+      "target": [
+        -1.2,
+        20.9,
+        0.45
+      ],
+      "ref": "ref/photo_1000017244.jpg"
+    },
+    "photo_1000017245": {
+      "eye": [
+        0.9,
+        17.6,
+        1.55
+      ],
+      "target": [
+        2.7,
+        20.4,
+        0.35
+      ],
+      "ref": "ref/photo_1000017245.jpg"
+    },
+    "photo_1000017246": {
+      "eye": [
+        0.4,
+        18.0,
+        1.5
+      ],
+      "target": [
+        2.6,
+        21.0,
+        0.6
+      ],
+      "ref": "ref/photo_1000017246.jpg"
+    },
+    "room_018": {
+      "eye": [
+        0.3,
+        18.6,
+        1.45
+      ],
+      "target": [
+        3.3,
+        17.0,
+        1.0
+      ],
+      "ref": "ref/room_018.jpg"
+    },
+    "kitchen_000": {
+      "eye": [
+        -1.3,
+        12.7,
+        1.6
+      ],
+      "target": [
+        0.4,
+        6.0,
+        0.8
+      ],
+      "ref": "kitchen_ref/kitchen_000.jpg"
+    },
+    "photo_1000017259": {
+      "eye": [
+        -1.45,
+        11.95,
+        1.35
+      ],
+      "target": [
+        -0.2,
+        10.9,
+        0.95
+      ],
+      "ref": "kitchen_ref/photo_1000017259.jpg"
+    },
+    "photo_1000017260": {
+      "eye": [
+        -1.7,
+        12.3,
+        1.5
+      ],
+      "target": [
+        -0.6,
+        8.5,
+        0.6
+      ],
+      "ref": "kitchen_ref/photo_1000017260.jpg"
+    },
+    "photo_1000017264": {
+      "eye": [
+        2.3,
+        11.95,
+        1.4
+      ],
+      "target": [
+        3.45,
+        11.6,
+        0.8
+      ],
+      "ref": "kitchen_ref/photo_1000017264.jpg"
+    },
+    "photo_1000017267": {
+      "eye": [
+        2.0,
+        12.4,
+        1.25
+      ],
+      "target": [
+        3.5,
+        12.6,
+        0.4
+      ],
+      "ref": "kitchen_ref/photo_1000017267.jpg"
+    },
+    "photo_1000017268": {
+      "eye": [
+        2.3,
+        10.85,
+        1.55
+      ],
+      "target": [
+        3.35,
+        10.85,
+        1.2
+      ],
+      "ref": "kitchen_ref/photo_1000017268.jpg"
+    },
+    "photo_1000017269": {
+      "eye": [
+        2.35,
+        9.35,
+        1.65
+      ],
+      "target": [
+        3.35,
+        9.35,
+        1.08
+      ],
+      "ref": "kitchen_ref/photo_1000017269.jpg"
+    },
+    "photo_1000017270": {
+      "eye": [
+        2.2,
+        7.5,
+        1.65
+      ],
+      "target": [
+        3.4,
+        7.5,
+        1.05
+      ],
+      "ref": "kitchen_ref/photo_1000017270.jpg"
+    },
+    "kitchen_047": {
+      "eye": [
+        1.6,
+        12.2,
+        1.45
+      ],
+      "target": [
+        -0.4,
+        12.6,
+        0.9
+      ],
+      "ref": "kitchen_ref/kitchen_047.jpg"
+    },
+    "20261009_140222": {
+      "eye": [
+        -6.3,
+        5.0,
+        1.55
+      ],
+      "target": [
+        -1.0,
+        9.5,
+        0.8
+      ],
+      "ref": "hall_ref/20261009_140222.jpg"
+    },
+    "20261009_140230": {
+      "eye": [
+        -3.0,
+        4.4,
+        1.5
+      ],
+      "target": [
+        -4.0,
+        13.0,
+        0.8
+      ],
+      "ref": "hall_ref/20261009_140230.jpg"
+    },
+    "20261009_140337": {
+      "eye": [
+        -6.0,
+        5.4,
+        1.55
+      ],
+      "target": [
+        -11.0,
+        10.5,
+        0.5
+      ],
+      "ref": "hall_ref/20261009_140337.jpg"
+    },
+    "20261009_140342": {
+      "eye": [
+        -6.6,
+        11.2,
+        1.5
+      ],
+      "target": [
+        -9.5,
+        13.6,
+        0.5
+      ],
+      "ref": "hall_ref/20261009_140342.jpg"
+    },
+    "20261009_140347": {
+      "eye": [
+        -7.0,
+        4.0,
+        1.6
+      ],
+      "target": [
+        -9.5,
+        11.0,
+        0.4
+      ],
+      "ref": "hall_ref/20261009_140347.jpg"
+    },
+    "20261009_140419": {
+      "eye": [
+        -8.6,
+        15.2,
+        1.6
+      ],
+      "target": [
+        -12.8,
+        20.2,
+        0.8
+      ],
+      "ref": "hall_ref/20261009_140419.jpg"
+    },
+    "20261009_140424": {
+      "eye": [
+        -6.6,
+        19.6,
+        1.6
+      ],
+      "target": [
+        -12.8,
+        14.6,
+        0.9
+      ],
+      "ref": "hall_ref/20261009_140424.jpg"
+    },
+    "20261009_140446": {
+      "eye": [
+        1.6,
+        -0.9,
+        1.55
+      ],
+      "target": [
+        1.0,
+        -3.9,
+        1.5
+      ],
+      "ref": "hall_ref/20261009_140446.jpg"
+    },
+    "20261009_140455": {
+      "eye": [
+        1.87,
+        -2.4,
+        1.6
+      ],
+      "target": [
+        1.87,
+        -3.9,
+        1.72
+      ],
+      "ref": "hall_ref/20261009_140455.jpg"
+    },
+    "coffee_robot": {
+      "eye": [
+        1.4,
+        11.5,
+        1.45
+      ],
+      "target": [
+        1.3,
+        15.3,
+        1.05
+      ],
+      "ref": "coffee_ref/coffee_robot.jpg"
+    },
+    "cv_032": {
+      "eye": [
+        1.3,
+        13.3,
+        1.5
+      ],
+      "target": [
+        1.3,
+        15.3,
+        1.15
+      ],
+      "ref": "coffee_ref/cv_032.jpg"
+    },
+    "cv_039": {
+      "eye": [
+        1.6,
+        12.9,
+        1.5
+      ],
+      "target": [
+        3.4,
+        14.6,
+        0.9
+      ],
+      "ref": "coffee_ref/cv_039.jpg"
+    },
+    "sink1": {
+      "eye": [
+        2.62,
+        8.1,
+        1.78
+      ],
+      "target": [
+        3.25,
+        8.1,
+        1.0
+      ],
+      "ref": "coffee_ref/sink1.jpg"
+    },
+    "sink2": {
+      "eye": [
+        2.62,
+        6.95,
+        1.78
+      ],
+      "target": [
+        3.25,
+        6.95,
+        1.0
+      ],
+      "ref": "coffee_ref/sink2.jpg"
+    },
+    "care_desk": {
+      "eye": [
+        -2.5,
+        18.0,
+        1.65
+      ],
+      "target": [
+        -3.9,
+        19.2,
+        0.75
+      ],
+      "ref": null
+    },
+    "care_sofa_new": {
+      "eye": [
+        0.2,
+        19.0,
+        1.55
+      ],
+      "target": [
+        -3.2,
+        20.7,
+        0.35
+      ],
+      "ref": "ref/photo_1000017243.jpg"
+    },
+    "care_plant": {
+      "eye": [
+        1.0,
+        18.6,
+        1.5
+      ],
+      "target": [
+        0.2,
+        16.6,
+        0.6
+      ],
+      "ref": null
+    },
+    "logo": {
+      "eye": [
+        1.25,
+        -2.55,
+        1.45
+      ],
+      "target": [
+        1.87,
+        -3.9,
+        1.75
+      ],
+      "ref": "logo_ref/logo.jpg"
+    },
+    "logo2": {
+      "eye": [
+        1.55,
+        -0.9,
+        1.55
+      ],
+      "target": [
+        1.6,
+        -3.9,
+        1.45
+      ],
+      "ref": "logo_ref/logo2.jpg"
+    }
+  },
+  "signage": {
+    "_doc": "wall lettering (user 2026-10-09 / 2026-10-16, photos logo.jpg / logo2.jpg): on the north face of room A's wall W058 (y -3.904) behind the reception U table; centred on the visible wall face between W020 (x 0.168) and W023 (x 3.569) at the previous height (centre z 1.72). Layout measured on logo.jpg (690 px wide block): white partner logos row, CARE + caption, 로봇직업교육센터, 경기테크노파크 (left) and 한양대학교 ERICA (lower right). Partner icons from ~/Downloads (copies in assets/Signage/sources): Hanyang and Gyeonggi TP in colour, the others in white. 2026-10-16 (2nd): partner row, 경기TP / 한양대 row on shared centre lines; CARE as tall as the 3-line caption.",
+    "wall_face": {
+      "y": -3.904,
+      "normal": [
+        0,
+        1,
+        0
+      ]
+    },
+    "center": [
+      1.8685,
+      1.72
+    ],
+    "size": [
+      1.2,
+      0.87
+    ],
+    "texture": "assets/Signage/care_logo.png",
+    "color": "logo_navy",
+    "lines": {
+      "care": "CARE",
+      "care_caption": [
+        "Center for",
+        "AI Robotics",
+        "Education"
+      ],
+      "korean": "로봇직업교육센터",
+      "university": "한양대학교 ERICA"
+    },
+    "note": "the user wrote 'ERCIA'; the wall in the photo reads 'ERICA', which is used",
+    "layout_px": {
+      "_doc": "pixels of the 690 x 500 block measured on logo.jpg. Rows sit on shared centre lines (user 2026-10-16): top_row (partners), middle_row (CARE + caption, CARE ink height = caption block), korean box, bottom_row (경기TP left, 한양대 right).",
+      "w": 690,
+      "h": 500,
+      "partners": [
+        {
+          "icon": "motie.jpg",
+          "white": true,
+          "text": "산업통상부"
+        },
+        {
+          "icon": "gyeonggi_do.png",
+          "white": true,
+          "text": "경기도",
+          "icon_max_w": 46
+        },
+        {
+          "icon": "kiria.jpg",
+          "white": true,
+          "text": "한국로봇산업진흥원",
+          "icon_max_w": 60
+        },
+        {
+          "icon": "ansan.png",
+          "white": true,
+          "text": "안산시"
+        }
+      ],
+      "korean": [
+        15,
+        245,
+        680,
+        335
+      ],
+      "tp": {
+        "icon": "gyeonggi_tp.jpg",
+        "text": "경기테크노파크"
+      },
+      "hanyang": {
+        "icon": "hanyang.png",
+        "text": "한양대학교 ERICA"
+      },
+      "top_row": {
+        "center_y": 32,
+        "icon_h": 28,
+        "text_h": 15,
+        "gap": 6,
+        "x0": 82,
+        "x1": 678
+      },
+      "middle_row": {
+        "center_y": 150,
+        "width": 560,
+        "gap": 34,
+        "caption_leading": 1.18
+      },
+      "bottom_row": {
+        "center_y": 428,
+        "icon_h": 62,
+        "text_h": 36,
+        "gap": 10,
+        "x0": 6,
+        "x1": 684,
+        "min_space": 40
+      }
+    },
+    "colors_rgb": {
+      "navy": [
+        32,
+        58,
+        150
+      ],
+      "tp_text": [
+        25,
+        25,
+        30
+      ],
+      "white": [
+        246,
+        246,
+        244
+      ],
+      "shadow": [
+        120,
+        118,
+        110
+      ]
+    }
+  },
+  "rooms": {
+    "_doc": "Per-space USDs written by scripts/27_split_rooms_add_obj.py (also run at the end of 21_add_obj_assemble.py): each file references the full DX_Hub_Building_add_obj_v1.usda (so every change of the full file shows up) and only adds 'active = false' overrides: the furniture groups of the other spaces (by group, so new furniture in this space appears automatically) and building prims whose bounds do not touch the space boxes (+ margin). Boxes are [x0, x1, y0, y1] in world metres.",
+    "margin_m": 0.2,
+    "Hall": {
+      "name_ko": "홀",
+      "furniture": [
+        "Hall"
+      ],
+      "boxes": [
+        [
+          -13.5,
+          -4.2,
+          -4.05,
+          21.75
+        ],
+        [
+          -4.2,
+          3.85,
+          -4.05,
+          16.25
+        ]
+      ],
+      "note": "central hall incl. reception (CARE logo), long table, sofa groups, window desks; the kitchen counters are building fixtures and stay (empty)"
+    },
+    "Kitchen": {
+      "name_ko": "주방",
+      "furniture": [
+        "Kitchen"
+      ],
+      "boxes": [
+        [
+          -2.0,
+          3.85,
+          2.3,
+          16.25
+        ]
+      ],
+      "note": "U-north counter (sinks, induction, microwave), bar with stools and showcase, fridge niche, pantry with the coffee robot and kiosk"
+    },
+    "CareRoom": {
+      "name_ko": "침실(케어룸)",
+      "furniture": [
+        "CareRoom"
+      ],
+      "boxes": [
+        [
+          -4.45,
+          3.85,
+          16.15,
+          21.75
+        ]
+      ],
+      "note": "bed, sofa, desk with the T-shirt, wardrobe - vanity - closet, plant"
+    }
+  }
+}

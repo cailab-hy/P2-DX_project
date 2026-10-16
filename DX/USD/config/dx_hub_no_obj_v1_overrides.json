@@ -1,0 +1,411 @@
+{
+  "_doc": "Human decisions applied on top of the measured plan (07_building_v3_plan.py). Positions/dimensions are still measured from the LiDAR; these entries only say WHAT an element is. Confirmed by the user on 2026-10-07.",
+  "diagonal_full_walls": [
+    {
+      "name": "Q1_DiagonalWall",
+      "near": [
+        -5.2,
+        -2.1
+      ],
+      "angle_deg": 129.0,
+      "note": "Q1: one continuous opaque diagonal wall (a 100-inch TV hides the middle of the upper band). Not glass."
+    }
+  ],
+  "extra_glass_lines": [
+    {
+      "name": "D_GlassDoorCorridor",
+      "axis": "x",
+      "approx_c": -3.7,
+      "a0": -13.0,
+      "a1": -4.0,
+      "kind": "glass_doors",
+      "note": "user: corridor lined with glass doors (video t=20-24 s)"
+    },
+    {
+      "name": "E_NorthGlassDoor",
+      "axis": "y",
+      "approx_c": 16.25,
+      "a0": -4.28,
+      "a1": -0.78,
+      "kind": "glass_doors",
+      "note": "user: glass door(s); extended west to the L corner with G (user 02-real.jpg)"
+    },
+    {
+      "name": "F_RobotRoomNorth",
+      "axis": "y",
+      "approx_c": -0.2,
+      "a0": -12.07,
+      "a1": -6.75,
+      "kind": "glass_partition",
+      "note": "evidence (step 1, Q1 sheet): frame at 2.35 m, mullions ~1.05 m, frosted band 0.7-1.5 m; robot room north side"
+    },
+    {
+      "name": "G_CareRoomWest",
+      "axis": "x",
+      "c": -4.28,
+      "a0": 16.22,
+      "a1": 18.3,
+      "kind": "glass_partition",
+      "note": "user 2026-10-08 (02-real.jpg): L-shaped glass with E; clear pane y 16.22-16.85 + open black-framed doorway y 16.85-18.30 (LAS elevation), wall line c from the wall faces -4.365/-4.195"
+    }
+  ],
+  "force_interior_walls": [
+    {
+      "axis": "x",
+      "c_range": [
+        5.6,
+        6.4
+      ],
+      "v_range": [
+        -11.8,
+        -4.3
+      ],
+      "note": "corridor east wall: ordinary wall, not glass/window (user)"
+    }
+  ],
+  "fixed_blocks": [
+    {
+      "name": "U_table_north_bar",
+      "note": "user 2026-10-08 (08-real): bar is _|-- : low showcase base, step, high bar. Measured on LAS (bar_measure); glass showcase removed (user 2026-10-08: it is an object)",
+      "parts": [
+        {
+          "x": [
+            -0.45,
+            0.04
+          ],
+          "y": [
+            5.55,
+            8.75
+          ],
+          "top_z": 1.113
+        },
+        {
+          "x": [
+            -0.71,
+            0.11
+          ],
+          "y": [
+            8.75,
+            10.55
+          ],
+          "top_z": 1.118
+        },
+        {
+          "x": [
+            -0.68,
+            0.14
+          ],
+          "y": [
+            10.55,
+            11.48
+          ],
+          "top_z": 0.81
+        }
+      ],
+      "backsplash": {
+        "x": 3.665,
+        "y": [
+          5.75,
+          10.85
+        ],
+        "z": [
+          1.113,
+          1.53
+        ],
+        "t": 0.008,
+        "finish": "glass_mint",
+        "note": "user: mint glass splash on the sink counter; LAS: plane x=3.665, top 1.53 m"
+      }
+    }
+  ],
+  "envelope_windows": [
+    {
+      "name": "South corridor end",
+      "axis": "y",
+      "approx_c": -21.6,
+      "a0": 3.7,
+      "a1": 5.93,
+      "room_side": 1,
+      "note": "B1 photo: exterior window at the end of the corridor"
+    },
+    {
+      "name": "North corridor end",
+      "axis": "y",
+      "approx_c": 21.4,
+      "a0": 3.8,
+      "a1": 6.0,
+      "room_side": -1,
+      "note": "B2 photo: exterior window at the end of the corridor (sill)"
+    },
+    {
+      "name": "Robot room west",
+      "axis": "x",
+      "approx_c": -13.1,
+      "a0": -4.3,
+      "a1": -0.75,
+      "room_side": 1,
+      "note": "C5 photo: exterior windows with roller blinds; wall not detected (low upper-band cover)"
+    }
+  ],
+  "glass_door_layout": {
+    "_note": "door/panel layout per glass line (along-line metres). Measured where frames were visible (D), from v2 (B, C) or assumed equal to D's panel width (E, marked).",
+    "A_RoomPartition": {
+      "doors": [],
+      "openings": [
+        [
+          -5.5,
+          -4.4
+        ]
+      ],
+      "max_pane": 1.5,
+      "note": "open doorway into room A at y -5.50..-4.40 (v2 measurement, header above 2.40 m)"
+    },
+    "B_SouthRooms": {
+      "doors": [
+        [
+          -5.0,
+          -4.05
+        ],
+        [
+          -1.2,
+          -0.15
+        ]
+      ],
+      "max_pane": 1.5,
+      "door_leaves": "opaque",
+      "pattern": "photo (clear top / frosted band / clear bottom); door leaves fully opaque (user)"
+    },
+    "C_CorridorEast": {
+      "doors": [
+        [
+          -4.35,
+          -2.925
+        ],
+        [
+          -2.925,
+          -1.5
+        ]
+      ],
+      "max_pane": 1.5,
+      "assumed": "two equal glass door leaves (REF/v2 elevation shows two leaves; split position estimated)",
+      "wall_panels": [
+        [
+          -1.5,
+          -0.35
+        ]
+      ],
+      "door_glass": "clear",
+      "header": "black",
+      "note2": "user 2026-10-08 (07-real): the north part is an opaque white panel in the black frame (LAS: dense points 0-2.45 m), the sliding doors are clear glass under a black header box"
+    },
+    "D_GlassDoorCorridor": {
+      "doors": "all_panels",
+      "max_pane": 1.15
+    },
+    "E_NorthGlassDoor": {
+      "doors": "all_panels",
+      "max_pane": 1.15,
+      "assumed": "panel width as D (frames not visible)"
+    },
+    "F_RobotRoomNorth": {
+      "doors": [],
+      "max_pane": 1.1,
+      "note": "user confirmed: glass partition, no door"
+    },
+    "G_CareRoomWest": {
+      "doors": [],
+      "openings": [
+        [
+          16.85,
+          18.3
+        ]
+      ],
+      "max_pane": 1.5,
+      "note": "open doorway, black frame, white header above",
+      "head_z": 2.37
+    }
+  },
+  "remove_walls": [
+    {
+      "axis": "y",
+      "c_range": [
+        13.9,
+        14.1
+      ],
+      "v_range": [
+        0.0,
+        3.85
+      ],
+      "note": "user 2026-10-08: the wall line through D008 (both sides) was demolished during construction -> open space"
+    }
+  ],
+  "door_overrides": [
+    {
+      "match": {
+        "axis": "x",
+        "u": 3.69,
+        "a_mid": -17.04,
+        "tol": 0.6
+      },
+      "action": "fill_wall",
+      "note": "D001: private rooms (professor office / toilets) -> closed off as wall"
+    },
+    {
+      "match": {
+        "axis": "x",
+        "u": 6.05,
+        "a_mid": 19.69,
+        "tol": 0.6
+      },
+      "action": "fill_wall",
+      "note": "D002: private -> wall"
+    },
+    {
+      "match": {
+        "axis": "y",
+        "u": -14.59,
+        "a_mid": 6.72,
+        "tol": 0.6
+      },
+      "action": "fill_wall",
+      "note": "D005: private -> wall"
+    },
+    {
+      "match": {
+        "axis": "y",
+        "u": -14.59,
+        "a_mid": 10.09,
+        "tol": 0.6
+      },
+      "action": "fill_wall",
+      "note": "D006: private -> wall"
+    },
+    {
+      "match": {
+        "axis": "y",
+        "u": -14.59,
+        "a_mid": 11.8,
+        "tol": 0.6
+      },
+      "action": "fill_wall",
+      "note": "D007: private -> wall"
+    },
+    {
+      "match": {
+        "axis": "y",
+        "u": 16.14,
+        "a_mid": -0.05,
+        "tol": 0.6
+      },
+      "action": "fill_wall",
+      "note": "D009: not a door -> wall"
+    },
+    {
+      "match": {
+        "axis": "y",
+        "u": 14.06,
+        "a_mid": 1.99,
+        "tol": 0.6
+      },
+      "action": "drop",
+      "note": "D008: not a door, open space (wall line removed)"
+    }
+  ],
+  "hinge_rule": "estimated: leaf opens into the room (away from the corridor side), hinge at the jamb nearer to the closest wall corner",
+  "remove_diagonal_walls": [
+    {
+      "angle_deg": 50.3,
+      "near": [
+        -6.28,
+        0.34
+      ],
+      "note": "user 2026-10-08 (05.png): the stub sticking out into the hall (Y shape) does not exist"
+    }
+  ],
+  "remove_columns": [
+    {
+      "near": [
+        11.16,
+        11.67
+      ],
+      "note": "user 2026-10-08 (04.png): no column in the middle of the east room (scan object)"
+    }
+  ],
+  "line_regularization": {
+    "max_face_diff_m": 0.1,
+    "max_gap_m": 2.0,
+    "note": "user 2026-10-08 (03.png): walls/doors on one line must be straight; faces of adjacent collinear walls within 10 cm are unified (length-weighted, measured faces x3)"
+  },
+  "gap_closing": {
+    "always_below_m": 0.6,
+    "check_las_up_to_m": 1.5,
+    "note": "user 2026-10-08 (01.png): no broken walls; gaps between collinear elements are filled (LAS-checked for 0.6-1.5 m)"
+  },
+  "door_replace": [
+    {
+      "axis": "x",
+      "u": 3.67,
+      "a0": 17.3,
+      "a1": 18.88,
+      "z1": 2.1,
+      "leaf_type": "double_swing",
+      "note": "user 2026-10-08 (09-real): one double door in one frame (replaces D000 + the added door); LAS elevation x=3.70"
+    },
+    {
+      "axis": "x",
+      "u": 6.19,
+      "a0": 11.79,
+      "a1": 13.47,
+      "z1": 2.12,
+      "leaf_type": "double_swing",
+      "note": "user 2026-10-08 (06-real, room 1106): one double door in one frame (replaces D003/D004); LAS elevation x=6.10"
+    }
+  ],
+  "solid_boxes": [
+    {
+      "name": "HydrantRecess",
+      "x": [
+        6.12,
+        6.8
+      ],
+      "y": [
+        13.54,
+        14.36
+      ],
+      "note": "user 06-real: the box beside room 1106's door is the fire-hydrant cabinet recess, solid (not an open box)"
+    }
+  ],
+  "wall_merge": {
+    "max_face_diff_m": 0.08,
+    "note": "only collinear wall pieces whose both faces agree within 8 cm are merged (avoid 39 cm thick merged walls)"
+  },
+  "unscanned_doors": {
+    "action": "fill_wall",
+    "note": "user policy 2026-10-08: doors into private / unscanned rooms are closed off as wall"
+  },
+  "facade_regularization": {
+    "bridge_gap_m": 3.0,
+    "blind_plane_tol_m": 0.06,
+    "close_holes_m": 0.6,
+    "min_window_m": 0.3,
+    "note": "user 2026-10-08 (10-bad/10-good): every window wall is one straight strip like 10-good: per facade one glass plane, sill depth, sill and head height (length-weighted median); gaps between bays up to 3 m are bridged where the LiDAR sees the blind plane; perpendicular walls and LiDAR-confirmed columns stay"
+  },
+  "column_check": {
+    "min_face_coverage": 0.3,
+    "note": "columns must show LiDAR points on their faces at 1.6-2.3 m (drops low furniture detected as columns)"
+  },
+  "door_header_finish": [
+    {
+      "axis": "x",
+      "u": 6.19,
+      "a_mid": 12.63,
+      "side": -1,
+      "finish": "header_brown",
+      "note": "room 1106: dark brown header panel on the corridor side (photo 23)"
+    }
+  ],
+  "diagonal_wall_finish": {
+    "hall_side": "wall_tv",
+    "note": "TV wall (real-02 t51): warm white-greige"
+  }
+}

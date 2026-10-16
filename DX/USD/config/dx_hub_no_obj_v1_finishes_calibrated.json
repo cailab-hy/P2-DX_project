@@ -1,0 +1,245 @@
+{
+ "_doc": "finish albedos for v3 (09_calibrate_colours.py): chromaticity from the 2026-10-08 night videos, luminance anchored (see 'how'); estimates",
+ "materials": {
+  "wall_greige": {
+   "linear": [
+    0.5077,
+    0.4516,
+    0.4029
+   ],
+   "srgb": [
+    0.74,
+    0.703,
+    0.667
+   ],
+   "Y": 0.46,
+   "how": "real-02 t74: linear-luminance ratio wall / white counter front = 0.57 x 0.80",
+   "n_chroma_samples": 6
+  },
+  "door_leaf": {
+   "linear": [
+    0.5077,
+    0.4516,
+    0.4029
+   ],
+   "srgb": [
+    0.74,
+    0.703,
+    0.667
+   ],
+   "Y": 0.46,
+   "how": "user: doors same warm greige as walls (photo 23: door ~ wall)",
+   "n_chroma_samples": 2
+  },
+  "wall_white": {
+   "linear": [
+    0.8,
+    0.8,
+    0.8
+   ],
+   "srgb": [
+    0.906,
+    0.906,
+    0.906
+   ],
+   "Y": 0.8,
+   "how": "toilet-front walls (user: white)",
+   "n_chroma_samples": 1
+  },
+  "wall_tile_gray": {
+   "linear": [
+    0.3926,
+    0.4072,
+    0.3508
+   ],
+   "srgb": [
+    0.66,
+    0.671,
+    0.627
+   ],
+   "Y": 0.4,
+   "how": "real-02 t77 ratio to greige x 0.87 (tiles slightly darker in user photo 15)",
+   "n_chroma_samples": 1
+  },
+  "wall_tv": {
+   "linear": [
+    0.5518,
+    0.4909,
+    0.4379
+   ],
+   "srgb": [
+    0.769,
+    0.729,
+    0.693
+   ],
+   "Y": 0.5,
+   "how": "TV wall a touch lighter than the greige walls (real-02 t51); chroma from greige (warm cast in the frame is cove light)",
+   "n_chroma_samples": 1
+  },
+  "header_brown": {
+   "linear": [
+    0.0906,
+    0.0837,
+    0.0815
+   ],
+   "srgb": [
+    0.333,
+    0.32,
+    0.316
+   ],
+   "Y": 0.085,
+   "how": "photo 23 ratio to greige wall 0.18",
+   "n_chroma_samples": 1
+  },
+  "counter_front": {
+   "linear": [
+    0.8,
+    0.8,
+    0.8
+   ],
+   "srgb": [
+    0.906,
+    0.906,
+    0.906
+   ],
+   "Y": 0.8,
+   "how": "white lacquer (reference)",
+   "n_chroma_samples": 1
+  },
+  "ceiling_tile_white": {
+   "linear": [
+    0.8,
+    0.8,
+    0.8
+   ],
+   "srgb": [
+    0.906,
+    0.906,
+    0.906
+   ],
+   "Y": 0.8,
+   "how": "white acoustic tile (assumed)",
+   "n_chroma_samples": 1
+  },
+  "ceiling_gray": {
+   "linear": [
+    0.1332,
+    0.1158,
+    0.1222
+   ],
+   "srgb": [
+    0.401,
+    0.375,
+    0.384
+   ],
+   "Y": 0.12,
+   "how": "estimate: charcoal paint, darker than the 0.19 same-frame ratio because downlit",
+   "n_chroma_samples": 5
+  },
+  "floor_room": {
+   "linear": [
+    0.5319,
+    0.4926,
+    0.4792
+   ],
+   "srgb": [
+    0.756,
+    0.73,
+    0.722
+   ],
+   "Y": 0.5,
+   "how": "estimate: light grey speckled vinyl; brighter than walls in every room frame",
+   "n_chroma_samples": 2
+  },
+  "floor_hall": {
+   "linear": [
+    0.3905,
+    0.378,
+    0.3687
+   ],
+   "srgb": [
+    0.658,
+    0.648,
+    0.641
+   ],
+   "Y": 0.38,
+   "how": "estimate: medium-light grey (one colour for the hall, user)",
+   "n_chroma_samples": 2
+  },
+  "floor_corridor": {
+   "linear": [
+    0.2258,
+    0.2207,
+    0.1963
+   ],
+   "srgb": [
+    0.512,
+    0.507,
+    0.48
+   ],
+   "Y": 0.22,
+   "how": "estimate: core corridor medium grey (real-02 t3 floor darker than walls)",
+   "n_chroma_samples": 1
+  },
+  "floor_tile_room": {
+   "linear": [
+    0.2136,
+    0.1995,
+    0.1647
+   ],
+   "srgb": [
+    0.5,
+    0.484,
+    0.443
+   ],
+   "Y": 0.2,
+   "how": "estimate: dark grey (real-02 t77, user photo 15)",
+   "n_chroma_samples": 1
+  },
+  "baseboard": {
+   "linear": [
+    0.0849,
+    0.0667,
+    0.0594
+   ],
+   "srgb": [
+    0.322,
+    0.286,
+    0.27
+   ],
+   "Y": 0.07,
+   "how": "estimate: dark grey baseboard (thin, patches blend with wall)",
+   "n_chroma_samples": 1
+  },
+  "glass_mint": {
+   "linear": [
+    0.6742,
+    0.7812,
+    0.664
+   ],
+   "srgb": [
+    0.84,
+    0.897,
+    0.835
+   ],
+   "Y": 0.75,
+   "how": "tint only (glass), from real-02 t74 chroma",
+   "n_chroma_samples": 1
+  },
+  "blind": {
+   "linear": [
+    0.62,
+    0.62,
+    0.62
+   ],
+   "srgb": [
+    0.809,
+    0.809,
+    0.809
+   ],
+   "Y": 0.62,
+   "how": "estimate: light grey combi-blind fabric",
+   "n_chroma_samples": 1
+  }
+ }
+}
