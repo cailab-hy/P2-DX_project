@@ -6,6 +6,14 @@ FJD 2D 장비로 스캔(2026-10-30, 2026-11-02)해 측정한 실제 가구·로�
 
 ![전체 모습](DX/USD/DX_Hub_Building_add_obj_v1_layout_20261102/validation/view_lamps_hall.png)
 
+### 변경된 부분 영상
+
+Isaac Sim에서 렌더링한 영상입니다. 추가하거나 옮긴 곳 19군데를 차례로 보여 줍니다(47.5초).
+
+![변경된 부분 영상](DX/USD/DX_Hub_Building_add_obj_v1_layout_20261102/validation/dx_hub_tour.gif)
+
+[고화질 MP4 영상 보기](DX/USD/DX_Hub_Building_add_obj_v1_layout_20261102/validation/dx_hub_tour.mp4)
+
 ## 추가한 파일
 
 ```
