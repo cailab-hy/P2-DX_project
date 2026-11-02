@@ -28,7 +28,7 @@ place.append(('Plant', -9.49, 7.89, 0.0, 'both scans'))
 place.append(('TVStand', -4.96, 14.49, 90.0, '11/02: top 1.95 m long, x -4.96'))
 # blob 26 small chairs (user label, not confirmed by 11/02 yet)
 place.append(('Chair6', -5.01, 13.62, 0.0, 'legs y 13.40..13.84, back on the south side'))
-place.append(('Chair6', -4.33, 13.28, 0.0, 'label 26'))
+place.append(('Chair6', -4.25, 14.52, -90.0, 'user: between the TV and the Desk6, facing the desk; rear legs x -4.45'))
 place.append(('Chair6', -5.01, 15.385, 180.0, 'user: legs y 15.17..15.60, back on the north side'))
 # fire extinguisher by the pillar (user, 2026-11-02): the red points, y 5.2..5.5, x -1.05..-0.8; the Kitchen one's asset
 place.append(('FireExtinguisher', -0.90, 5.35, 90.0, 'red points'))
@@ -150,6 +150,10 @@ import drawer_chest  # noqa: E402
 drawer_chest.add(stage, HALL)
 log.append(['add', 'Scan_DrawerChest_1', 'DrawerChest', -7.63, 17.86, 0.0, 'box on the slices'])
 log.append(['add', 'Scan_DrawerChest_2', 'DrawerChest', -4.755, 19.01, 0.0, 'box on the slices'])
+# wall display on the diagonal wall (user, 2026-11-02), see wall_tv.py
+import wall_tv  # noqa: E402
+wall_tv.add(stage, HALL)
+log.append(['add', 'Scan_WallTV_1', 'WallTV', wall_tv.X, wall_tv.Y, wall_tv.YAW, 'rectangle on the wall points'])
 # pendant lamps, monitors (user, 2026-11-02), see pendant_lamps.py, monitors.py
 import monitors  # noqa: E402
 import pendant_lamps  # noqa: E402

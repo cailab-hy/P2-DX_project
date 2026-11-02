@@ -289,6 +289,24 @@ def Xform "World"
         matrix4d xformOp:transform = ( (-0.789352, 0.613941, 0.000000, 0), (0.431204, 0.554405, 0.711828, 0), (0.437020, 0.561883, -0.702354, 0), (-3.0, 7.3, 1.05, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
+    def Camera "wall_tv"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (-0.638572, 0.769562, 0.000000, 0), (-0.062793, -0.052104, 0.996666, 0), (0.766996, 0.636443, 0.081595, 0), (-2.75, -0.1, 1.55, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "chair_desk"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.999764, -0.021734, 0.000000, 0), (0.010052, 0.462371, 0.886630, 0), (-0.019270, -0.886420, 0.462480, 0), (-4.3, 12.2, 1.7, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
     def Camera "clois"
     {
         float focalLength = 12

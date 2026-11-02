@@ -65,6 +65,7 @@ python place_final.py ../../config/dx_hub_v1 ../../config/dx_hub_v1 "$PWD/../../
 | 서랍장 | 2 | `drawer_chest.py` |
 | 둥근 테이블 / 원형 스툴 | 1 / 7 | `round_items.py` |
 | 화분(몬스테라) / 꽃 화분 | 4 / 1 | `monstera.py` |
+| 벽걸이 TV (스캔 기준 2.53×1.44 m) | 1 | `wall_tv.py` |
 | 펜던트 조명 | 27 | `pendant_lamps.py` |
 | 모니터 | 31 | `monitors.py` |
 | 소화기, 사무용 책상·의자 등 기존 모델 | - | `place_final.py` |

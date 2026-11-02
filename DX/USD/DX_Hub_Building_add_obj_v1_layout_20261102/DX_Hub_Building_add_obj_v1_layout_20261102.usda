@@ -127,8 +127,8 @@ over "DX_Hub_Building_add_obj"
                 prepend references = @../DX_Hub_Building_add_obj_v1/assets/Chair6/Chair6.usda@
             )
             {
-                float xformOp:rotateZ = 0
-                double3 xformOp:translate = (-4.33, 13.28, 0)
+                float xformOp:rotateZ = -90
+                double3 xformOp:translate = (-4.25, 14.52, 0)
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ"]
             }
 
@@ -6504,6 +6504,64 @@ over "DX_Hub_Building_add_obj"
                     double size = 1
                     float3 xformOp:scale = (0.594, 0.012, 0.105)
                     double3 xformOp:translate = (-4.755000000000001, 18.965999999999998, 0.9295)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+            }
+
+            def Xform "Scan_WallTV_1"
+            {
+                float xformOp:rotateZ = 39.2
+                double3 xformOp:translate = (-5.103, -2.041, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ"]
+
+                def Scope "Looks"
+                {
+                    def Material "Body"
+                    {
+                        token outputs:surface.connect = </DX_Hub_Building_add_obj/Furniture/Hall/Scan_WallTV_1/Looks/Body/Shader.outputs:surface>
+
+                        def Shader "Shader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.035, 0.035, 0.04)
+                            float inputs:roughness = 0.5
+                            token outputs:surface
+                        }
+                    }
+
+                    def Material "Screen"
+                    {
+                        token outputs:surface.connect = </DX_Hub_Building_add_obj/Furniture/Hall/Scan_WallTV_1/Looks/Screen/Shader.outputs:surface>
+
+                        def Shader "Shader"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.006, 0.008, 0.012)
+                            float inputs:roughness = 0.1
+                            token outputs:surface
+                        }
+                    }
+                }
+
+                def Cube "body" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                    rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/Scan_WallTV_1/Looks/Body>
+                    double size = 1
+                    float3 xformOp:scale = (0.046, 2.53, 1.44)
+                    double3 xformOp:translate = (0.023, 0, 1.5)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "screen" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/Scan_WallTV_1/Looks/Screen>
+                    double size = 1
+                    float3 xformOp:scale = (0.001, 2.506, 1.416)
+                    double3 xformOp:translate = (0.0465, 0, 1.5)
                     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
                 }
             }
