@@ -1,0 +1,184 @@
+[
+ {
+  "asset": "SofaTable",
+  "x": -9.59,
+  "y": 3.67,
+  "yaw": 90.0,
+  "why": "table 0.60 x 1.20 m"
+ },
+ {
+  "asset": "Armchair",
+  "x": -10.805,
+  "y": 3.335,
+  "yaw": -90.0,
+  "why": "W pair, outline 0.69 x 1.41 m, gap 4/6"
+ },
+ {
+  "asset": "Armchair",
+  "x": -10.805,
+  "y": 4.075,
+  "yaw": -90.0,
+  "why": "W pair, outline 0.69 x 1.41 m, gap 4/6"
+ },
+ {
+  "asset": "Armchair",
+  "x": -8.255,
+  "y": 3.305,
+  "yaw": 90.0,
+  "why": "E pair, outline 0.75 x 1.35 m, gap 4/5"
+ },
+ {
+  "asset": "Armchair",
+  "x": -8.255,
+  "y": 4.045,
+  "yaw": 90.0,
+  "why": "E pair, outline 0.75 x 1.35 m, gap 4/5"
+ },
+ {
+  "asset": "SofaTable",
+  "x": -9.47,
+  "y": 6.565,
+  "yaw": 90.0,
+  "why": "table 0.60 x 1.53 m"
+ },
+ {
+  "asset": "Armchair",
+  "x": -10.73,
+  "y": 6.23,
+  "yaw": -90.0,
+  "why": "W pair, outline 0.72 x 1.47 m, gap 5/4"
+ },
+ {
+  "asset": "Armchair",
+  "x": -10.73,
+  "y": 6.97,
+  "yaw": -90.0,
+  "why": "W pair, outline 0.72 x 1.47 m, gap 5/4"
+ },
+ {
+  "asset": "Sofa3",
+  "x": -8.225,
+  "y": 6.585,
+  "yaw": 90.0,
+  "why": "E sofa, outline 0.81 x 1.74 m, no gap (5/6)"
+ },
+ {
+  "asset": "SofaTable",
+  "x": -9.455,
+  "y": 8.965,
+  "yaw": 90.0,
+  "why": "table 0.57 x 1.23 m"
+ },
+ {
+  "asset": "Armchair",
+  "x": -10.775,
+  "y": 8.54,
+  "yaw": -90.0,
+  "why": "W pair, outline 0.69 x 1.47 m, gap 7/6"
+ },
+ {
+  "asset": "Armchair",
+  "x": -10.775,
+  "y": 9.28,
+  "yaw": -90.0,
+  "why": "W pair, outline 0.69 x 1.47 m, gap 7/6"
+ },
+ {
+  "asset": "Armchair",
+  "x": -8.12,
+  "y": 8.585,
+  "yaw": 90.0,
+  "why": "E pair, outline 0.78 x 1.44 m, gap 6/6"
+ },
+ {
+  "asset": "Armchair",
+  "x": -8.12,
+  "y": 9.325,
+  "yaw": 90.0,
+  "why": "E pair, outline 0.78 x 1.44 m, gap 6/6"
+ },
+ {
+  "asset": "OfficeDesk",
+  "x": -7.625,
+  "y": 18.775,
+  "yaw": 90.0,
+  "why": "top fill 0.99"
+ },
+ {
+  "asset": "OfficeChair",
+  "x": -8.245,
+  "y": 18.775,
+  "yaw": -90.0,
+  "why": "seat/back share 0.46 vs 0.28"
+ },
+ {
+  "asset": "OfficeDesk",
+  "x": -9.665,
+  "y": 18.115,
+  "yaw": 90.0,
+  "why": "top fill 0.88"
+ },
+ {
+  "asset": "OfficeChair",
+  "x": -10.285,
+  "y": 18.115,
+  "yaw": -90.0,
+  "why": "seat/back share 0.45 vs 0.23"
+ },
+ {
+  "asset": "OfficeDesk",
+  "x": -9.965,
+  "y": 16.255,
+  "yaw": 0.0,
+  "why": "top fill 0.84"
+ },
+ {
+  "asset": "OfficeChair",
+  "x": -9.965,
+  "y": 16.875,
+  "yaw": 180.0,
+  "why": "seat/back share 0.75 vs 0.13"
+ },
+ {
+  "asset": "OfficeDesk",
+  "x": -12.365,
+  "y": 16.885,
+  "yaw": -90.0,
+  "why": "top fill 0.75"
+ },
+ {
+  "asset": "OfficeChair",
+  "x": -11.745,
+  "y": 16.885,
+  "yaw": 90.0,
+  "why": "seat/back share 0.31 vs 0.00"
+ },
+ {
+  "asset": "OfficeDesk",
+  "x": -7.055,
+  "y": 18.835,
+  "yaw": -90.0,
+  "why": "top fill 0.72"
+ },
+ {
+  "asset": "OfficeChair",
+  "x": -6.435,
+  "y": 18.835,
+  "yaw": 90.0,
+  "why": "seat/back share 0.36 vs 0.13"
+ },
+ {
+  "asset": "OfficeDesk",
+  "x": -12.365,
+  "y": 15.385,
+  "yaw": -90.0,
+  "why": "top fill 0.56"
+ },
+ {
+  "asset": "OfficeChair",
+  "x": -11.745,
+  "y": 15.385,
+  "yaw": 90.0,
+  "why": "seat/back share 0.63 vs 0.00"
+ }
+]

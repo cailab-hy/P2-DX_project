@@ -1,0 +1,310 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def "Building" (
+        prepend references = @./DX_Hub_Building_add_obj_v1_layout_20261102.usda@
+    )
+    {
+    }
+
+    def DomeLight "Dome"
+    {
+        float inputs:intensity = 1500
+    }
+    def DistantLight "Sun"
+    {
+        float inputs:intensity = 1500
+        float inputs:angle = 1
+        double3 xformOp:rotateXYZ = (-35, 20, 0)
+        uniform token[] xformOpOrder = ["xformOp:rotateXYZ"]
+    }
+    def SphereLight "Room"
+    {
+        float inputs:intensity = 60000
+        float inputs:radius = 0.5
+        double3 xformOp:translate = (-3.527, 16.406, 2.3)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+    def Camera "eye_level"
+    {
+        float focalLength = 14
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.998027, 0.062791, -0.000000, 0.000000), (-0.004028, 0.064027, 0.997940, 0.000000), (0.062661, -0.995971, 0.064153, 0.000000), (-3.464209, 12.407973, 1.450000, 1.000000) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "overview"
+    {
+        float focalLength = 14
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.960640, 0.277798, -0.000000, 0.000000), (-0.060297, 0.208509, 0.976160, 0.000000), (0.271175, -0.937738, 0.217053, 0.000000), (-1.279784, 9.539474, 2.350000, 1.000000) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Camera "hall_west"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.759257, 0.650791, -0.000000, 0.000000), (-0.154295, 0.180011, 0.971488, 0.000000), (0.632236, -0.737609, 0.237089, 0.000000), (-4.500000, 8.000000, 2.450000, 1.000000) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Camera "sofa_groups"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.809422, 0.587228, -0.000000, 0.000000), (-0.193577, 0.266823, 0.944105, 0.000000), (0.554404, -0.764179, 0.329646, 0.000000), (-5.800000, 1.900000, 2.400000, 1.000000) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Camera "desks_tv"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.581238, -0.813733, 0.000000, 0.000000), (0.294014, 0.210010, 0.932444, 0.000000), (-0.758761, -0.541972, 0.361315, 0.000000), (-7.200000, 12.000000, 2.400000, 1.000000) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Camera "office"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.682318, 0.731055, -0.000000, 0.000000), (-0.230995, 0.215595, 0.948768, 0.000000), (0.693602, -0.647362, 0.315974, 0.000000), (-6.000000, 13.800000, 2.450000, 1.000000) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Camera "desk_row"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.000000, -1.000000, 0.000000, 0.000000), (0.424434, 0.000000, 0.905459, 0.000000), (-0.905459, -0.000000, 0.424434, 0.000000), (-6.600000, 8.600000, 1.900000, 1.000000) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Camera "office_desk6"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.328408, 0.944536, -0.000000, 0.000000), (-0.311036, 0.108145, 0.944225, 0.000000), (0.891855, -0.310091, 0.329300, 0.000000), (-6.600000, 15.200000, 1.700000, 1.000000) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "desk_pair"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.547249, -0.836970, 0.000000, 0), (0.354008, 0.231466, 0.906147, 0), (-0.758417, -0.495888, 0.422963, 0), (-3.9, 13.0, 1.9, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "robots_west"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (-0.346650, 0.937994, 0.000000, 0), (-0.348113, -0.128650, 0.928583, 0), (0.871006, 0.321894, 0.371124, 0), (-9.3, 12.6, 1.7, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "chair_tv"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (-1.000000, -0.000000, 0.000000, 0), (0.000000, -0.695022, 0.718988, 0), (-0.000000, 0.718988, 0.695022, 0), (-5.0, 16.7, 1.75, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "round_wall"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (-0.731055, 0.682318, 0.000000, 0), (-0.375035, -0.401823, 0.835396, 0), (0.570006, 0.610721, 0.549649, 0), (-2.4, -0.8, 1.75, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "stools"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (-0.749838, 0.661622, 0.000000, 0), (-0.389326, -0.441236, 0.808539, 0), (0.534947, 0.606274, 0.588442, 0), (-9.0, 2.2, 1.9, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "plant_a"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (-0.650791, 0.759257, 0.000000, 0), (-0.333035, -0.285459, 0.898666, 0), (0.682318, 0.584844, 0.438633, 0), (-4.6, 0.9, 1.7, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "plant_b"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (-0.483077, 0.875578, 0.000000, 0), (-0.380860, -0.210130, 0.900439, 0), (0.788405, 0.434982, 0.434982, 0), (-2.0, -2.8, 1.6, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "rbm"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (-0.937425, 0.348187, 0.000000, 0), (-0.176761, -0.475895, 0.861556, 0), (0.299982, 0.807645, 0.507662, 0), (4.6, -0.2, 1.7, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "rby1"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.925169, 0.379556, -0.000000, 0), (-0.162696, 0.396572, 0.903472, 0), (0.342918, -0.835864, 0.428648, 0), (-2.0, 17.0, 1.75, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "drawer"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.991010, -0.133786, 0.000000, 0), (0.066237, 0.490641, 0.868840, 0), (-0.116239, -0.861030, 0.495092, 0), (-7.9, 15.9, 1.6, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "fire_plant"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (-0.384615, -0.923077, 0.000000, 0), (0.498153, -0.207564, 0.841879, 0), (-0.777119, 0.323800, 0.539666, 0), (-2.7, 5.9, 1.6, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "counter_plant"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.371391, -0.928477, 0.000000, 0), (0.406827, 0.162731, 0.898894, 0), (-0.834602, -0.333841, 0.438166, 0), (-2.8, 9.2, 1.75, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "nw_red"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.707107, 0.707107, -0.000000, 0), (-0.473016, 0.473016, 0.743311, 0), (0.525600, -0.525600, 0.668946, 0), (-10.5, 17.1, 1.6, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "chest2"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.728848, -0.684675, 0.000000, 0), (0.340954, 0.362951, 0.867189, 0), (-0.593743, -0.632049, 0.497978, 0), (-6.3, 17.1, 1.75, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "sg2_desk"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (1.000000, -0.000000, 0.000000, 0), (0.000000, 0.316228, 0.948683, 0), (-0.000000, -0.948683, 0.316228, 0), (-3.5, 12.6, 1.8, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "lamps_hall"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.800000, 0.600000, -0.000000, 0), (0.054321, -0.072429, 0.995893, 0), (0.597536, -0.796715, -0.090536, 0), (-1.9, 3.2, 1.2, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "mon_row"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.999512, -0.031235, 0.000000, 0), (0.008015, 0.256480, 0.966516, 0), (-0.030189, -0.966045, 0.256606, 0), (-9.0, 17.2, 1.75, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "mon_west"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.800000, 0.600000, -0.000000, 0), (-0.163562, 0.218082, 0.962127, 0), (0.577276, -0.769701, 0.272603, 0), (-10.6, 15.6, 1.75, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "mon_pair"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (1.000000, -0.000000, 0.000000, 0), (0.000000, 0.429934, 0.902861, 0), (-0.000000, -0.902861, 0.429934, 0), (-1.4, 12.9, 1.85, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "lamp_under"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (-0.789352, 0.613941, 0.000000, 0), (0.431204, 0.554405, 0.711828, 0), (0.437020, 0.561883, -0.702354, 0), (-3.0, 7.3, 1.05, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "clois"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (-0.519415, -0.854522, 0.000000, 0), (0.295551, -0.179649, 0.938283, 0), (-0.801784, 0.487359, 0.345867, 0), (-3.0, 0.9, 1.65, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+    def Camera "aidens"
+    {
+        float focalLength = 12
+        float horizontalAperture = 20.955
+        float verticalAperture = 11.787
+        float2 clippingRange = (0.05, 200)
+        matrix4d xformOp:transform = ( (0.995275, -0.097100, 0.000000, 0), (0.048880, 0.501019, 0.864055, 0), (-0.083900, -0.859972, 0.503398, 0), (0.7, 0.55, 1.75, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}

@@ -1,0 +1,1745 @@
+[
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/CareRoom/Bed",
+  "room": "CareRoom",
+  "asset": "Bed.usda",
+  "min": [
+   1.231,
+   19.001,
+   0.0
+  ],
+  "max": [
+   2.731,
+   21.091,
+   0.95
+  ],
+  "pos": [
+   1.981,
+   20.046,
+   0.0
+  ],
+  "yaw": 0.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/CareRoom/Sofa3",
+  "room": "CareRoom",
+  "asset": "Sofa3.usda",
+  "min": [
+   -2.345,
+   20.144,
+   0.0
+  ],
+  "max": [
+   -0.595,
+   20.896,
+   0.73
+  ],
+  "pos": [
+   -1.47,
+   20.521,
+   0.0
+  ],
+  "yaw": 180.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/CareRoom/Plant",
+  "room": "CareRoom",
+  "asset": "Plant.usda",
+  "min": [
+   -0.433,
+   16.489,
+   0.0
+  ],
+  "max": [
+   -0.072,
+   16.849,
+   1.132
+  ],
+  "pos": [
+   -0.253,
+   16.669,
+   0.0
+  ],
+  "yaw": 0.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/CareRoom/Wardrobe800",
+  "room": "CareRoom",
+  "asset": "Wardrobe800.usda",
+  "min": [
+   1.407,
+   16.354,
+   0.0
+  ],
+  "max": [
+   2.208,
+   16.784,
+   2.1
+  ],
+  "pos": [
+   1.808,
+   16.554,
+   0.0
+  ],
+  "yaw": 0.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/CareRoom/Vanity640",
+  "room": "CareRoom",
+  "asset": "Vanity640.usda",
+  "min": [
+   0.768,
+   16.344,
+   0.0
+  ],
+  "max": [
+   1.407,
+   16.782,
+   2.1
+  ],
+  "pos": [
+   1.087,
+   16.554,
+   0.0
+  ],
+  "yaw": 0.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/CareRoom/Closet640",
+  "room": "CareRoom",
+  "asset": "Closet640.usda",
+  "min": [
+   0.128,
+   16.344,
+   0.0
+  ],
+  "max": [
+   0.767,
+   16.782,
+   2.1
+  ],
+  "pos": [
+   0.448,
+   16.554,
+   0.0
+  ],
+  "yaw": 0.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/CareRoom/CareDesk",
+  "room": "CareRoom",
+  "asset": "CareDesk.usda",
+  "min": [
+   -4.192,
+   18.37,
+   0.0
+  ],
+  "max": [
+   -3.442,
+   19.77,
+   0.725
+  ],
+  "pos": [
+   -3.817,
+   19.07,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/CareRoom/TShirt",
+  "room": "CareRoom",
+  "asset": "TShirt.usda",
+  "min": [
+   -4.165,
+   18.604,
+   0.735
+  ],
+  "max": [
+   -3.505,
+   19.536,
+   0.743
+  ],
+  "pos": [
+   -3.835,
+   19.07,
+   0.735
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/Showcase",
+  "room": "Kitchen",
+  "asset": "Showcase.usda",
+  "min": [
+   -0.554,
+   10.67,
+   0.81
+  ],
+  "max": [
+   0.011,
+   11.37,
+   1.48
+  ],
+  "pos": [
+   -0.27,
+   11.02,
+   0.81
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/Plant",
+  "room": "Kitchen",
+  "asset": "Plant.usda",
+  "min": [
+   -1.206,
+   11.004,
+   0.0
+  ],
+  "max": [
+   -0.714,
+   11.496,
+   1.132
+  ],
+  "pos": [
+   -0.96,
+   11.25,
+   0.0
+  ],
+  "yaw": 30.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/BarStool_1",
+  "room": "Kitchen",
+  "asset": "BarStool.usda",
+  "min": [
+   -0.961,
+   6.446,
+   0.0
+  ],
+  "max": [
+   -0.539,
+   6.854,
+   0.762
+  ],
+  "pos": [
+   -0.75,
+   6.65,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/BarStool_2",
+  "room": "Kitchen",
+  "asset": "BarStool.usda",
+  "min": [
+   -0.961,
+   6.996,
+   0.0
+  ],
+  "max": [
+   -0.539,
+   7.404,
+   0.762
+  ],
+  "pos": [
+   -0.75,
+   7.2,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/BarStool_3",
+  "room": "Kitchen",
+  "asset": "BarStool.usda",
+  "min": [
+   -0.961,
+   7.546,
+   0.0
+  ],
+  "max": [
+   -0.539,
+   7.954,
+   0.762
+  ],
+  "pos": [
+   -0.75,
+   7.75,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/BarStool_4",
+  "room": "Kitchen",
+  "asset": "BarStool.usda",
+  "min": [
+   -0.961,
+   8.096,
+   0.0
+  ],
+  "max": [
+   -0.539,
+   8.504,
+   0.762
+  ],
+  "pos": [
+   -0.75,
+   8.3,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/Sink_1",
+  "room": "Kitchen",
+  "asset": "Sink.usda",
+  "min": [
+   2.998,
+   6.65,
+   0.92
+  ],
+  "max": [
+   3.518,
+   7.25,
+   1.387
+  ],
+  "pos": [
+   3.22,
+   6.95,
+   1.112
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/Sink_2",
+  "room": "Kitchen",
+  "asset": "Sink.usda",
+  "min": [
+   2.998,
+   7.8,
+   0.92
+  ],
+  "max": [
+   3.518,
+   8.4,
+   1.518
+  ],
+  "pos": [
+   3.22,
+   8.1,
+   1.112
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/Microwave",
+  "room": "Kitchen",
+  "asset": "Microwave.usda",
+  "min": [
+   3.079,
+   10.625,
+   1.112
+  ],
+  "max": [
+   3.429,
+   11.075,
+   1.371
+  ],
+  "pos": [
+   3.27,
+   10.85,
+   1.112
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/WaterPurifier",
+  "room": "Kitchen",
+  "asset": "WaterPurifier.usda",
+  "min": [
+   3.064,
+   11.425,
+   0.0
+  ],
+  "max": [
+   3.587,
+   11.775,
+   1.23
+  ],
+  "pos": [
+   3.328,
+   11.6,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/TrashBin3",
+  "room": "Kitchen",
+  "asset": "TrashBin3.usda",
+  "min": [
+   3.138,
+   11.82,
+   0.0
+  ],
+  "max": [
+   3.587,
+   12.84,
+   0.742
+  ],
+  "pos": [
+   3.362,
+   12.33,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/FireExtinguisher",
+  "room": "Kitchen",
+  "asset": "FireExtinguisher.usda",
+  "min": [
+   3.36,
+   12.94,
+   0.0
+  ],
+  "max": [
+   3.58,
+   13.16,
+   0.51
+  ],
+  "pos": [
+   3.47,
+   13.05,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/Fridge",
+  "room": "Kitchen",
+  "asset": "Fridge.usda",
+  "min": [
+   -0.35,
+   13.03,
+   0.0
+  ],
+  "max": [
+   0.299,
+   13.63,
+   1.715
+  ],
+  "pos": [
+   -0.026,
+   13.33,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/Induction_1",
+  "room": "Kitchen",
+  "asset": "Induction.usda",
+  "min": [
+   2.938,
+   8.752,
+   1.058
+  ],
+  "max": [
+   3.462,
+   9.348,
+   1.12
+  ],
+  "pos": [
+   3.2,
+   9.05,
+   1.112
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/Induction_2",
+  "room": "Kitchen",
+  "asset": "Induction.usda",
+  "min": [
+   2.938,
+   9.502,
+   1.058
+  ],
+  "max": [
+   3.462,
+   10.098,
+   1.12
+  ],
+  "pos": [
+   3.2,
+   9.8,
+   1.112
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/CoffeeRobot",
+  "room": "Kitchen",
+  "asset": "CoffeeRobot.usda",
+  "min": [
+   0.4,
+   14.533,
+   0.0
+  ],
+  "max": [
+   2.2,
+   16.123,
+   1.85
+  ],
+  "pos": [
+   1.3,
+   15.328,
+   0.0
+  ],
+  "yaw": 180.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Kitchen/CoffeeKiosk",
+  "room": "Kitchen",
+  "asset": "CoffeeKiosk.usda",
+  "min": [
+   3.173,
+   14.35,
+   0.02
+  ],
+  "max": [
+   3.592,
+   14.85,
+   1.81
+  ],
+  "pos": [
+   3.382,
+   14.6,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/SofaTable_S",
+  "room": "Hall",
+  "asset": "SofaTable.usda",
+  "min": [
+   -9.25,
+   6.0,
+   0.0
+  ],
+  "max": [
+   -8.45,
+   7.2,
+   0.34
+  ],
+  "pos": [
+   -8.85,
+   6.6,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Armchair_SW1",
+  "room": "Hall",
+  "asset": "Armchair.usda",
+  "min": [
+   -10.575,
+   5.875,
+   0.0
+  ],
+  "max": [
+   -9.823,
+   6.585,
+   0.73
+  ],
+  "pos": [
+   -10.2,
+   6.23,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Armchair_SW2",
+  "room": "Hall",
+  "asset": "Armchair.usda",
+  "min": [
+   -10.575,
+   6.615,
+   0.0
+  ],
+  "max": [
+   -9.823,
+   7.325,
+   0.73
+  ],
+  "pos": [
+   -10.2,
+   6.97,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Armchair_SE1",
+  "room": "Hall",
+  "asset": "Armchair.usda",
+  "min": [
+   -7.877,
+   5.875,
+   0.0
+  ],
+  "max": [
+   -7.125,
+   6.585,
+   0.73
+  ],
+  "pos": [
+   -7.5,
+   6.23,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Armchair_SE2",
+  "room": "Hall",
+  "asset": "Armchair.usda",
+  "min": [
+   -7.877,
+   6.615,
+   0.0
+  ],
+  "max": [
+   -7.125,
+   7.325,
+   0.73
+  ],
+  "pos": [
+   -7.5,
+   6.97,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/SofaTable_C",
+  "room": "Hall",
+  "asset": "SofaTable.usda",
+  "min": [
+   -9.25,
+   9.45,
+   0.0
+  ],
+  "max": [
+   -8.45,
+   10.65,
+   0.34
+  ],
+  "pos": [
+   -8.85,
+   10.05,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Armchair_CW1",
+  "room": "Hall",
+  "asset": "Armchair.usda",
+  "min": [
+   -10.575,
+   9.325,
+   0.0
+  ],
+  "max": [
+   -9.823,
+   10.035,
+   0.73
+  ],
+  "pos": [
+   -10.2,
+   9.68,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Armchair_CW2",
+  "room": "Hall",
+  "asset": "Armchair.usda",
+  "min": [
+   -10.575,
+   10.065,
+   0.0
+  ],
+  "max": [
+   -9.823,
+   10.775,
+   0.73
+  ],
+  "pos": [
+   -10.2,
+   10.42,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Sofa3_C",
+  "room": "Hall",
+  "asset": "Sofa3.usda",
+  "min": [
+   -7.877,
+   9.175,
+   0.0
+  ],
+  "max": [
+   -7.125,
+   10.925,
+   0.73
+  ],
+  "pos": [
+   -7.5,
+   10.05,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/SofaTable_N",
+  "room": "Hall",
+  "asset": "SofaTable.usda",
+  "min": [
+   -9.25,
+   12.2,
+   0.0
+  ],
+  "max": [
+   -8.45,
+   13.4,
+   0.34
+  ],
+  "pos": [
+   -8.85,
+   12.8,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Armchair_NW1",
+  "room": "Hall",
+  "asset": "Armchair.usda",
+  "min": [
+   -10.575,
+   12.075,
+   0.0
+  ],
+  "max": [
+   -9.823,
+   12.785,
+   0.73
+  ],
+  "pos": [
+   -10.2,
+   12.43,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Armchair_NW2",
+  "room": "Hall",
+  "asset": "Armchair.usda",
+  "min": [
+   -10.575,
+   12.815,
+   0.0
+  ],
+  "max": [
+   -9.823,
+   13.525,
+   0.73
+  ],
+  "pos": [
+   -10.2,
+   13.17,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Armchair_NE1",
+  "room": "Hall",
+  "asset": "Armchair.usda",
+  "min": [
+   -7.877,
+   12.075,
+   0.0
+  ],
+  "max": [
+   -7.125,
+   12.785,
+   0.73
+  ],
+  "pos": [
+   -7.5,
+   12.43,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Armchair_NE2",
+  "room": "Hall",
+  "asset": "Armchair.usda",
+  "min": [
+   -7.877,
+   12.815,
+   0.0
+  ],
+  "max": [
+   -7.125,
+   13.525,
+   0.73
+  ],
+  "pos": [
+   -7.5,
+   13.17,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Desk6_1",
+  "room": "Hall",
+  "asset": "Desk6.usda",
+  "min": [
+   -4.1,
+   5.9,
+   0.0
+  ],
+  "max": [
+   -3.3,
+   7.7,
+   0.72
+  ],
+  "pos": [
+   -3.7,
+   6.8,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_1W1",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -4.454,
+   5.985,
+   0.009
+  ],
+  "max": [
+   -3.98,
+   6.515,
+   0.755
+  ],
+  "pos": [
+   -4.22,
+   6.25,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_1W2",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -4.454,
+   6.535,
+   0.009
+  ],
+  "max": [
+   -3.98,
+   7.065,
+   0.755
+  ],
+  "pos": [
+   -4.22,
+   6.8,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_1W3",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -4.454,
+   7.085,
+   0.009
+  ],
+  "max": [
+   -3.98,
+   7.615,
+   0.755
+  ],
+  "pos": [
+   -4.22,
+   7.35,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_1E1",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -3.42,
+   5.985,
+   0.009
+  ],
+  "max": [
+   -2.946,
+   6.515,
+   0.755
+  ],
+  "pos": [
+   -3.18,
+   6.25,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_1E2",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -3.42,
+   6.535,
+   0.009
+  ],
+  "max": [
+   -2.946,
+   7.065,
+   0.755
+  ],
+  "pos": [
+   -3.18,
+   6.8,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_1E3",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -3.42,
+   7.085,
+   0.009
+  ],
+  "max": [
+   -2.946,
+   7.615,
+   0.755
+  ],
+  "pos": [
+   -3.18,
+   7.35,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Desk6_2",
+  "room": "Hall",
+  "asset": "Desk6.usda",
+  "min": [
+   -4.1,
+   7.7,
+   0.0
+  ],
+  "max": [
+   -3.3,
+   9.5,
+   0.72
+  ],
+  "pos": [
+   -3.7,
+   8.6,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_2W1",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -4.454,
+   7.785,
+   0.009
+  ],
+  "max": [
+   -3.98,
+   8.315,
+   0.755
+  ],
+  "pos": [
+   -4.22,
+   8.05,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_2W2",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -4.454,
+   8.335,
+   0.009
+  ],
+  "max": [
+   -3.98,
+   8.865,
+   0.755
+  ],
+  "pos": [
+   -4.22,
+   8.6,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_2W3",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -4.454,
+   8.885,
+   0.009
+  ],
+  "max": [
+   -3.98,
+   9.415,
+   0.755
+  ],
+  "pos": [
+   -4.22,
+   9.15,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_2E1",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -3.42,
+   7.785,
+   0.009
+  ],
+  "max": [
+   -2.946,
+   8.315,
+   0.755
+  ],
+  "pos": [
+   -3.18,
+   8.05,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_2E2",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -3.42,
+   8.335,
+   0.009
+  ],
+  "max": [
+   -2.946,
+   8.865,
+   0.755
+  ],
+  "pos": [
+   -3.18,
+   8.6,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_2E3",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -3.42,
+   8.885,
+   0.009
+  ],
+  "max": [
+   -2.946,
+   9.415,
+   0.755
+  ],
+  "pos": [
+   -3.18,
+   9.15,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Desk6_3",
+  "room": "Hall",
+  "asset": "Desk6.usda",
+  "min": [
+   -4.1,
+   9.5,
+   0.0
+  ],
+  "max": [
+   -3.3,
+   11.3,
+   0.72
+  ],
+  "pos": [
+   -3.7,
+   10.4,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_3W1",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -4.454,
+   9.585,
+   0.009
+  ],
+  "max": [
+   -3.98,
+   10.115,
+   0.755
+  ],
+  "pos": [
+   -4.22,
+   9.85,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_3W2",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -4.454,
+   10.135,
+   0.009
+  ],
+  "max": [
+   -3.98,
+   10.665,
+   0.755
+  ],
+  "pos": [
+   -4.22,
+   10.4,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_3W3",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -4.454,
+   10.685,
+   0.009
+  ],
+  "max": [
+   -3.98,
+   11.215,
+   0.755
+  ],
+  "pos": [
+   -4.22,
+   10.95,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_3E1",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -3.42,
+   9.585,
+   0.009
+  ],
+  "max": [
+   -2.946,
+   10.115,
+   0.755
+  ],
+  "pos": [
+   -3.18,
+   9.85,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_3E2",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -3.42,
+   10.135,
+   0.009
+  ],
+  "max": [
+   -2.946,
+   10.665,
+   0.755
+  ],
+  "pos": [
+   -3.18,
+   10.4,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/Chair6_3E3",
+  "room": "Hall",
+  "asset": "Chair6.usda",
+  "min": [
+   -3.42,
+   10.685,
+   0.009
+  ],
+  "max": [
+   -2.946,
+   11.215,
+   0.755
+  ],
+  "pos": [
+   -3.18,
+   10.95,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/TVStand",
+  "room": "Hall",
+  "asset": "TVStand.usda",
+  "min": [
+   -4.425,
+   11.895,
+   0.0
+  ],
+  "max": [
+   -2.975,
+   12.605,
+   1.74
+  ],
+  "pos": [
+   -3.7,
+   12.25,
+   0.0
+  ],
+  "yaw": 180.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeDesk_1",
+  "room": "Hall",
+  "asset": "OfficeDesk.usda",
+  "min": [
+   -12.766,
+   17.475,
+   0.01
+  ],
+  "max": [
+   -12.066,
+   18.875,
+   0.74
+  ],
+  "pos": [
+   -12.416,
+   18.175,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeChair_1",
+  "room": "Hall",
+  "asset": "OfficeChair.usda",
+  "min": [
+   -12.145,
+   17.831,
+   0.0
+  ],
+  "max": [
+   -11.42,
+   18.519,
+   1.25
+  ],
+  "pos": [
+   -11.79,
+   18.175,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeDesk_2",
+  "room": "Hall",
+  "asset": "OfficeDesk.usda",
+  "min": [
+   -12.766,
+   19.055,
+   0.01
+  ],
+  "max": [
+   -12.066,
+   20.455,
+   0.74
+  ],
+  "pos": [
+   -12.416,
+   19.755,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeChair_2",
+  "room": "Hall",
+  "asset": "OfficeChair.usda",
+  "min": [
+   -12.145,
+   19.411,
+   0.0
+  ],
+  "max": [
+   -11.42,
+   20.099,
+   1.25
+  ],
+  "pos": [
+   -11.79,
+   19.755,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeDesk_3",
+  "room": "Hall",
+  "asset": "OfficeDesk.usda",
+  "min": [
+   -10.67,
+   18.301,
+   0.01
+  ],
+  "max": [
+   -9.97,
+   19.701,
+   0.74
+  ],
+  "pos": [
+   -10.32,
+   19.001,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeChair_3",
+  "room": "Hall",
+  "asset": "OfficeChair.usda",
+  "min": [
+   -11.31,
+   18.657,
+   0.0
+  ],
+  "max": [
+   -10.585,
+   19.345,
+   1.25
+  ],
+  "pos": [
+   -10.94,
+   19.001,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeDesk_4",
+  "room": "Hall",
+  "asset": "OfficeDesk.usda",
+  "min": [
+   -10.67,
+   19.701,
+   0.01
+  ],
+  "max": [
+   -9.97,
+   21.101,
+   0.74
+  ],
+  "pos": [
+   -10.32,
+   20.401,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeChair_4",
+  "room": "Hall",
+  "asset": "OfficeChair.usda",
+  "min": [
+   -11.31,
+   20.057,
+   0.0
+  ],
+  "max": [
+   -10.585,
+   20.745,
+   1.25
+  ],
+  "pos": [
+   -10.94,
+   20.401,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeDesk_5",
+  "room": "Hall",
+  "asset": "OfficeDesk.usda",
+  "min": [
+   -9.97,
+   18.301,
+   0.01
+  ],
+  "max": [
+   -9.27,
+   19.701,
+   0.74
+  ],
+  "pos": [
+   -9.62,
+   19.001,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeChair_5",
+  "room": "Hall",
+  "asset": "OfficeChair.usda",
+  "min": [
+   -9.355,
+   18.657,
+   0.0
+  ],
+  "max": [
+   -8.63,
+   19.345,
+   1.25
+  ],
+  "pos": [
+   -9.0,
+   19.001,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeDesk_6",
+  "room": "Hall",
+  "asset": "OfficeDesk.usda",
+  "min": [
+   -9.97,
+   19.701,
+   0.01
+  ],
+  "max": [
+   -9.27,
+   21.101,
+   0.74
+  ],
+  "pos": [
+   -9.62,
+   20.401,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeChair_6",
+  "room": "Hall",
+  "asset": "OfficeChair.usda",
+  "min": [
+   -9.355,
+   20.057,
+   0.0
+  ],
+  "max": [
+   -8.63,
+   20.745,
+   1.25
+  ],
+  "pos": [
+   -9.0,
+   20.401,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeDesk_7",
+  "room": "Hall",
+  "asset": "OfficeDesk.usda",
+  "min": [
+   -7.93,
+   18.301,
+   0.01
+  ],
+  "max": [
+   -7.23,
+   19.701,
+   0.74
+  ],
+  "pos": [
+   -7.58,
+   19.001,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeChair_7",
+  "room": "Hall",
+  "asset": "OfficeChair.usda",
+  "min": [
+   -8.57,
+   18.657,
+   0.0
+  ],
+  "max": [
+   -7.845,
+   19.345,
+   1.25
+  ],
+  "pos": [
+   -8.2,
+   19.001,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeDesk_8",
+  "room": "Hall",
+  "asset": "OfficeDesk.usda",
+  "min": [
+   -7.93,
+   19.701,
+   0.01
+  ],
+  "max": [
+   -7.23,
+   21.101,
+   0.74
+  ],
+  "pos": [
+   -7.58,
+   20.401,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeChair_8",
+  "room": "Hall",
+  "asset": "OfficeChair.usda",
+  "min": [
+   -8.57,
+   20.057,
+   0.0
+  ],
+  "max": [
+   -7.845,
+   20.745,
+   1.25
+  ],
+  "pos": [
+   -8.2,
+   20.401,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeDesk_9",
+  "room": "Hall",
+  "asset": "OfficeDesk.usda",
+  "min": [
+   -7.23,
+   18.301,
+   0.01
+  ],
+  "max": [
+   -6.53,
+   19.701,
+   0.74
+  ],
+  "pos": [
+   -6.88,
+   19.001,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeChair_9",
+  "room": "Hall",
+  "asset": "OfficeChair.usda",
+  "min": [
+   -6.615,
+   18.657,
+   0.0
+  ],
+  "max": [
+   -5.89,
+   19.345,
+   1.25
+  ],
+  "pos": [
+   -6.26,
+   19.001,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeDesk_10",
+  "room": "Hall",
+  "asset": "OfficeDesk.usda",
+  "min": [
+   -7.23,
+   19.701,
+   0.01
+  ],
+  "max": [
+   -6.53,
+   21.101,
+   0.74
+  ],
+  "pos": [
+   -6.88,
+   20.401,
+   0.0
+  ],
+  "yaw": -90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeChair_10",
+  "room": "Hall",
+  "asset": "OfficeChair.usda",
+  "min": [
+   -6.615,
+   20.057,
+   0.0
+  ],
+  "max": [
+   -5.89,
+   20.745,
+   1.25
+  ],
+  "pos": [
+   -6.26,
+   20.401,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeDesk_11",
+  "room": "Hall",
+  "asset": "OfficeDesk.usda",
+  "min": [
+   -5.076,
+   19.701,
+   0.01
+  ],
+  "max": [
+   -4.376,
+   21.101,
+   0.74
+  ],
+  "pos": [
+   -4.726,
+   20.401,
+   0.0
+  ],
+  "yaw": 90.0
+ },
+ {
+  "path": "/DX_Hub_Building_add_obj/Furniture/Hall/OfficeChair_11",
+  "room": "Hall",
+  "asset": "OfficeChair.usda",
+  "min": [
+   -5.716,
+   20.057,
+   0.0
+  ],
+  "max": [
+   -4.991,
+   20.745,
+   1.25
+  ],
+  "pos": [
+   -5.346,
+   20.401,
+   0.0
+  ],
+  "yaw": -90.0
+ }
+]
