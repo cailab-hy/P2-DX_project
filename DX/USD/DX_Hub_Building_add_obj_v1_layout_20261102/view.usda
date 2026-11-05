@@ -11,6 +11,10 @@ def Xform "World"
         prepend references = @./DX_Hub_Building_add_obj_v1_layout_20261102.usda@
     )
     {
+        over "Zones"
+        {
+            token visibility = "inherited"
+        }
     }
 
     def DomeLight "Dome"
