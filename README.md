@@ -78,6 +78,7 @@ python place_final.py ../../config/dx_hub_v1 ../../config/dx_hub_v1 "$PWD/../../
 | 벽걸이 TV (스캔 기준 2.53×1.44 m) | 1 | `wall_tv.py` |
 | 펜던트 조명 | 27 | `pendant_lamps.py` |
 | 모니터 | 31 | `monitors.py` |
+| 로봇 책상 칸막이 (스캔 기준 0.80×0.46 m, 두께 3 cm) | 1 | USD에만 반영 (코드는 Dx_hub_project의 `desk_partition.py`) |
 | 소화기, 사무용 책상·의자 등 기존 모델 | - | `place_final.py` |
 
 기존 가구 26개는 스캔에 맞춰 옮겼습니다.

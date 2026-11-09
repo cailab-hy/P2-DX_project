@@ -6662,6 +6662,33 @@ over "DX_Hub_Building_add_obj"
                 }
             }
 
+            def Xform "Scan_DeskPartition_1"
+            {
+                def Material "Look"
+                {
+                    token outputs:surface.connect = </DX_Hub_Building_add_obj/Furniture/Hall/Scan_DeskPartition_1/Look/Shader.outputs:surface>
+
+                    def Shader "Shader"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        color3f inputs:diffuseColor = (0.6, 0.59, 0.56)
+                        float inputs:roughness = 0.8
+                        token outputs:surface
+                    }
+                }
+
+                def Cube "panel" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                )
+                {
+                    rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/Scan_DeskPartition_1/Look>
+                    double size = 1
+                    float3 xformOp:scale = (0.8, 0.03, 0.455)
+                    double3 xformOp:translate = (-3.4699999999999998, 14.535, 0.9524999999999999)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+            }
+
             def Xform "Scan_WallTV_1"
             {
                 float xformOp:rotateZ = 39.2
