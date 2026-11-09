@@ -6689,6 +6689,390 @@ over "DX_Hub_Building_add_obj"
                 }
             }
 
+            def Xform "RobotDesk_CubeSet"
+            {
+                float xformOp:rotateZ = 180
+                double3 xformOp:translate = (-3.5, 14.5, 0.0050000000000000044)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ"]
+
+                def "Looks"
+                {
+                    def Material "DeskWhite"
+                    {
+                        token outputs:surface.connect = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/DeskWhite/S.outputs:surface>
+
+                        def Shader "S"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.9, 0.89, 0.86)
+                            float inputs:opacity = 1
+                            float inputs:roughness = 0.6
+                            token outputs:surface
+                        }
+                    }
+
+                    def Material "LegWhite"
+                    {
+                        token outputs:surface.connect = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/LegWhite/S.outputs:surface>
+
+                        def Shader "S"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.93, 0.93, 0.92)
+                            float inputs:opacity = 1
+                            float inputs:roughness = 0.4
+                            token outputs:surface
+                        }
+                    }
+
+                    def Material "PartitionFabric"
+                    {
+                        token outputs:surface.connect = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/PartitionFabric/S.outputs:surface>
+
+                        def Shader "S"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.62, 0.61, 0.56)
+                            float inputs:opacity = 1
+                            float inputs:roughness = 0.9
+                            token outputs:surface
+                        }
+                    }
+
+                    def Material "PartitionFrame"
+                    {
+                        token outputs:surface.connect = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/PartitionFrame/S.outputs:surface>
+
+                        def Shader "S"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.94, 0.94, 0.93)
+                            float inputs:opacity = 1
+                            float inputs:roughness = 0.6
+                            token outputs:surface
+                        }
+                    }
+
+                    def Material "BinClear"
+                    {
+                        token outputs:surface.connect = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/BinClear/S.outputs:surface>
+
+                        def Shader "S"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.92, 0.94, 0.95)
+                            float inputs:ior = 1.45
+                            float inputs:opacity = 0.35
+                            float inputs:roughness = 0.15
+                            token outputs:surface
+                        }
+                    }
+
+                    def Material "CubeBlue"
+                    {
+                        token outputs:surface.connect = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/CubeBlue/S.outputs:surface>
+
+                        def Shader "S"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.08, 0.3, 0.9)
+                            float inputs:opacity = 1
+                            float inputs:roughness = 0.6
+                            token outputs:surface
+                        }
+                    }
+
+                    def Material "CubeRed"
+                    {
+                        token outputs:surface.connect = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/CubeRed/S.outputs:surface>
+
+                        def Shader "S"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.85, 0.08, 0.08)
+                            float inputs:opacity = 1
+                            float inputs:roughness = 0.6
+                            token outputs:surface
+                        }
+                    }
+
+                    def Material "CubeGreen"
+                    {
+                        token outputs:surface.connect = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/CubeGreen/S.outputs:surface>
+
+                        def Shader "S"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor = (0.08, 0.55, 0.22)
+                            float inputs:opacity = 1
+                            float inputs:roughness = 0.6
+                            token outputs:surface
+                        }
+                    }
+
+                    def Material "Physics" (
+                        prepend apiSchemas = ["PhysicsMaterialAPI"]
+                    )
+                    {
+                        float physics:dynamicFriction = 0.6
+                        float physics:restitution = 0
+                        float physics:staticFriction = 0.7
+                    }
+                }
+
+                def Xform "BoxA" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    bool physics:kinematicEnabled = 1
+                    float physics:mass = 0.6
+                    float xformOp:rotateZ = 90
+                    double3 xformOp:translate = (0.16000000000000003, -0.305, 0.721)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ"]
+
+                    def Cube "Bottom" (
+                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                    )
+                    {
+                        rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/BinClear>
+                        rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                        double size = 1
+                        float3 xformOp:scale = (0.36, 0.26, 0.003)
+                        double3 xformOp:translate = (0, 0, 0.0015)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                    }
+
+                    def Cube "Wall0" (
+                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                    )
+                    {
+                        rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/BinClear>
+                        rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                        double size = 1
+                        float3 xformOp:scale = (0.36, 0.003, 0.15)
+                        double3 xformOp:translate = (0, -0.1285, 0.075)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                    }
+
+                    def Cube "Wall1" (
+                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                    )
+                    {
+                        rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/BinClear>
+                        rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                        double size = 1
+                        float3 xformOp:scale = (0.36, 0.003, 0.15)
+                        double3 xformOp:translate = (0, 0.1285, 0.075)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                    }
+
+                    def Cube "Wall2" (
+                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                    )
+                    {
+                        rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/BinClear>
+                        rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                        double size = 1
+                        float3 xformOp:scale = (0.003, 0.26, 0.15)
+                        double3 xformOp:translate = (-0.1785, 0, 0.075)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                    }
+
+                    def Cube "Wall3" (
+                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                    )
+                    {
+                        rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/BinClear>
+                        rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                        double size = 1
+                        float3 xformOp:scale = (0.003, 0.26, 0.15)
+                        double3 xformOp:translate = (0.1785, 0, 0.075)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                    }
+                }
+
+                def Xform "BoxB" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    bool physics:kinematicEnabled = 1
+                    float physics:mass = 0.6
+                    float xformOp:rotateZ = 90
+                    double3 xformOp:translate = (-0.16000000000000003, 0.305, 0.721)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZ"]
+
+                    def Cube "Bottom" (
+                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                    )
+                    {
+                        rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/BinClear>
+                        rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                        double size = 1
+                        float3 xformOp:scale = (0.36, 0.26, 0.003)
+                        double3 xformOp:translate = (0, 0, 0.0015)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                    }
+
+                    def Cube "Wall0" (
+                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                    )
+                    {
+                        rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/BinClear>
+                        rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                        double size = 1
+                        float3 xformOp:scale = (0.36, 0.003, 0.15)
+                        double3 xformOp:translate = (0, -0.1285, 0.075)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                    }
+
+                    def Cube "Wall1" (
+                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                    )
+                    {
+                        rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/BinClear>
+                        rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                        double size = 1
+                        float3 xformOp:scale = (0.36, 0.003, 0.15)
+                        double3 xformOp:translate = (0, 0.1285, 0.075)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                    }
+
+                    def Cube "Wall2" (
+                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                    )
+                    {
+                        rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/BinClear>
+                        rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                        double size = 1
+                        float3 xformOp:scale = (0.003, 0.26, 0.15)
+                        double3 xformOp:translate = (-0.1785, 0, 0.075)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                    }
+
+                    def Cube "Wall3" (
+                        prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI"]
+                    )
+                    {
+                        rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/BinClear>
+                        rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                            bindMaterialAs = "weakerThanDescendants"
+                        )
+                        double size = 1
+                        float3 xformOp:scale = (0.003, 0.26, 0.15)
+                        double3 xformOp:translate = (0.1785, 0, 0.075)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                    }
+                }
+
+                def Cube "CubeA_blue" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/CubeBlue>
+                    rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    float physics:mass = 0.02
+                    double size = 1
+                    float3 xformOp:scale = (0.045, 0.045, 0.045)
+                    double3 xformOp:translate = (-0.08000000000000002, -0.29500000000000004, 0.7434999999999999)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "CubeA_red" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/CubeRed>
+                    rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    float physics:mass = 0.02
+                    double size = 1
+                    float3 xformOp:scale = (0.045, 0.045, 0.045)
+                    double3 xformOp:translate = (-0.29000000000000004, -0.245, 0.7434999999999999)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "CubeA_green" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/CubeGreen>
+                    rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    float physics:mass = 0.02
+                    double size = 1
+                    float3 xformOp:scale = (0.045, 0.045, 0.045)
+                    double3 xformOp:translate = (-0.33999999999999997, -0.42000000000000004, 0.7434999999999999)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "CubeB_blue" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/CubeBlue>
+                    rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    float physics:mass = 0.02
+                    double size = 1
+                    float3 xformOp:scale = (0.045, 0.045, 0.045)
+                    double3 xformOp:translate = (0.08000000000000002, 0.29500000000000004, 0.7434999999999999)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "CubeB_red" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/CubeRed>
+                    rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    float physics:mass = 0.02
+                    double size = 1
+                    float3 xformOp:scale = (0.045, 0.045, 0.045)
+                    double3 xformOp:translate = (0.29000000000000004, 0.245, 0.7434999999999999)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+
+                def Cube "CubeB_green" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    rel material:binding = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/CubeGreen>
+                    rel material:binding:physics = </DX_Hub_Building_add_obj/Furniture/Hall/RobotDesk_CubeSet/Looks/Physics> (
+                        bindMaterialAs = "weakerThanDescendants"
+                    )
+                    float physics:mass = 0.02
+                    double size = 1
+                    float3 xformOp:scale = (0.045, 0.045, 0.045)
+                    double3 xformOp:translate = (0.33999999999999997, 0.42000000000000004, 0.7434999999999999)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+            }
+
             def Xform "Scan_WallTV_1"
             {
                 float xformOp:rotateZ = 39.2

@@ -79,6 +79,7 @@ python place_final.py ../../config/dx_hub_v1 ../../config/dx_hub_v1 "$PWD/../../
 | 펜던트 조명 | 27 | `pendant_lamps.py` |
 | 모니터 | 31 | `monitors.py` |
 | 로봇 책상 칸막이 (스캔 기준 0.80×0.46 m, 두께 3 cm) | 1 | USD에만 반영 (코드는 Dx_hub_project의 `desk_partition.py`) |
+| 작업대 박스 / RGB 큐브 (작업대 실측 USD에서 복사, 로봇 쪽 = 북쪽 책상) | 2 / 6 | USD에만 반영 (코드는 Dx_hub_project의 `desk_cube_set.py`) |
 | 소화기, 사무용 책상·의자 등 기존 모델 | - | `place_final.py` |
 
 기존 가구 26개는 스캔에 맞춰 옮겼습니다.
